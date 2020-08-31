@@ -1,0 +1,50 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url(hinh/bg.jpg) no-repeat;
+    background-size: cover;
+}
+.login_box{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.login_box h1{
+    padding: 13px 0;
+    font-size: 40px;
+    font-family: sans-serif;
+    border-bottom: 6px solid yellowgreen;
+    float: left;
+    margin-bottom: 50px;
+}
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid yellowgreen;
+
+}
+.textbox i{width:  26px; float: left; text-align: center;}
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    padding: 0 10px;
+    color: white;
+}
+.btn{
+    width: 100%;
+    background: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px ;
+    border: 2px solid yellowgreen;
+    margin: 10px 0;
+}

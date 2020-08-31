@@ -1,0 +1,51 @@
+*{margin:0;padding: 0;box-sizing: border-box;}
+.h1{width:480px;height:220px;}
+ul li.active {background-color:#f5f5f5;transition: 0.4s}
+.hinha2 img.h21{ margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+width: 180px;height: 120px;}
+.hinha2 img.h31{ margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+width: 180px;height: 120px;}
+#post_data{display:flex;flex-wrap: wrap;margin-left: 84px;}
+.loptop_konoibat{display:flex;flex-wrap: wrap;margin-left: 84px;}
+.hinha2 img.h41{ margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+width: 180px;height: 120px;}
+.colum2 img{width: 75px !important; margin-left: 15px;}
+.logopc{display: flex;flex-wrap: wrap;width: auto;height:160px;margin-left: 125px;}
+.logopc a{width: 230px;height: 150px;}
+.lap1 img{width: 230px;height:130px;}
+strong.sl{margin-left:80px;font-size: 25px;font-family: 'Times New Roman', Times, serif;text-transform: capitalize;}
+
+.MultiCarousel {overflow: hidden; padding: 15px;height: 350px; position:relative; border: 3px solid #ba0953;
+
+}
+.multione{}
+    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+        .MultiCarousel .MultiCarousel-inner .item { float: left;}
+        .MultiCarousel .MultiCarousel-inner .item { text-align: center; padding:10px; margin:10px; }
+    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+    .MultiCarousel .leftLst { left:0; }
+    .MultiCarousel .rightLst { right:0; }
+    
+        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;}
+
+.itemlap{width: 240px !important; height: auto;margin-top: -15px;border: 1px solid #f1f1f1;}
+.itemlap img{width: 210px;height: 140px;}
+img.lga{margin-left: 105px;}
+img.tang{width: 35px;height: 35px;}
+.laptop h3{font-size: 13px; margin-top: 25px;}
+.laptop a.ac{text-decoration: none;font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;color: black;}
+.pagi1{margin-left:550px;margin-top: 20px;}
+.con2 p{color: black;font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;font-size: 13px;}
+p.km{
+    font-size: 13px;
+    margin-top: 25px;
+}

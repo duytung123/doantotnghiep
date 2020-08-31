@@ -1,0 +1,11 @@
+.imgwatch{width: 1200px;height: 100px;background: white;margin-left: 60px;}
+ul.watch{text-align: center;}
+ul li.active {background-color:#f5f5f5;transition: 0.4s}
+li.watch2{margin-left: auto;margin-right: auto;list-style: none;display: inline-block; padding: 0 40px;}
+.imgwatch img{width: 60px;height: 60px;margin-top: -45px;}
+.imgwatch a{width: 235px;height: 78px;}
+.watch2 strong{margin-left: 20px;display: block; color: black; text-transform: uppercase;font-size: 13px;padding: 3px 40px;}
+.chunoibat{display: inline-block;padding: 15px 0px;
+    margin-top: 10px;
+    margin-left: -20px;}
+.chunoibat a.chunoibat_text{text-decoration: none;}
