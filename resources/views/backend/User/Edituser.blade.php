@@ -1,5 +1,20 @@
   @extends('adminlte')
   @section('main')
+    <script>
+    $(document).ready(function(){
+        $("#changePassword").change(function(){
+            if($(this).is(":checked"))
+            {
+                $(".password").removeAttr('disabled');
+            }
+            else
+            {
+                $(".password").arttr('disabled','');
+
+            }
+        });
+    });
+</script>
   <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -65,8 +80,8 @@
                                 </label>
                               
                             </div>
-                            <button type="submit" class="btn btn-default">sửa</button>
-                            <button type="reset" class="btn btn-default">Mới</button>
+                            <button type="submit" class="btn btn-default">Lưu</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
                         <form>
                     </div>
                 </div>
@@ -75,21 +90,7 @@
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-  @section('script')
-  <script>
-    $(document).ready(function(){
-        $("#changePassword").change(function(){
-            if($(this).is(":checked"))
-            {
-                $(".password").removeAttr('disabled');
-            }
-            else
-            {
-                $(".password").arttr('disabled','');
 
-            }
-        });
-    });
-</script>
-@endsection
+
+
 @endsection

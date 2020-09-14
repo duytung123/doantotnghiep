@@ -13,7 +13,7 @@ class TdUser extends Migration
      */
     public function up()
     {
-         Schema::create('td_user', function (Blueprint $table) {
+        Schema::create('td_user', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('email')->unique();
                 $table->string('password');
@@ -32,6 +32,6 @@ class TdUser extends Migration
      */
     public function down()
     {
-          Schema::dropIfExists('td_user');
+            Schema::dropIfExists('td_user');
     }
 }

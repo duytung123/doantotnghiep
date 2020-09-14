@@ -13,13 +13,13 @@ class TdCategory extends Migration
      */
     public function up()
     {
-        Schema::create('td_category', function (Blueprint $table) {
-            $table->increments('cate_id');
-                        $table->string('cate_name');
-                                    $table->string('cate_slug');
-            $table->timestamps();
-        });
-    }
+       Schema::create('td_category', function (Blueprint $table) {
+        $table->increments('cate_id');
+        $table->string('cate_name');
+        $table->string('cate_slug');
+        $table->timestamps();
+    });
+   }
 
     /**
      * Reverse the migrations.
@@ -28,6 +28,6 @@ class TdCategory extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('td_category');
+        Schema::dropIfExists('td_category');
     }
 }

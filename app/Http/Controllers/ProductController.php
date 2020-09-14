@@ -13,8 +13,18 @@ class ProductController extends Controller
 {
     public function getproduct()
     {
-        $data['productlist']=DB::table('td_product')->join('td_category','td_product.prod_cate','=','td_category.cate_id')->orderBy('prod_id','desc')->get();
+        $data['productlist']=DB::table('td_product')->where('prod_cate',1)->join('td_category','td_product.prod_cate','=','td_category.cate_id')->orderBy('prod_id','desc')->get();
+        // điện thoại
+
+        
+
+        $data['tabletlist']=DB::table('td_product')->where('prod_cate',3)->join('td_category','td_product.prod_cate','=','td_category.cate_id')->orderBy('prod_id','desc')->get();
+        // tablet
+
+        $data['phukienlist']=DB::table('td_product')->where('prod_cate',4)->join('td_category','td_product.prod_cate','=','td_category.cate_id')->orderBy('prod_id','desc')->get();
         return view('backend.Product.Product',$data);
+        // phụ kiện
+
     }
     public function getaddproduct()
     {
@@ -37,6 +47,7 @@ class ProductController extends Controller
         $product->prod_condition=$request->condition;
         $product->prod_description=$request->description;
         $product->prod_cate=$request->cate;
+        $product->prod_cateall=$request->cateall;
         $product->save();
         $request->img->storeAs('avatar',$filename);
         return redirect('admin/product/add')->with('thongbao','bạn đã thêm thành công');
@@ -76,5 +87,15 @@ class ProductController extends Controller
 
         return back();
         
+    }
+
+    public function getsearch(Request $request)
+    {
+        $result=$request->result;
+        $result=str_replace(' ', '%', $result);
+        $data['keyword']=$result;
+        $data['productlist']=Product::where('prod_name','like','%'.$result.'%')->get();
+        return view('backend.Product.Searchproduct',$data);
+
     }
 }

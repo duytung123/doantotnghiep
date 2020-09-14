@@ -75,6 +75,14 @@
 										<input value="{{$edit->prod_name}}" required type="text" name="name" class="form-control">
 									</div>
 									<div class="form-group" >
+										<label>Hãng điện thoại</label>
+										<select required name="cateall" class="form-control">
+											@foreach($cateallproduct as $cate)
+											<option value="{{$cate->cateall_id}}">{{$cate->cateall_name}}</option>
+											@endforeach
+										</select>
+									</div>
+									<div class="form-group" >
 										<label>Giá sản phẩm</label>
 										<input value="{{$edit->prod_price}}" required type="number" name="price" class="form-control">
 									</div>
@@ -120,7 +128,7 @@
 									<div class="form-group" >
 										<label>Sản phẩm nổi bật</label><br>
 										Sale: <input type="radio" name="featured" value="0" @if($edit->prod_featured ==1) selected @endif >
-										Có : <input type="radio" name="featured" value="1" @if($edit->laptop_featured == 3 ) selected @endif >
+										Có : <input type="radio" name="featured" value="1" @if($edit->prod_featured == 3 ) selected @endif >
 										Hot: <input type="radio" checked name="featured" value="2"@if($edit->prod_featured ==0) selected @endif >
 										Không: <input type="radio" name="featured" value="3" @if($edit->prod_featured ==2) selected @endif>
 										Sale Khủng : <input type="radio" name="featured" value="4" @if($edit->prod_featured == 4) selected @endif>

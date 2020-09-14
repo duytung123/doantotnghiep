@@ -13,19 +13,15 @@ class TdTransaction extends Migration
      */
     public function up()
     {
-        Schema::create('td_transaction', function (Blueprint $table) { 
+         Schema::create('td_transaction', function (Blueprint $table) { 
             $table->increments('id'); 
-            $table->string('tr_user_id');
             $table->string('tr_phone')->nullable();
             $table->string('tr_address')->nullable();
             $table->string('tr_note')->nullable();
-            $table->tinyInteger('tr_status')->default(0);
             $table->integer('tr_totalprice'); 
             $table->timestamps();
 
      });
-
-
     }
 
     /**
@@ -35,6 +31,6 @@ class TdTransaction extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('td_transaction');
     }
 }

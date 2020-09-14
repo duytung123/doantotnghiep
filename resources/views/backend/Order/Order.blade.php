@@ -1,6 +1,6 @@
 @extends('adminlte')
 @section('main')
-  <script>
+<script>
   $(function(){
         $(".model_js").click(function(event) {
             event.preventDefault();

@@ -13,7 +13,7 @@ class TdOrder extends Migration
      */
     public function up()
     {
-        Schema::create('td_order', function (Blueprint $table) {
+         Schema::create('td_order', function (Blueprint $table) {
            $table->increments('id');
            $table->integer('or_transaction_id');
            $table->integer('or_product_id');
@@ -32,6 +32,6 @@ class TdOrder extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('td_order');
     }
 }

@@ -1,0 +1,39 @@
+
+    .home_new{
+    	margin-left: 85px;
+    }
+    .home_new_big_title{
+    	font-family: fangsong;
+    	width: 500px;
+    	font-size: 20px;
+    	color: #999;
+    }
+    .small_title{
+    	margin-top: 40px;
+    }
+    .title2 a.title2_text{
+    	text-decoration: none;
+    }
+    p.concat{
+
+    	font-size: 10px;
+    }
+    .content-wrapper{
+    	display: flex;
+    	flex-wrap:wrap;
+    	text-align:center;
+    }
+    .text_small strong.author{
+    	margin-left: -76%;
+    	color: cadetblue;
+    }
+    p.text_content{
+    	width: 600px;
+    	margin: 20px auto;
+    	color: #333;
+
+    }
+    p{	
+
+    	font: 16px Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
+    }

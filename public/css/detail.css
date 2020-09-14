@@ -5,68 +5,82 @@
     padding: 0px 5px;
     font-size: 15px;}
     .breakhead span{display: inline-block;
-    font-size: 22px;
-    color: #999;
-    padding: 2px 2px 0 0;
-    line-height: 1;}
- .phonetext h2{    font-size: 25px;
-    color: black;
-    margin-top: 15px;
-    margin-left: 85px;}
- hr{width: 1200px;margin-left: 60px;}
- .contentphone{display: flex;position: relative;}
- .contentphone-one img{margin-left: 80px;width: 400px;
-    height: 460px;}
- .contentphonesmall{position: absolute;left: 38%;}
- .contenphone-buttonbuy{margin-left: 6px;text-align: center; display: flex; flex-wrap: wrap; margin-bottom:15px;}
- .buyone{width: 375px;height: 50px;  background: -webkit-linear-gradient(top,#f59000,#fd6e1d); border-radius: 3px;}
-a.buttonbuyone{ width: 367px; height: 50px; background-color: #fd6e1d;}
-.contenphone-buttonbuy a.buttonbuyone{color: white; text-decoration: none;}
-.contentphone-buttonbuy2 a.buttonbuytwo{text-decoration: none;}
-.contentphone-buttonbuy2 a.buttonbuythree{text-decoration: none;}
-.contenphone-buttonbuy span{display: block; color: white;}
- a.buttonbuytwo{color: white; margin-left: 5px; width: 182px;height: 50px;background: #288ad6; border-radius: 3px;}
- a.buttonbuythree{color: white; margin-left: 5px; width: 182px;height: 50px;background: #288ad6; border-radius: 3px;}
- .buythree a.buttonbuythree{text-decoration: none; color: white; margin-left: 5px; }
- .contenphone-buttonbuy a.buttonbuyone{}
- .contentphone-buttonbuy2{display: flex;}
- .contenphone-text{display: flex;}
- .contenphone-text strong{font-size: 23px ; color: rgb(255, 9, 9); margin-right: 10px; vertical-align: middle;}
- .contenphone-text span{text-decoration: line-through; margin-top: 7px; margin-right: 10px;}
- .contenphone-text p{width: 70px;height: 20px;background: #f28902;  margin-top: 7px; border-radius: 4px;}
- .contenphone-texttwo{width: 375px;height: 100px;border: 1px solid #f1f1f1; }
- .contenphone-texttwo strong{margin-left: 10px; margin-top: 10px;}
- .contenphone-texttwo p{margin-left: 20px;}
- .contenphone-check{width: 375px;font-size: 14px;color: rgb(3, 3, 3);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
- .contentphone-call{margin-top: 20px; margin-left: 25px;}
- .call span{font-size: 14px;}
- a.buttonbuytwo b{margin-left: 20px;}
- a.buttonbuytwo span{margin-left: 40px;font-size: 13px;}
- a.buttonbuythree b{margin-left: 20px;}
- a.buttonbuythree span{margin-left: 40px;font-size: 13px;}
-.opstionsphone{position: absolute;left: 70%; width: 370px;height: 560px;}
-.opstionsphone hr{width: 330px;margin-left: 0px;}
-li{list-style:none;}
-.commenttong{margin-left: 60px;}
-.submitcmt{
-width: 719px;
-    height: 35px;
-    border: 1px solid #969191;
-    margin-top: -10px;
-}
-.submitcmt a.fileimg{margin-left: 15px; text-decoration: none;}
-.submitcmt button.btnsubmit{
-        padding: 4px 25px;
-    height: 30px;
-    font-size: 15px;
-    color: #fff;
-    border: 1px solid #288ad6;
-    border-radius: 4px;
-    background: #288ad6;
-    margin: 3px;
-    margin-left: 75%;
-}
-.ratinghr{
- width: 650px;
-    margin-left: 15px;
-}
+        font-size: 22px;
+        color: #999;
+        padding: 2px 2px 0 0;
+        line-height: 1;}
+        .phonetext h2{    font-size: 25px;
+            color: black;
+            margin-top: 15px;
+            margin-left: 85px;}
+            hr{width: 1200px;margin-left: 60px;}
+            .contentphone{display: flex;position: relative;}
+            .contentphone-one img{margin-left: 80px;width: 400px;
+                height: 460px;}
+                .contentphone-one .img_detail{
+                    width: 400px; height: 300px;
+                }
+                .contentphonesmall{position: absolute;left: 38%;}
+                .contenphone-buttonbuy{margin-left: 6px;text-align: center; display: flex; flex-wrap: wrap; margin-bottom:15px;}
+                .buyone{width: 375px;height: 50px;  background: -webkit-linear-gradient(top,#f59000,#fd6e1d); border-radius: 3px;}
+                a.buttonbuyone{ width: 367px; height: 50px; background-color: #fd6e1d;}
+                .contenphone-buttonbuy a.buttonbuyone{color: white; text-decoration: none;}
+                .contentphone-buttonbuy2 a.buttonbuytwo{text-decoration: none;}
+                .contentphone-buttonbuy2 a.buttonbuythree{text-decoration: none;}
+                .contenphone-buttonbuy span{display: block; color: white;}
+                a.buttonbuytwo{color: white; margin-left: 5px; width: 182px;height: 50px;background: #288ad6; border-radius: 3px;}
+                a.buttonbuythree{color: white; margin-left: 5px; width: 182px;height: 50px;background: #288ad6; border-radius: 3px;}
+                .buythree a.buttonbuythree{text-decoration: none; color: white; margin-left: 5px; }
+                .contenphone-buttonbuy a.buttonbuyone{}
+                .contentphone-buttonbuy2{display: flex;}
+                .contenphone-text{display: flex;}
+                .contenphone-text strong{font-size: 23px ; color: rgb(255, 9, 9); margin-right: 10px; vertical-align: middle;}
+                .contenphone-text span{text-decoration: line-through; margin-top: 7px; margin-right: 10px;}
+                .contenphone-text p{width: 85px;height: 20px;background: #f28902;  margin-top: 7px; border-radius: 4px;}
+                .contenphone-texttwo{width: 375px;height: 100px;border: 1px solid #f1f1f1; }
+                .contenphone-texttwo strong{margin-left: 10px; margin-top: 10px;}
+                .contenphone-texttwo p{font-size: 15px; margin-left: 10px;}
+                .contenphone-check{width: 375px;font-size: 14px;color: rgb(3, 3, 3);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+                .contentphone-call{margin-top: 20px; margin-left: 25px;}
+                .call span{font-size: 14px;}
+                a.buttonbuytwo b{margin-left: 20px;}
+                a.buttonbuytwo span{margin-left: 40px;font-size: 13px;}
+                a.buttonbuythree b{margin-left: 20px;}
+                a.buttonbuythree span{margin-left: 40px;font-size: 13px;}
+                .opstionsphone{position: absolute;left: 70%; width: 370px;height: 560px;}
+                .opstionsphone hr{width: 330px;margin-left: 0px;}
+                li{list-style:none;}
+                .commenttong{margin-left: 60px;}
+                .submitcmt{
+                    width: 719px;
+                    height: 35px;
+                    border: 1px solid #969191;
+                    margin-top: -10px;
+                }
+                .submitcmt a.fileimg{margin-left: 15px; text-decoration: none;}
+                .submitcmt button.btnsubmit{
+                    padding: 4px 25px;
+                    height: 30px;
+                    font-size: 15px;
+                    color: #fff;
+                    border: 1px solid #288ad6;
+                    border-radius: 4px;
+                    background: #288ad6;
+                    margin: 3px;
+                    margin-left: 75%;
+                }
+                .ratinghr{
+                   width: 650px;
+                   margin-left: 15px;
+               }
+               p.text_description{
+                margin-top: 100px;
+                display: block;
+                overflow: hidden;
+                line-height: 53px;
+                font-size: 45px;
+                color: #333;
+                font-family: 'Roboto Condensed',sans-serif;
+                font-weight: 600;
+
+            }

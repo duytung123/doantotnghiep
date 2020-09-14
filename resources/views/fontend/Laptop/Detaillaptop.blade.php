@@ -1,5 +1,6 @@
 @extends('master2')
 @section('main')
+
 <script>
     $(function(){
         let listrating1 = $(".list__star .fa");
@@ -44,7 +45,8 @@
     }
     .cffff1{
         display: inline-block;
-        margin-left: 10px;
+        margin-top: -3px;
+        margin-left: -3px;
         position: relative;
         background: #52b858;
         color: #fff;
@@ -71,7 +73,7 @@
         margin-top: -6px;
     }
 </style>
-  <link rel="stylesheet" href="css/detail.css">
+<link rel="stylesheet" href="css/detail.css">
 <div class="breakhead">
     <a class="breakhead-text" href="trangchu">Trang chủ </a>
     <span> › </span>
@@ -83,7 +85,7 @@
 <div class="phonetext">
 
     <h2>{{$cate->prod_name}}</h2>
-    
+
 </div>
 
 <hr>
@@ -104,91 +106,91 @@
         </div>
         <div class="contenphone-check">
             <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                Yêu cầu nhân viên kỹ thuật giao hàng: hỗ trợ copy danh bạ, hướng dẫn sử dụng máy mới, giải đáp thắc mắc sản phẩm.
-            </label>
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    Yêu cầu nhân viên kỹ thuật giao hàng: hỗ trợ copy danh bạ, hướng dẫn sử dụng máy mới, giải đáp thắc mắc sản phẩm.
+                </label>
+            </div>
+        </div>
+        <div class="contenphone-buttonbuy">
+
+            <a class="buttonbuyone" href="{{asset('cart/add/'.$cate->prod_id)}}">
+                <b>Mua Ngay</b>
+
+                <span>Giao tận nơi hoặc nhận tại siêu thị</span>
+            </a>
+
+
+        </div>
+        <div class="contentphone-buttonbuy2">
+
+
+            <a  class="buttonbuytwo" href="">
+                <b>MUA TRẢ GÓP 0%</b>
+
+                <span>Thủ tục đơn giản</span>
+            </a>
+
+
+            <a  class="buttonbuythree" href="">
+                <b>TRẢ GÓP QUA THẺ</b>
+
+                <span>Visa, Master,JCB</span>
+            </a>
+
+
+        </div>
+        <div class="contentphone-call">
+            <div class="call">
+                <span>
+                    "Gọi đặt mua:"
+                    <a href="">0123456789</a>
+                    "(miễn phí - 8:30 - 10:00)"
+                </span>
+            </div>
         </div>
     </div>
-    <div class="contenphone-buttonbuy">
 
-        <a class="buttonbuyone" href="{{asset('cart/add/'.$cate->prod_id)}}">
-            <b>Mua Ngay</b>
-            
-            <span>Giao tận nơi hoặc nhận tại siêu thị</span>
-        </a>
-        
-        
+    <div class="opstionsphone">
+        <h3>Thông số kỹ thuật</h3>
+        <hr>
+        <li>
+            <span >Màn hình:</span  >
+            <a href="">IPS LCD, 6.53", Full HD+</a>
+        </li>
+        <hr>
+        <li>
+            <span>Hệ điều hành:</span>    <a href="">Androi 9.0</a>
+        </li>
+        <hr>
+        <li>
+            <span>Cammera sau:</span> <span>Chính 16 MP & Phụ 8 MP, 2 MP</span>
+        </li>
+        <hr>
+        <li>
+            <span>Camera trước:</span>    <span>16MB</span>
+        </li>
+        <hr>
+        <li>
+            <span>CPU</span>  <a href="">MediaTek MT6768 8 nhân (Helio P65)</a>
+        </li>
+        <hr>
+        <li>
+            <span>RAM</span>  <span>6 GB</span>
+        </li>
+        <hr>
+        <li>
+            <span>Bộ nhớ trong:</span> <span>128 GB</span>
+        </li>
+        <hr>
+        <li>
+            <span>Thẻ nhớ:</span>  <a href="">MicroSD, hỗ trợ tối đa 256 GB</a>
+        </li>
+        <hr>
+        <li>
+            <span>Dung lượng pin:</span> <span>5000 mAh, có sạc nhanh</span>
+        </li>
     </div>
-    <div class="contentphone-buttonbuy2">
-
-
-        <a  class="buttonbuytwo" href="">
-            <b>MUA TRẢ GÓP 0%</b>
-            
-            <span>Thủ tục đơn giản</span>
-        </a>
-        
-        
-        <a  class="buttonbuythree" href="">
-            <b>TRẢ GÓP QUA THẺ</b>
-            
-            <span>Visa, Master,JCB</span>
-        </a>
-        
-        
-    </div>
-    <div class="contentphone-call">
-        <div class="call">
-            <span>
-                "Gọi đặt mua:"
-                <a href="">0123456789</a>
-                "(miễn phí - 8:30 - 10:00)"
-            </span>
-        </div>
-    </div>
-</div>
-
-<div class="opstionsphone">
-    <h3>Thông số kỹ thuật</h3>
-    <hr>
-    <li>
-        <span >Màn hình:</span  >
-        <a href="">IPS LCD, 6.53", Full HD+</a>
-    </li>
-    <hr>
-    <li>
-        <span>Hệ điều hành:</span>    <a href="">Androi 9.0</a>
-    </li>
-    <hr>
-    <li>
-        <span>Cammera sau:</span> <span>Chính 16 MP & Phụ 8 MP, 2 MP</span>
-    </li>
-    <hr>
-    <li>
-        <span>Camera trước:</span>    <span>16MB</span>
-    </li>
-    <hr>
-    <li>
-        <span>CPU</span>  <a href="">MediaTek MT6768 8 nhân (Helio P65)</a>
-    </li>
-    <hr>
-    <li>
-        <span>RAM</span>  <span>6 GB</span>
-    </li>
-    <hr>
-    <li>
-        <span>Bộ nhớ trong:</span> <span>128 GB</span>
-    </li>
-    <hr>
-    <li>
-        <span>Thẻ nhớ:</span>  <a href="">MicroSD, hỗ trợ tối đa 256 GB</a>
-    </li>
-    <hr>
-    <li>
-        <span>Dung lượng pin:</span> <span>5000 mAh, có sạc nhanh</span>
-    </li>
-</div>
 
 </div>
 <br>
@@ -202,7 +204,7 @@
     <div class="danhgiaphone">
         <h3>42 đánh giá</h3>
     </div>
-<!--     // đánh giá sản phẩm -->
+<!-- đánh giá sản phẩm -->
     <div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">
 
         <div class="rating_item" style="width: 20%;position: relative;"> 
@@ -245,7 +247,7 @@
     </div>
     <div style="display:flex; margin-top: 15px;"class="hide" > 
         <p style="font-size: 15px; ">Chọn đánh giá của bạn</p>
-        <span style="margin: 0 15px; " class="list__star">
+        <span style="margin: -3px 15px; " class="list__star">
             @for($i=1;$i<=5;$i++)
             <i class="fa fa-star" data-key="{{$i}}"></i>
             @endfor
@@ -253,14 +255,14 @@
         <span class="cffff1">không thích</span>
     </div>
     <div>
-        <textarea style="margin-top: -25px ;" name="" cols="100" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
+        <textarea style="margin-top: 5px ;" name="" cols="100" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
     </div>
     <div style=" border-radius: 5px;width: 90px;background-color: #288ad6;padding: 5px 7px;">
         <a style="text-decoration: none;color: white;font-size: 13px;FONT-FAMILY: initial;" href="">Gửi Đánh Giá</a>
     </div>
 
 
-<!--     // phần bình luận sản phẩm -->
+<!-- phần bình luận sản phẩm -->
 
     <div id="comment">
         <h3>Bình luận</h3>
@@ -285,7 +287,7 @@
             </form>
         </div>
     </div>
-
+<hr class="ratinghr">
     <div class="list product ">
         <div class="col-md-12">
             <div class="comment-list">
@@ -308,4 +310,12 @@
 
 </div>
 
+
 @endsection
+
+
+
+
+
+
+

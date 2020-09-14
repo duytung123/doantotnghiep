@@ -1,35 +1,35 @@
 @extends('master2')
 @section('main')
 <script>
-$(document).ready(function(){
- 
- var _token = $('input[name="_token"]').val();
+	$(document).ready(function(){
+	 
+	 var _token = $('input[name="_token"]').val();
 
- load_data('', _token);
+	 load_data('', _token);
 
- function load_data(prod_id="", _token)
- {
-  $.ajax({
-   url:"{{ route('phone.load_data') }}",
-   method:"POST",
-   data:{prod_id:prod_id, _token:_token},
-   success:function(data)
-   {
-    // console.log(data)
-    $('#load_more_button').remove();
-    $('#post_data').append(data);
-   }
-  })
- }
+	 function load_data(prod_id="", _token)
+	 {
+	  $.ajax({
+	   url:"{{ route('phone.load_data') }}",
+	   method:"POST",
+	   data:{prod_id:prod_id, _token:_token},
+	   success:function(data)
+	   {
+	    // console.log(data)
+	    $('#load_more_button').remove();
+	    $('#post_data').append(data);
+	   }
+	  })
+	 }
 
- $(document).on('click', '#load_more_button', function(){
-  var prod_id = $(this).data('id');
+	 $(document).on('click', '#load_more_button', function(){
+	  var prod_id = $(this).data('id');
 
-  $('#load_more_button').html('<b>Loading...</b>');
-  load_data(prod_id, _token);
- });
+	  $('#load_more_button').html('<b>Loading...</b>');
+	  load_data(prod_id, _token);
+	 });
 
-});
+	});
 </script>
 <div id="demo" class="carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
@@ -72,32 +72,19 @@ $(document).ready(function(){
 	<img class="bn2" src="avatar/baner2.png" alt="">
 </div>
 <div class="columlogo">
-	<nav class="navbar navbar-expand-sm">
-		<ul class="navbar-nav g1">
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo1.jpg" alt=""></a>
-			</li>
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo2.jpg" alt=""></a>
-			</li>
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo3.jpg" alt=""></a>
-			</li>
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo4.png" alt=""></a>
-			</li>
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo5.jpg" alt=""></a>
-			</li>
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo6.jpg" alt=""></a>
-			</li>
-			<li class="nav-item lg1">
-				<a class="nav-link c1a" href=""><img src="avatar/logo7.png" alt=""></a>
-			</li>
+  <nav class="navbar navbar-expand-sm">
+    <ul class="navbar-nav g1">
+         @foreach($listcate as $cate)
+      <li class="nav-item lg1">
+      
+        <a class="nav-link c1a" href="{{asset('cateallproduct/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
+        <p class="catelistphone">{{$cate->cateall_name}}</p>
+      </a>
+      </li>
+     @endforeach
 
-		</ul>
-	</nav>
+    </ul>
+  </nav>
 </div>
 
 <div class="category2">
@@ -162,7 +149,7 @@ $(document).ready(function(){
 		<a class="max" href="">
 			<div class="hinh2">
 				<a href="{{asset('detail/'.$fee2->prod_id.'/'.$fee2->prod_slug.'.html')}}"><img class="h2" src="{{asset('../storage/app/avatar/'.$fee2->prod_img)}}" alt=""></a>
-				<div class="con1">
+				<div class="con4">
 					<a class="click1" href="{{asset('detail/'.$fee2->prod_id.'/'.$fee2->prod_slug.'.html')}}">
 						<h3>{{$fee2->prod_name}}</h3>
 						<strong>{{number_format($fee2->prod_price,0,',','.')}}đ</strong>
@@ -197,7 +184,7 @@ $(document).ready(function(){
    <a class="max" href="">
      <div class="hinh2">
        <a href="{{asset('detail/'.$fee2->prod_id.'/'.$fee2->prod_slug.'.html')}}"><img class="h2" src="{{asset('../storage/app/avatar/'.$fee2->prod_img)}}" alt=""></a>
-       <div class="con1">
+       <div class="con4">
          <a class="click1" href="{{asset('detail/'.$fee2->prod_id.'/'.$fee2->prod_slug.'.html')}}">
            <h3>{{$fee2->prod_name}}</h3>
            <strong>{{number_format($fee2->prod_price,0,',','.')}}đ</strong>
@@ -216,7 +203,7 @@ $(document).ready(function(){
    <a class="max" href="">
      <div class="hinh2">
        <a href="{{asset('detail/'.$fee3->prod_id.'/'.$fee3->prod_slug.'.html')}}"><img class="h2" src="{{asset('../storage/app/avatar/'.$fee3->prod_img)}}" alt=""></a>
-       <div class="con1">
+       <div class="con4">
          <a class="click1" href="{{asset('detail/'.$fee3->prod_id.'/'.$fee3->prod_slug.'.html')}}">
            <h3>{{$fee3->prod_name}}</h3>
            <strong>{{number_format($fee3->prod_price,0,',','.')}}đ</strong>

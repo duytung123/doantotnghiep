@@ -24,22 +24,31 @@ width: 180px;height: 120px;}
 .lap1 img{width: 230px;height:130px;}
 strong.sl{margin-left:80px;font-size: 25px;font-family: 'Times New Roman', Times, serif;text-transform: capitalize;}
 
-.MultiCarousel {overflow: hidden; padding: 15px;height: 350px; position:relative; border: 3px solid #ba0953;
+.MultiCarousel {overflow: hidden; padding: 15px;height: 350px;width:100%; position:relative; border: 3px solid #ba0953;
 
 }
 .multione{}
     .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
         .MultiCarousel .MultiCarousel-inner .item { float: left;}
-        .MultiCarousel .MultiCarousel-inner .item { text-align: center; padding:10px; margin:10px; }
+        .MultiCarousel .MultiCarousel-inner .item { text-align: center; padding:16px; }
     .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
     .MultiCarousel .leftLst { left:0; }
     .MultiCarousel .rightLst { right:0; }
     
         .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;}
+        .rowmu .inner1{
+
+        }
+        .rowmu{
+            margin-left: 85px;
+            width:1200px;
+            
+        }
 
 .itemlap{width: 240px !important; height: auto;margin-top: -15px;border: 1px solid #f1f1f1;}
 .itemlap img{width: 210px;height: 140px;}
-img.lga{margin-left: 105px;}
+.itemlap .laptop{margin-top: 15px;}
+img.lga{margin-left: 85px;}
 img.tang{width: 35px;height: 35px;}
 .laptop h3{font-size: 13px; margin-top: 25px;}
 .laptop a.ac{text-decoration: none;font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;color: black;}

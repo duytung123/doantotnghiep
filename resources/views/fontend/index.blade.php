@@ -3,8 +3,6 @@
 <div class="producthot">
   <nav class="navbar navbar-expand-sm">
     <span class="chulon">Phụ Kiện giá rẻ</span>
-
-
   </nav>
 
 </div>
@@ -95,7 +93,7 @@
    <div class="hinh2">
     <a class="click1" href="{{asset('detail/'.$item->prod_id.'/'.$item->prod_slug.'.html')}}">
      <img class="h2" width="180px" height="180px" src="{{asset('../storage/app/avatar/'.$item->prod_img)}}" alt="">
-     <div class="con1">
+     <div class="con4">
       <h3>{{$item ->prod_name}}</h3>   
       <strong>{{number_format($item->prod_price,0,',','.')}}đ</strong>
       {!!$item->prod_description!!}
@@ -134,7 +132,7 @@
  <div class="hinh2">
   <a class="click1" href="{{asset('detail/'.$item->prod_id.'/'.$item->prod_slug.'.html')}}">
    <img class="h2" width="180px" height="180px" src="{{asset('../storage/app/avatar/'.$item->prod_img)}}" alt="">
-   <div class="con1">
+   <div class="con4">
 
     <h3>{{$item ->prod_name}}</h3>   
     <strong>{{number_format($item->prod_price,0,',','.')}}đ</strong>
@@ -238,7 +236,7 @@
 
 <div class="content">
   <div class="tong1">
-    @foreach($laptop as $laptop)
+    @foreach($laptop1 as $laptop)
     <div class="hinh1">
      <a class="chu1" href="{{asset('detail2/'.$laptop->prod_id.'/'.$laptop->prod_slug.'.html')}}">
       <img class="h1" width="480px" height="220px" src="{{asset('../storage/app/avatar/'.$laptop->prod_img)}}" alt="">
@@ -257,11 +255,11 @@
   <div class="hinh2">
     <a class="click1" href="{{asset('detail2/'.$laptop->prod_id.'/'.$laptop->prod_slug.'.html')}}">
       <img class="h2 h2a" width="180px" height="180px" src="{{asset('../storage/app/avatar/'.$laptop->prod_img)}}" alt="">
-      <div class="con1">
+      <div class="con1 con4">
 
         <h3>{{$laptop->prod_name}}</h3>
         <strong>{{number_format($laptop->prod_price,0,',','.')}}đ</strong>
-        <p> {!!$laptop->prod_description!!}</p>
+         {!!$laptop->prod_description!!}
       </div>
     </a>
     
@@ -309,7 +307,7 @@
           
           <h3>{{$tab->prod_name}}</h3>
           <strong>{{number_format($tab->prod_price,0,',','.')}}đ</strong>
-         <p>{!!$tab->prod_description!!}</p> 
+         {!!$tab->prod_description!!}
         </div>
       </a>
       

@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
+use App\Cateallproduct;
 use DB;
 class FrontendController extends Controller
 {
+	// lay sp theo danh muc điện thoại
+	public function getcateallproduct($id)
+	{
+
+		$data['catname']=Cateallproduct::find($id);
+		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(20);
+		return view('fontend.Phone.catelistproduct',$data);
+	}
 	public function getHome()
 	{
 		$data['phukien']=Product::where('prod_featured',0)->Where('prod_cate',4)->orderBy('prod_id','desc')->take(10)->get();
@@ -22,6 +31,8 @@ class FrontendController extends Controller
 		$data['new1']=Product::where('prod_featured',2)->Where('prod_cate',1)->orderBy('prod_id','desc')->take(3)->get();
 
 		$data['laptop']=Product::where('prod_featured',2)->Where('prod_cate',2)->orderBy('prod_id','desc')->take(3)->get();
+
+		$data['laptop1']=Product::where('prod_featured',3)->Where('prod_cate',2)->orderBy('prod_id','desc')->take(1)->get();
 
 		$data['laptop2']=Product::where('prod_featured',1)->Where('prod_cate',2)->orderBy('prod_id','desc')->take(3)->get();
 

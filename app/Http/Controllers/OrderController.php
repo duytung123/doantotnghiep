@@ -24,9 +24,10 @@ class OrderController extends Controller
     	{
 
     		$orders = Order::where('or_transaction_id',$id)->get();
-    		$html=view('backend.Components.chitietdonhang',compact('orders'))->render();
 
-    		return response()->json($html);
+    		$html= view('backend.Components.chitietdonhang',compact('orders'))->render();
+
+    		return response()->json($orders);
 
     	}
     }

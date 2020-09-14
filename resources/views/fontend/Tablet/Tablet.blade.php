@@ -1,35 +1,35 @@
 @extends('master2')
 @section('main')
 <script>
-$(document).ready(function(){
- 
- var _token = $('input[name="_token"]').val();
+  $(document).ready(function(){
+   
+   var _token = $('input[name="_token"]').val();
 
- load_data('', _token);
+   load_data('', _token);
 
- function load_data(prod_id="", _token)
- {
-  $.ajax({
-   url:"{{ route('tablet.load_data') }}",
-   method:"POST",
-   data:{prod_id:prod_id, _token:_token},
-   success:function(data)
+   function load_data(prod_id="", _token)
    {
-    // console.log(data)
-    $('#load_more_button').remove();
-    $('#post_data').append(data);
+    $.ajax({
+     url:"{{ route('tablet.load_data') }}",
+     method:"POST",
+     data:{prod_id:prod_id, _token:_token},
+     success:function(data)
+     {
+      // console.log(data)
+      $('#load_more_button').remove();
+      $('#post_data').append(data);
+     }
+    })
    }
-  })
- }
 
- $(document).on('click', '#load_more_button', function(){
-  var prod_id = $(this).data('id');
+   $(document).on('click', '#load_more_button', function(){
+    var prod_id = $(this).data('id');
 
-  $('#load_more_button').html('<b>Loading...</b>');
-  load_data(prod_id, _token);
- });
+    $('#load_more_button').html('<b>Loading...</b>');
+    load_data(prod_id, _token);
+   });
 
-});
+  });
 </script>
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
@@ -132,7 +132,7 @@ $(document).ready(function(){
     <div class="hinh2">
       <a class="click1" href="{{asset('detail3/'.$tab1->prod_id.'/'.$tab1->prod_slug.'.html')}}">
         <img class="h2" src="{{asset('../storage/app/avatar/'.$tab1->prod_img)}}" alt="">
-        <div class="con1 con3">
+        <div class="con1">
 
           <h3>{{$tab1 ->prod_name}}</h3>
           <strong>{{number_format($tab1->prod_price,0,',','.')}}</strong> 
@@ -170,7 +170,7 @@ $(document).ready(function(){
     <div class="hinh2">
       <a class="click1" href="{{asset('detail3/'.$tab1->prod_id.'/'.$tab1->prod_slug.'.html')}}">
         <img class="h2" src="{{asset('../storage/app/avatar/'.$tab1->prod_img)}}" alt="">
-        <div class="con1 con3">
+        <div class="con1">
 
           <h3>{{$tab1 ->prod_name}}</h3>
           <strong>{{number_format($tab1->prod_price,0,',','.')}}</strong> 

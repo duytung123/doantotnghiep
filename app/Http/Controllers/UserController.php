@@ -66,14 +66,14 @@ class UserController extends Controller
         {
              $this->validate($request,
         [
-            'password'=>'required|min:3|max:20',
+            'password'=>'required|min:6|max:20',
             'passwordAgain'=>'required|same:password'
         ],
         
         [
             
             'password.required'=>'Bạn chưa nhập mật khẩu',
-            'password.min'=>'Mật khẩu phải có ít nhất 3 ký tự',
+            'password.min'=>'Mật khẩu phải có ít nhất 6 ký tự',
             'password.max'=>'Mật khẩu không quá 20 ký tự',
             'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp với mật khẩu trên'
 

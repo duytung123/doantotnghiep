@@ -23,9 +23,9 @@
   <div class="header">
     <nav class="navbar navbar-expand-sm navbar1 navbar-dark">
       <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/lg1.jpg" alt=""> </div> </a> 
-      <form method="get" role="Search" class="form-inline" action="{{asset('search/')}}">
-        <input class="form-control mr-sm-2" id="search" type="text" placeholder="Bạn tìm gì.." name="result">
-        <button class="btn btn-success"  type="submit">Search</button>
+      <form method="get" role="Search" class="form-inline" action="{{asset('searchcomplete/')}}">
+        <input class="form-control mr-sm-2 inputsearch" id="scrollable-dropdown-menu" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
+        <button class="btn searchbtn"  type="submit"><i class="fa fa-search"></i></button>
       </form>
 
       <ul class="navbar-nav">
@@ -60,10 +60,10 @@
             <a class="nav" href="">đồng hồ</a>
           </li>
         </a>
-        <a href="">
+        <a href="tintuc">
           <li class="nav-item nav_item"> 
             <div class="icon"><i class="fal fa-newspaper"></i></div> 
-            <a class="nav" href="">công nghệ</a>
+            <a class="nav" href="tintuc">công nghệ</a>
           </li>
         </a>
         <a href="">

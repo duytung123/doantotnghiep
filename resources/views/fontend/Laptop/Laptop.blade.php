@@ -121,16 +121,16 @@ $(document).ready(function(){
 
 <img class="lga" src="avatar/lga.png" alt="">
 
-<div class="container">
-  <div class="row">
+<div class="rowmu">
+
     <div class="MultiCarousel multione" data-items="1,2,3,4,5" data-slide="1" id="MultiCarousel"  data-interval="1000">
-         <div class="MultiCarousel-inner">
+         <div class="MultiCarousel-inner inner1">
         <a class="casel" href="">
              @foreach($laptopsale as $ccc)
           <div class="item itemlap">
            
             <div class="pad15 laptop">
-              <a class="ac" href="{{asset('detail2/'.$ccc->laptop_id.'/'.$ccc->prod_slug.'.html')}}">
+              <a class="ac" href="{{asset('detail2/'.$ccc->prod_id.'/'.$ccc->prod_slug.'.html')}}">
                 <img src="{{asset('../storage/app/avatar/'.$ccc->prod_img)}}" alt="">
                 <h3>{{$ccc->prod_name}}</h3>
                 <strong>{{number_format($ccc->prod_price,0,',','.')}}đ</strong>
@@ -147,9 +147,10 @@ $(document).ready(function(){
   
       <button class="btn btn-primary leftLst">></button>
       <button class="btn btn-primary rightLst">></button>
-    </div>
-  </div>
+
+
   
+</div>
 </div>
 <br>
 

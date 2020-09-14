@@ -20,7 +20,7 @@ a.chu-textbig{text-transform: capitalize;font-size: 15px;}
 .logoqc h3{font-size: 13px; margin-top: 5px;}
 .phukiengiasoc a.phukientext{text-decoration: none;}
 .logoqc:hover{border: 1px solid rgb(9, 9, 255); transition: 0.5s;}
-.phukiengiasoc{width: 1200px; height: 2200px; border: 3px solid #ba0953; margin-left: 80px;  display: flex; flex-wrap: wrap; box-sizing: border-box;}
+.phukiengiasoc{width: 1200px; height: max-content; border: 3px solid #ba0953; margin-left: 80px;  display: flex; flex-wrap: wrap; box-sizing: border-box;}
 .itemphukien .bottompk{margin-top: -2px;
     width: 280px; height: 142px;}
 .itemphukien{width: 285px; height: 420px;  box-sizing: border-box; margin-left: 12px; margin-top: 10px;border: 1px solid #f1f1ff;}
@@ -29,7 +29,7 @@ a.chu-textbig{text-transform: capitalize;font-size: 15px;}
 .itemphukien strong:hover{color: rgb(43, 43, 247);cursor: pointer;}
 .itemphukien p{font-weight: 700;padding: 10px 10px; color: rgb(253, 30, 30);cursor: pointer;}
 p.sale_1{margin-left: 105px;
-    margin-top: -63px;
+    margin-top: -52px;
     position: absolute;
     color: gray;
     text-decoration: line-through;

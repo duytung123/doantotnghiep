@@ -44,7 +44,8 @@
     }
     .cffff1{
         display: inline-block;
-        margin-left: 10px;
+        margin-top: -3px;
+        margin-left: -3px;
         position: relative;
         background: #52b858;
         color: #fff;
@@ -245,7 +246,7 @@
     </div>
     <div style="display:flex; margin-top: 15px;"class="hide" > 
         <p style="font-size: 15px; ">Chọn đánh giá của bạn</p>
-        <span style="margin: 0 15px; " class="list__star">
+        <span style="margin: -3px 15px; " class="list__star">
             @for($i=1;$i<=5;$i++)
             <i class="fa fa-star" data-key="{{$i}}"></i>
             @endfor
@@ -253,7 +254,7 @@
         <span class="cffff1">không thích</span>
     </div>
     <div>
-        <textarea style="margin-top: -25px ;" name="" cols="100" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
+        <textarea style="margin-top: 5px ;" name="" cols="100" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
     </div>
     <div style=" border-radius: 5px;width: 90px;background-color: #288ad6;padding: 5px 7px;">
         <a style="text-decoration: none;color: white;font-size: 13px;FONT-FAMILY: initial;" href="">Gửi Đánh Giá</a>

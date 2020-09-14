@@ -35,6 +35,6 @@ class TdComment extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('td_comment');
     }
 }

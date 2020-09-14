@@ -1,5 +1,37 @@
 @extends('master2')
 @section('main')
+
+<script>
+	$(document).ready(function(){
+	 
+	 var _token = $('input[name="_token"]').val();
+
+	 load_data('', _token);
+
+	 function load_data(prod_id="", _token)
+	 {
+	  $.ajax({
+	   url:"{{ route('phukien.load_data') }}",
+	   method:"POST",
+	   data:{prod_id:prod_id, _token:_token},
+	   success:function(data)
+	   {
+	    // console.log(data)
+	    $('#load_more_button').remove();
+	    $('#post_data').append(data);
+	   }
+	  })
+	 }
+
+	 $(document).on('click', '#load_more_button', function(){
+	  var prod_id = $(this).data('id');
+
+	  $('#load_more_button').html('<b>Loading...</b>');
+	  load_data(prod_id, _token);
+	 });
+
+	});
+</script>
 <div id="demo" class="carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
 		<li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -96,62 +128,62 @@
 		<h3>nổi bật</h3>
 	</a>
 	<a href="" class="logoqc">
-		<img src="avatar/00-nb8.png" alt="">
+		<img src="avatar/catephukien/7.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 	<a href="" class="logoqc">
-		<img src="avatar/00-nb9.png" alt="">
+		<img src="avatar/catephukien/8.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
-		<h3>nổi bật</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/9.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/10.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/11.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/12.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/13.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
-		<h3>nổi bật</h3>
-	</a>
-
-	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/14.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/15.png" alt="">
+		<h3>nổi bật</h3>
+	</a>
+
+	<a href="" class="logoqc">
+		<img src="avatar/catephukien/16.png" alt="">
+		<h3>nổi bật</h3>
+	</a>
+
+
+	<a href="" class="logoqc">
+		<img src="avatar/catephukien/17.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
@@ -176,7 +208,11 @@
 			</div>
 		</a>	
 	</div>
+
 	@endforeach
+	<div class="btn_load">
+		<button class="btn_load_content">Xem thêm</button>
+	</div>
 </div>
 
 <div class="logoquangcao">
@@ -214,62 +250,62 @@
 		<h3>nổi bật</h3>
 	</a>
 	<a href="" class="logoqc">
-		<img src="avatar/00-nb8.png" alt="">
+		<img src="avatar/catephukien/7.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 	<a href="" class="logoqc">
-		<img src="avatar/00-nb9.png" alt="">
+		<img src="avatar/catephukien/8.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
-		<h3>nổi bật</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/9.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/10.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/11.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/12.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/13.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
-		<h3>nổi bật</h3>
-	</a>
-
-	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/14.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
+		<img src="avatar/catephukien/15.png" alt="">
+		<h3>nổi bật</h3>
+	</a>
+
+	<a href="" class="logoqc">
+		<img src="avatar/catephukien/16.png" alt="">
+		<h3>nổi bật</h3>
+	</a>
+
+
+	<a href="" class="logoqc">
+		<img src="avatar/catephukien/17.png" alt="">
 		<h3>nổi bật</h3>
 	</a>
 

@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/detail.css">
   <link rel="stylesheet" href="css/phukien.css">
-    <link rel="stylesheet" href="css/complete.css">
+  <link rel="stylesheet" href="css/complete.css">
+  <link rel="stylesheet" href="css/tintuc.css">
   <link rel="stylesheet" href="{{asset('public/fontasome/Font-Awesome/Font-Awesome/fontawesome-pro-5.13.0/css/all.min.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
@@ -26,9 +27,9 @@
   <div class="header">
     <nav class="navbar navbar-expand-sm navbar1 navbar-dark">
       <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/lg1.jpg" alt=""> </div> </a> 
-      <form  method="get" role="Search" class="form-inline" action="{{asset('search/')}}">
-        <input name="result" class="form-control mr-sm-2" type="text" placeholder="Bạn tìm gì..">
-        <button class="btn btn-success"  type="submit">Search</button>
+      <form method="get" role="Search" class="form-inline" action="{{asset('searchcomplete/')}}">
+        <input class="form-control mr-sm-2 inputsearch" id="scrollable-dropdown-menu" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
+        <button class="btn searchbtn"  type="submit"><i class="fa fa-search"></i></button>
       </form>
 
       <ul class="navbar-nav">
@@ -57,16 +58,16 @@
             <a class="nav" href="phukien">phụ kiện</a>
           </li>
         </a>
-                <a href="">
+        <a href="">
           <li class="nav-item nav_item">
             <div class="icon"><i class="fal fa-watch-fitness"></i></div> 
             <a class="nav" href="">đồng hồ</a>
           </li>
         </a>
-        <a href="">
+        <a href="tintuc">
           <li class="nav-item nav_item"> 
             <div class="icon"><i class="fal fa-newspaper"></i></div> 
-            <a class="nav" href="">công nghệ</a>
+            <a class="nav" href="tintuc">công nghệ</a>
           </li>
         </a>
         <a href="">
@@ -76,7 +77,7 @@
           </li>
         </a>
 
-          <a href="{{asset('cart/show')}}">
+        <a href="{{asset('cart/show')}}">
           <li class="dddd"> 
             <div class="icon cart"><i class="fas fa-shopping-cart"></i></div> 
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>

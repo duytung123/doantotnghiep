@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use App\User;
+// use App\User;
 
 class loginmiddleware
 {
@@ -17,10 +17,10 @@ class loginmiddleware
      */
     public function handle($request, Closure $next)
     {
-       if(Auth::check())
+    if(Auth::check())
         {
             $user=Auth::user();
-            if($user ->level==1)
+            if($user->level==1)
                return $next($request);
 
            else

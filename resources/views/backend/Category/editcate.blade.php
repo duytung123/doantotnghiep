@@ -34,15 +34,19 @@
 							<input required="" type="text" name="name" class="form-control" placeholder="Tên danh mục..." value="{{$cate->cate_name}}">
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" class="form-control btn btn-primary" value="sửa">
+							<input type="submit" class="form-control btn btn-primary" value="sửa">
 							<div class="form-group">
 								<a href="{{asset('admin/category')}}" class="form-control btn btn-danger">hủy bỏ</a>
 
 								@csrf
-							</form>
+							</div>
 						</div>
-					</div>
+
+
+					</form>
 				</div>
-			</div><!--/.row-->
-		</div>	<!--/.main-->
-		@endsection
+			</div>
+		</div>
+	</div><!--/.row-->
+</div>	<!--/.main-->
+@endsection
