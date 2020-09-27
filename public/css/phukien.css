@@ -49,3 +49,7 @@ a.buy{margin-top: 20px;
 a.buy:hover{background: #f89406; color: rgb(252, 243, 243);}
 .itemphukien a.buy{text-decoration: none;}
 .logoquangcao .active{border: 1px solid rgb(255, 255, 0);}
+.controllerpk{
+    margin-left: -84px;
+}
+#post_data1{display:flex;flex-wrap: wrap;}

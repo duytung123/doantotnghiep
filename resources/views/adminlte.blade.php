@@ -277,7 +277,7 @@
           <a href="user" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
             <p>
-              USER
+              Acount
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
@@ -285,7 +285,7 @@
             <li class="nav-item">
               <a href="user" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Danh sách user</p>
+                <p>Danh sách acount</p>
               </a>
             </li>
 

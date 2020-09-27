@@ -259,7 +259,7 @@
 
         <h3>{{$laptop->prod_name}}</h3>
         <strong>{{number_format($laptop->prod_price,0,',','.')}}đ</strong>
-         {!!$laptop->prod_description!!}
+        {!!$laptop->prod_description!!}
       </div>
     </a>
     
@@ -297,26 +297,29 @@
     </div>
     @endforeach
   </div>
-     @foreach($tablet2 as $tab)
+  @foreach($tablet2 as $tab)
   <div class="tong2">
- 
+
     <div class="hinh2">
       <a class="click1" href="{{asset('detail3/'.$tab->prod_id.'/'.$tab->prod_slug.'.html')}}">
         <img class="h2 h2a" width="180px" height="180px" src="{{asset('../storage/app/avatar/'.$tab->prod_img)}}" alt="">
         <div class="con1">
-          
+
           <h3>{{$tab->prod_name}}</h3>
           <strong>{{number_format($tab->prod_price,0,',','.')}}đ</strong>
-         {!!$tab->prod_description!!}
+          {!!$tab->prod_description!!}
         </div>
       </a>
       
     </div>
 
   </div>
-      @endforeach
+  @endforeach
   
 </div>
 
-
 @stop
+
+
+
+

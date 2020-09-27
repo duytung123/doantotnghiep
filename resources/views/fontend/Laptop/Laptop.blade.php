@@ -245,7 +245,5 @@ $(document).ready(function(){
     {{csrf_field()}}
 <div id="post_data"></div>
 
-
-
 <!-- endcontent2 -->
 @endsection

@@ -2,6 +2,11 @@
 @section('main')
 
 <script>
+    $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+    });
     $(function(){
         let listrating1 = $(".list__star .fa");
 
@@ -16,7 +21,8 @@
         listrating1.mouseover(function() {
             let $this = $(this);
             let number =$this.attr('data-key');
-            listrating1.removeClass('rating_active');
+            listrating1.removeClass('rating_active')
+            $(".number_rating_format").val(number);
 
             $.each( listrating1, function(key, value) {
                 if (key +1 <= number)
@@ -32,11 +38,51 @@
 
         $(".js_rating").click(function(event) {
             event.preventDefault();
+            if($(".bigbig").hasClass('invisible'))
+            {   
+                $(".bigbig").addClass('active').removeClass('invisible');
+
+            } else{
+                $(".bigbig").addClass('invisible').removeClass('active');
+            }
         });
+            // danh gia product
+        $(".js_rating_product").click(function(event) {
+            event.preventDefault();
+            let content = $("#r_content").val();
+            let number = $(".number_rating_format").val();
+            let url = $(this).attr('href');
+            let id = $(this).attr('data-id');
+            console.log('url : ' + url);
+
+            if(content && number)
+            {
+                $.ajax({
+                    url: url,
+                    type : 'get',
+                    data: {
+                        number : number,
+                        r_content : content,
+                        id : id
+                }
+                }).done(function(result) {
+                    if(result.code==1)
+                    {
+                        alert("Gửi đánh giá thành công");
+                        location.reload();
+
+                    }
+                });
+            }
+
+        });
+
     });
 </script>   
 
 <style>
+    .star_rating_foramt_total .active {color: #FF9705 !important;}
+
     .list__star .rating_active{
         color:#ff9705;
     }
@@ -73,19 +119,35 @@
         margin-top: -6px;
     }
 </style>
-  <link rel="stylesheet" href="css/detail.css">
+<link rel="stylesheet" href="css/detail.css">
 <div class="breakhead">
     <a class="breakhead-text" href="trangchu">Trang chủ </a>
     <span> › </span>
-    <a class="breakhead-text" href="">Điện Thoại </a>
+    <a class="breakhead-text" href="">Phụ Kiện</a>
     <span> › </span>
-    <a class="breakhead-text" href="">....</a>
 </div>
 
 <div class="phonetext">
-
-    <h2>{{$cate->prod_name}}</h2>
+    <?php
+    $age = 0;
+        if($cate->prod_rating_number)
+        {
+            $age = round($cate->prod_total_number / $cate->prod_rating_number,2);
+        }
+    ?>
+    <div class="phonetext_rating">
+    <h2>{{$cate->prod_name}}</h2> 
+    <li class="star_rating_foramt">
+        <span class="star_rating_foramt_total">
+            @for($i=1;$i<=5;$i++)
+            <i class="fa fa-star {{$i <=$age ? 'active' : ''}}" ></i>
+            @endfor
+        </span>
+        
+    </li>
+    </div>
     
+        {{-- <span style="margin-left: 20px;">{{$age}}</span> --}}
 </div>
 
 <hr>
@@ -98,7 +160,7 @@
     </div>
     <div class="contentphonesmall">
         <div class="contenphone-text">
-            <strong>{{number_format($cate->prod_price,'0',',','.')}}đ</strong> <span>4.690.000đ</span> <p>Trả góp 0%</p>
+            <strong>{{number_format($cate->prod_price,'0',',','.')}}đ</strong> <span>{{$cate->prod_promotion}}</span> <p>Trả góp 0%</p>
         </div>
         <div class="contenphone-texttwo">
             <strong>KHUYẾN MÃI</strong>
@@ -106,91 +168,91 @@
         </div>
         <div class="contenphone-check">
             <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                Yêu cầu nhân viên kỹ thuật giao hàng: hỗ trợ copy danh bạ, hướng dẫn sử dụng máy mới, giải đáp thắc mắc sản phẩm.
-            </label>
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    Yêu cầu nhân viên kỹ thuật giao hàng: hỗ trợ copy danh bạ, hướng dẫn sử dụng máy mới, giải đáp thắc mắc sản phẩm.
+                </label>
+            </div>
+        </div>
+        <div class="contenphone-buttonbuy">
+
+            <a class="buttonbuyone" href="{{asset('cart/add/'.$cate->prod_id)}}">
+                <b>Mua Ngay</b>
+
+                <span>Giao tận nơi hoặc nhận tại siêu thị</span>
+            </a>
+
+
+        </div>
+        <div class="contentphone-buttonbuy2">
+
+
+            <a  class="buttonbuytwo" href="">
+                <b>MUA TRẢ GÓP 0%</b>
+
+                <span>Thủ tục đơn giản</span>
+            </a>
+
+
+            <a  class="buttonbuythree" href="">
+                <b>TRẢ GÓP QUA THẺ</b>
+
+                <span>Visa, Master,JCB</span>
+            </a>
+
+
+        </div>
+        <div class="contentphone-call">
+            <div class="call">
+                <span>
+                    "Gọi đặt mua:"
+                    <a href="">0123456789</a>
+                    "(miễn phí - 8:30 - 10:00)"
+                </span>
+            </div>
         </div>
     </div>
-    <div class="contenphone-buttonbuy">
 
-        <a class="buttonbuyone" href="{{asset('cart/add/'.$cate->prod_id)}}">
-            <b>Mua Ngay</b>
-            
-            <span>Giao tận nơi hoặc nhận tại siêu thị</span>
-        </a>
-        
-        
+    <div class="opstionsphone">
+        <h3>Thông số kỹ thuật</h3>
+        <hr>
+        <li>
+            <span >Màn hình:</span  >
+            <a href="">IPS LCD, 6.53", Full HD+</a>
+        </li>
+        <hr>
+        <li>
+            <span>Hệ điều hành:</span>    <a href="">Androi 9.0</a>
+        </li>
+        <hr>
+        <li>
+            <span>Cammera sau:</span> <span>Chính 16 MP & Phụ 8 MP, 2 MP</span>
+        </li>
+        <hr>
+        <li>
+            <span>Camera trước:</span>    <span>16MB</span>
+        </li>
+        <hr>
+        <li>
+            <span>CPU</span>  <a href="">MediaTek MT6768 8 nhân (Helio P65)</a>
+        </li>
+        <hr>
+        <li>
+            <span>RAM</span>  <span>6 GB</span>
+        </li>
+        <hr>
+        <li>
+            <span>Bộ nhớ trong:</span> <span>128 GB</span>
+        </li>
+        <hr>
+        <li>
+            <span>Thẻ nhớ:</span>  <a href="">MicroSD, hỗ trợ tối đa 256 GB</a>
+        </li>
+        <hr>
+        <li>
+            <span>Dung lượng pin:</span> <span>5000 mAh, có sạc nhanh</span>
+        </li>
     </div>
-    <div class="contentphone-buttonbuy2">
-
-
-        <a  class="buttonbuytwo" href="">
-            <b>MUA TRẢ GÓP 0%</b>
-            
-            <span>Thủ tục đơn giản</span>
-        </a>
-        
-        
-        <a  class="buttonbuythree" href="">
-            <b>TRẢ GÓP QUA THẺ</b>
-            
-            <span>Visa, Master,JCB</span>
-        </a>
-        
-        
-    </div>
-    <div class="contentphone-call">
-        <div class="call">
-            <span>
-                "Gọi đặt mua:"
-                <a href="">0123456789</a>
-                "(miễn phí - 8:30 - 10:00)"
-            </span>
-        </div>
-    </div>
-</div>
-
-<div class="opstionsphone">
-    <h3>Thông số kỹ thuật</h3>
-    <hr>
-    <li>
-        <span >Màn hình:</span  >
-        <a href="">IPS LCD, 6.53", Full HD+</a>
-    </li>
-    <hr>
-    <li>
-        <span>Hệ điều hành:</span>    <a href="">Androi 9.0</a>
-    </li>
-    <hr>
-    <li>
-        <span>Cammera sau:</span> <span>Chính 16 MP & Phụ 8 MP, 2 MP</span>
-    </li>
-    <hr>
-    <li>
-        <span>Camera trước:</span>    <span>16MB</span>
-    </li>
-    <hr>
-    <li>
-        <span>CPU</span>  <a href="">MediaTek MT6768 8 nhân (Helio P65)</a>
-    </li>
-    <hr>
-    <li>
-        <span>RAM</span>  <span>6 GB</span>
-    </li>
-    <hr>
-    <li>
-        <span>Bộ nhớ trong:</span> <span>128 GB</span>
-    </li>
-    <hr>
-    <li>
-        <span>Thẻ nhớ:</span>  <a href="">MicroSD, hỗ trợ tối đa 256 GB</a>
-    </li>
-    <hr>
-    <li>
-        <span>Dung lượng pin:</span> <span>5000 mAh, có sạc nhanh</span>
-    </li>
-</div>
 
 </div>
 <br>
@@ -204,7 +266,7 @@
     <div class="danhgiaphone">
         <h3>42 đánh giá</h3>
     </div>
-<!--     // đánh giá sản phẩm -->
+    <!-- đánh giá sản phẩm -->
     <div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">
 
         <div class="rating_item" style="width: 20%;position: relative;"> 
@@ -241,28 +303,52 @@
         ?>
 
         <div style="    border-radius: 5px;width: 200px;background-color: #288ad6;padding: 10px 35px;" class="rating_people">
-            <a href="#" class="js_rating" style="color: white; font-size: 15px;   text-decoration: none;" href="">Đánh giá của bạn</a>
+            <a href="#" class="js_rating" style="color: white; font-size: 15px;   text-decoration: none;" >Đánh giá của bạn</a>
         </div>
 
-    </div>
-    <div style="display:flex;margin-top: 15px;"class="hide" > 
-        <p style="font-size: 15px; ">Chọn đánh giá của bạn</p>
-        <span style="margin: -3px 15px; " class="list__star">
-            @for($i=1;$i<=5;$i++)
-            <i class="fa fa-star" data-key="{{$i}}"></i>
-            @endfor
-        </span>
-        <span class="cffff1">không thích</span>
-    </div>
-    <div>
-        <textarea style="margin-top: 5px ;" name="" cols="100" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
-    </div>
-    <div style=" border-radius: 5px;width: 90px;background-color: #288ad6;padding: 5px 7px;">
-        <a style="text-decoration: none;color: white;font-size: 13px;FONT-FAMILY: initial;" href="">Gửi Đánh Giá</a>
-    </div>
 
 
-<!--     // phần bình luận sản phẩm -->
+    </div>
+{{--    show danh gia san pham --}}
+    <div class="list product ">
+        <div class="col-md-12">
+            <div class="comment-list">
+                @foreach($rating as $rating)
+                <ul>
+                    <li class="com-title">
+                        <i class="fal fa-badge-check checked"></i> <span class="r">Đã mua hàng tại Thegioiso.web</span>
+                        <br>
+                        <span>{{Carbon::now()}}</span>   
+                    </li>
+                    <li class="com-details">
+                        <p class="com_details_font">{{$rating->r_content}}</p>
+                    </li>
+                </ul>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <div class="bigbig invisible">
+        <div style="display:flex;margin-top: 15px; "class="hide" > 
+            <p style="font-size: 15px; ">Chọn đánh giá của bạn</p>
+            <span style="margin: -3px 15px; " class="list__star">
+                @for($i=1;$i<=5;$i++)
+                <i class="fa fa-star" data-key="{{$i}}"></i>
+                @endfor
+            </span>
+            <span class="cffff1">không thích</span>
+            <input type="hidden" value="" class="number_rating_format">
+        </div>
+        <div>
+            <textarea id="r_content" style="margin-top: 5px ;" name="" cols="100" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
+        </div>
+
+        <div style=" border-radius: 5px;width: 90px;background-color: #288ad6;padding: 5px 7px;">
+            <a class="js_rating_product" style="text-decoration: none;color: white;font-size: 13px;FONT-FAMILY: initial;" data-id="{{$cate->prod_id}}" href="{{asset('/rating')}}" >Gửi Đánh Giá</a>
+        </div>
+    </div>
+
+    <!-- phần bình luận sản phẩm -->
 
     <div id="comment">
         <h3>Bình luận</h3>
@@ -287,7 +373,7 @@
             </form>
         </div>
     </div>
-
+    <hr class="ratinghr">
     <div class="list product ">
         <div class="col-md-12">
             <div class="comment-list">
@@ -312,3 +398,10 @@
 
 
 @endsection
+
+
+
+
+
+
+

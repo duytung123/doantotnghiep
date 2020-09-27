@@ -98,6 +98,11 @@
 					<a href="phone" class="my-btn btn">Mua tiếp</a>
 					<a href="#" class="my-btn btn">Cập nhật</a>
 					<a href="{{asset('cart/delete/all')}}" class="my-btn btn">Xóa giỏ hàng</a>
+
+			<a  class="buttonbuythree" href="{{asset('thanhtoan/index/'.$item->rowId)}}">
+				<b>THANH TOÁN ONLINE</b>
+			</a>
+
 				</div>
 			</div>
 		</form>

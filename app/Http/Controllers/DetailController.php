@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Product;
 use App\Comments;
+use App\Rating;
 
 
 class DetailController extends Controller
@@ -14,6 +15,7 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->get();
 
 		return view('fontend.Phone.Detailphone',$data);
 
@@ -22,6 +24,7 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->get();
 		return view('fontend.Laptop.Detaillaptop',$data);
 
 	}
@@ -29,6 +32,7 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->get();
 		return view('fontend.Tablet.Detailtablet',$data);
 
 	}
@@ -36,19 +40,19 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
-
+		$data['rating']=Rating::where('r_product_id',$id)->get();
 		return view('fontend.Phukien.Detailpkien',$data);
 
 	}
 
-		    public function postComment(Request $request,$id)
-    {
-    	$comment=new Comments;
-    	$comment->cm_name=$request->name;
-    	$comment->cm_email=$request->email;
-    	$comment->cm_content=$request->content;
-    	$comment->cm_product=$id;
-    	$comment->save();
-    	return back();
-    }
+	public function postComment(Request $request,$id)
+	{
+		$comment=new Comments;
+		$comment->cm_name=$request->name;
+		$comment->cm_email=$request->email;
+		$comment->cm_content=$request->content;
+		$comment->cm_product=$id;
+		$comment->save();
+		return back();
+	}
 }

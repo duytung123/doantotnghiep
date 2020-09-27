@@ -3,32 +3,32 @@
 
 <script>
 	$(document).ready(function(){
-	 
-	 var _token = $('input[name="_token"]').val();
 
-	 load_data('', _token);
+		var _token = $('input[name="_token"]').val();
 
-	 function load_data(prod_id="", _token)
-	 {
-	  $.ajax({
-	   url:"{{ route('phukien.load_data') }}",
-	   method:"POST",
-	   data:{prod_id:prod_id, _token:_token},
-	   success:function(data)
-	   {
-	    // console.log(data)
-	    $('#load_more_button').remove();
-	    $('#post_data').append(data);
-	   }
-	  })
-	 }
+		load_data('', _token);
 
-	 $(document).on('click', '#load_more_button', function(){
-	  var prod_id = $(this).data('id');
+		function load_data(prod_id="", _token)
+		{
+			$.ajax({
+				url:"{{ route('phukien.load_data') }}",
+				method:"POST",
+				data:{prod_id:prod_id, _token:_token},
+				success:function(data)
+				{
+      // console.log(data)
+      $('#load_more_button').remove();
+      $('#post_data1').append(data);
+  }
+})
+		}
 
-	  $('#load_more_button').html('<b>Loading...</b>');
-	  load_data(prod_id, _token);
-	 });
+		$(document).on('click', '#load_more_button', function(){
+			var prod_id = $(this).data('id');
+
+			$('#load_more_button').html('<b>Loading...</b>');
+			load_data(prod_id, _token);
+		});
 
 	});
 </script>
@@ -198,23 +198,23 @@
 <div class="phukiengiasoc">
 	@foreach($prphukien as $pkien)
 	<div class="itemphukien">
-		<a class="phukientext" href="">
+		<a class="phukientext" href="{{asset('detail4/'.$pkien->prod_id.'/'.$pkien->prod_slug.'.html')}}">
 			<img src="{{asset('../storage/app/avatar/'.$pkien->prod_img)}}" alt="">
 			<div class="bottompk">
 				<p>{{number_format($pkien->prod_price,0,',','.')}}đ</p>
 				<p class="sale_1">{{$pkien->prod_promotion}}</p>
 				<strong>{{$pkien->prod_name}}</strong>
-				<a class="buy" href="">MUA NGAY</a>
+				<a class="buy" href="{{asset('detail4/'.$pkien->prod_id.'/'.$pkien->prod_slug.'.html')}}">MUA NGAY</a>
 			</div>
 		</a>	
 	</div>
 
-	@endforeach
-	<div class="btn_load">
-		<button class="btn_load_content">Xem thêm</button>
-	</div>
-</div>
 
+
+	@endforeach
+	{{csrf_field()}}
+	<div id="post_data1"></div>
+</div>
 <div class="logoquangcao">
 
 	<a href="" class="logoqc active">
@@ -314,4 +314,5 @@
 		<h3>nổi bật</h3>
 	</a>
 </div>
+
 @endsection

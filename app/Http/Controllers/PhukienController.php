@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ADDrequest;
 use Illuminate\Support\Str;
 use DB;
 use App\Product;
@@ -11,72 +12,73 @@ use App\Cateallproduct;
 
 class PhukienController extends Controller
 {
-	    function load_data(Request $request)
-    {
-      if($request->ajax())
-      {
-        if($request->prod_id >0)
-        {
-          $data = DB::table('td_product')
-          ->where('prod_id', '<', $request->prod_id)
-          ->where('prod_featured',4)
-          ->where('prod_cate',4)
-          ->orderBy('prod_id', 'DESC')
-          ->limit(5)
-          ->get();
-        }
-        else
-        {
-          $data = DB::table('td_product')
-          ->where('prod_featured',4)
-          ->where('prod_cate',4)
-          ->orderBy('prod_id', 'DESC')
-          ->limit(5)
-          ->get();
-        }
-        $output = '';
-        $last_id = '';
+	function load_data(Request $request)
+	{
+		if($request->ajax())
+		{
+			if($request->prod_id >0)
+			{
+				$data = DB::table('td_product')
+				->where('prod_id', '<', $request->prod_id)
+				->where('prod_featured',2)
+				->where('prod_cate',4)
+				->orderBy('prod_id', 'DESC')
+				->limit(4)
+				->get();
+			}
+			else
+			{
+				$data = DB::table('td_product')
+				->where('prod_featured',2)
+				->where('prod_cate',4)
+				->orderBy('prod_id', 'DESC')
+				->limit(4)
+				->get();
+			}
+			$output = '';
+			$last_id = '';
 
-        if(!$data->isEmpty())
-        {
-          foreach($data as $lap)
-          {
-            $output .= '
-            <div class="tong2">
-            <div class="hinh2">
-            <a class="click1" href="'.asset("/detail6/$lap->prod_id/$lap->prod_slug.html").'">
-            <img class="h2 h2a" src="'.asset("../storage/app/avatar/$lap->prod_img").'" alt="">
-            <div class="con1">
-            <h3>'.$lap->prod_name.'</h3>
-            <strong>'.number_format($lap->prod_price).'đ</strong>
-            <p>'.$lap->prod_description.'</p> 
-            </div>
-            </a>
-            </div>
-            </div> 
-            ';
-            $last_id = $lap->prod_id;
+			if(!$data->isEmpty())
+			{
+				foreach($data as $lap)
+				{
+					$output .= '
 
-          }
-          $output .= '
-          <div id="load_more">
-          <button type="button" name="load_more_button" class="btn form-control btnmore" data-id="'.$last_id.'" id="load_more_button">Xem thêm phụ kiện khác</button>
-          </div>
-          ';
-        }
-        else
-        {
-          $output .= '
-          <div id="load_more">
-          <button type="button" name="load_more_button" class="btn form-control btnmore">.....</button>
-          </div>
-          ';
-        }
-        echo $output;
-      }
+					<div class="itemphukien">
+					<a class="phukientext" href="'.asset("/detail6/$lap->prod_id/$lap->prod_slug.html").'">
+					<img src="'.asset("../storage/app/avatar/$lap->prod_img").'" alt="">
+					<div class="bottompk">
+					<p>'.number_format($lap->prod_price).'đ</p>
+					<p class="sale_1">'.$lap->prod_promotion.'</p>
+					<strong>'.$lap->prod_name.'</strong>
+					<a class="buy" href="">MUA NGAY</a>
+					</div>
+					</a>	
+					</div>
+
+					';
+					$last_id = $lap->prod_id;
+
+				}
+				$output .= '
+				<div id="load_more">
+				<button type="button" name="load_more_button" class="btn form-control btnmore" data-id="'.$last_id.'" id="load_more_button">Xem thêm</button>
+				</div>
+				';
+			}
+			else
+			{
+				$output .= '
+				<div id="load_more">
+				<button type="button" name="load_more_button" class="btn form-control btnmore">.....</button>
+				</div>
+				';
+			}
+			echo $output;
+		}
 
 
-    }
+	}
 
 	public function getPhukien()
 	{

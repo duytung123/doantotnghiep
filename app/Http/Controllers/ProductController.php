@@ -16,8 +16,6 @@ class ProductController extends Controller
         $data['productlist']=DB::table('td_product')->where('prod_cate',1)->join('td_category','td_product.prod_cate','=','td_category.cate_id')->orderBy('prod_id','desc')->get();
         // điện thoại
 
-        
-
         $data['tabletlist']=DB::table('td_product')->where('prod_cate',3)->join('td_category','td_product.prod_cate','=','td_category.cate_id')->orderBy('prod_id','desc')->get();
         // tablet
 

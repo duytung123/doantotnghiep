@@ -5,10 +5,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 });
+//THANH TOÁN ONLINE VNPAY
+Route::group(['prefix'=>'thanhtoan'],function(){
+	Route::get('index/{id}','VnpayController@index');
+	Route::get('viewthanhtoan','VnpayController@getview');
+	Route::post('vnpay','VnpayController@create');
+	Route::get('getvnpay','VnpayController@return');
+});
+
+//search autocomplet
+Route::post('autocomplet_ajax','FrontendController@autocompletajax');
+//rating product
+Route::get('rating','RatingController@rating');
 // route lấy sản phẩm theo danh muc
 Route::get('cateallproduct/{id}/{slug}.html','FrontendController@getcateallproduct');
 
 Route::get('search','ProductController@getsearch');//timkiem cho phan backend
+
 Route::get('complete','CartController@getcomple');
 // GioHang
 Route::group(['prefix'=>'cart'],function(){
@@ -40,10 +53,10 @@ Route::post('detail4/{id}/{slug}.html','DetailController@postComment');
 
 //ajax load more
 
-Route::post('laptop/load_data', 'LaptopController@load_data')->name('laptop.load_data');
-Route::post('phone/load_data', 'PhoneController@load_data')->name('phone.load_data');
-Route::post('tablet/load_data', 'TabletController@load_data')->name('tablet.load_data');
-Route::post('phukien/load_data', 'PhukienController@load_data')->name('phukien.load_data');
+Route::post('laptop/load_data','LaptopController@load_data')->name('laptop.load_data');
+Route::post('phone/load_data','PhoneController@load_data')->name('phone.load_data');
+Route::post('tablet/load_data','TabletController@load_data')->name('tablet.load_data');
+Route::post('phukien/load_data','PhukienController@load_data')->name('phukien.load_data');
 
 Route::get('trangchu','frontendController@getHome');
 
@@ -59,11 +72,12 @@ Route::group(['prefix' =>'admin/login'],function(){
 	Route::post('/','LoginController@postLogin');
 });
 
-Route::group(['prefix'=>'admin','adminlogin'=>'middleware'],function(){
-	Route::get('logout','LoginController@getLogout');
-	
+Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 
 	Route::get('home','LoginController@gethome');
+
+	Route::get('logout','LoginController@getLogout');
+
 	Route::group(['prefix'=>'category'],function(){
 		Route::get('/','CategoryController@getcate');
 		Route::get('add','CategoryController@getaddcate');
@@ -115,7 +129,7 @@ Route::group(['prefix'=>'admin','adminlogin'=>'middleware'],function(){
 		Route::post('update/{id}','LaptopController@postupdatelaptop');
 		Route::get('delete/{id}','LaptopController@getdeletelaptop');
 	});
-		Route::group(['prefix'=>'phukien'],function(){
+	Route::group(['prefix'=>'phukien'],function(){
 		Route::get('/','PhukienController@getindex');
 		Route::get('add','PhukienController@getaddphukien');
 		Route::post('add','PhukienController@postaddphukien');

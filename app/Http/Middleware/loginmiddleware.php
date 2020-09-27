@@ -1,12 +1,9 @@
 <?php
 
 namespace App\Http\Middleware;
-
-use Closure;
 use Illuminate\Support\Facades\Auth;
-// use App\User;
-
-class loginmiddleware
+use Closure;
+class Loginmiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,18 +14,10 @@ class loginmiddleware
      */
     public function handle($request, Closure $next)
     {
-    if(Auth::check())
-        {
-            $user=Auth::user();
-            if($user->level==1)
-               return $next($request);
-
-           else
-            return redirect('admin/login');
-
-
-    }
-    else
-        return redirect('admin/login');
+        if (Auth::check()&&Auth::user()->email == "admin@gmail.com") {
+            return $next($request);
+        } else {
+            return redirect("admin/login");
+        }
     }
 }

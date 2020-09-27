@@ -41,5 +41,26 @@ class FrontendController extends Controller
 
 		return view('fontend.index',$data);
 	}
+	public function autocompletajax(Request $request)
+	{
+		$data=$request->all();
+		if($data['query'])
+		{
+			$product = Product::where('prod_name','LIKE','%'.$data['query'].'%')->get();
+			$output='<ul class="dropdown-menu" style="display:block;z-index:1;width:max-content;padding:5px 15px;margin: 2px 99px;">';
+			foreach ($product as $key => $value) {
+				$output .='<li><a href="'.asset("/detail/$value->prod_id/$value->prod_slug.html").'">
+				<img style=width:90px;height:75px; src="'.asset("../storage/app/avatar/$value->prod_img").'" alt="">
+				'.$value->prod_name.''.$value->prod_description.'</a></li>';
+			}
+			$output .='</ul>';
+			echo $output;
+
+		}
+
+
+
+	}
+	
 
 }

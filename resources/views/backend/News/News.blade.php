@@ -19,7 +19,7 @@
                <tr align="center">
                   <th width="5%">ID</th>   
                   <th width="20%">Tiêu Đề</th>
-                  <th width="10%">Thể loại</th>
+                  <th width="10%">Ảnh</th>
                   <th width="15%">Tác giả</th>
                   <th>mô tả</th>
                   <th width="5%">Delete</th>
@@ -29,8 +29,9 @@
           <tbody>
            @foreach($tintuc as $tintuc)
            <td>{{$tintuc->id}}</td>
+          
            <td>{{$tintuc->n_title}}</td>
-           <td>{{$tintuc->n_category}}</td>
+           <td> <img src="{{asset('../storage/app/avatar/'.$tintuc->n_img)}}" alt=""></td> 
            <td>{{$tintuc->n_author}}</td>
            <td>{!!$tintuc->n_description!!}</td>
            <td><a href="{{asset('admin/news/delete/'.$tintuc->id)}}"><i class="fas fa-trash-alt"></i></a></td>
