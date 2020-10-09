@@ -74,7 +74,7 @@
 										<input required type="text" name="name" class="form-control">
 									</div>
 									<div class="form-group" >
-										<label>Hãng máy tĩnh</label>
+										<label>Hãng máy tính</label>
 										<select required name="cateall" class="form-control">
 											@foreach($catealllaptop as $cate)
 											<option value="{{$cate->cateall_id}}">{{$cate->cateall_name}}</option>

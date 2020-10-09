@@ -17,12 +17,18 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 Route::post('autocomplet_ajax','FrontendController@autocompletajax');
 //rating product
 Route::get('rating','RatingController@rating');
+
 // route lấy sản phẩm theo danh muc
 Route::get('cateallproduct/{id}/{slug}.html','FrontendController@getcateallproduct');
+Route::get('catealllaptop/{id}/{slug}.html','FrontendController@getcatealllaptop');
+Route::get('catealltablet/{id}/{slug}.html','FrontendController@getcatealltablet');
+Route::get('cateallphukien/{id}/{slug}.html','FrontendController@getcateallphukien');
 
 Route::get('search','ProductController@getsearch');//timkiem cho phan backend
 
 Route::get('complete','CartController@getcomple');
+
+
 // GioHang
 Route::group(['prefix'=>'cart'],function(){
 	Route::get('add/{id}','CartController@getaddcart');
@@ -40,8 +46,9 @@ Route::get('detail/{id}/{slug}.html','DetailController@getDetailphone');
 Route::get('detail2/{id}/{slug}.html','DetailController@getDetaillaptop');
 Route::get('detail3/{id}/{slug}.html','DetailController@getDetailtablet');
 Route::get('detail4/{id}/{slug}.html','DetailController@getDetailpkien');
-Route::get('detail6/{id}/{slug}.html','DetailController@getDetailpkien');
 Route::get('detail5/{id}/{slug}.html','Tintuccontroller@getDetailtintuc');
+Route::get('detail6/{id}/{slug}.html','DetailController@getDetailpkien');
+
 
 //các thao tác trên web
 

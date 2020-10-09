@@ -58,9 +58,9 @@
 				<div class="form-group">
 					<label for="language">Loại hàng hóa </label>
 					<select name="order_type" id="order_type" class="form-control">
-								<option value="billpayment">Thanh toán hóa đơn</option>
+						<option value="billpayment">Thanh toán hóa đơn</option>
 						<option value="topup">Nạp tiền điện thoại</option>
-				
+
 						<option value="fashion">Thời trang</option>
 						<option value="other">Khác - Xem thêm tại VNPAY</option>
 					</select>
@@ -78,19 +78,31 @@
 					<label for="amount">số tiền:</label>
 					<input class="form-control" id="amount"
 					name="amount"value="{{$product_vnp1->price}}"/>
-
 					@endforeach
 				</div>
+				<span>Bạn vui lòng điền vào những thông tin dưới đây:</span>
 				<div class="form-group">
-					<label for="order_desc">Nội dung thanh toán</label>
-					<textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2"></textarea>
+					<label for="order_desc">Tên của bạn</label>
+					<input class="form-control" cols="20" id="order_desc" name="name">
+				</div>
+				<div class="form-group">
+					<label for="order_desc">số điện thoại</label>
+					<input type="number" class="form-control" cols="20" id="order_desc" name="phone">
+				</div>
+					<div class="form-group">
+					<label for="order_desc">Địa chỉ</label>
+					<input class="form-control" cols="20" id="order_desc" name="add">
+				</div>
+				<div class="form-group">
+					<label for="order_desc">Ghi chú</label>
+					<textarea class="form-control" cols="20" id="order_desc" name="note" rows="2"></textarea>
 				</div>
 				<div class="form-group">
 					<label for="bank_code">Ngân hàng</label>
 					<select name="bank_code" id="bank_code" class="form-control">
-									<option value="NCB"> Ngan hang NCB</option>
+						<option value="NCB"> Ngan hang NCB</option>
 						<option value="">Không chọn</option>
-			
+
 						<option value="AGRIBANK"> Ngan hang Agribank</option>
 						<option value="SCB"> Ngan hang SCB</option>
 						<option value="SACOMBANK">Ngan hang SacomBank</option>
@@ -122,8 +134,7 @@
 					</select>
 				</div>
 
-				<button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Popup</button>
-				<button type="submit" class="btn btn-default">Thanh toán Redirect</button>
+				<button type="submit" class="btn btn-default">Tiến hành thanh toán</button>
 
 			</form>
 

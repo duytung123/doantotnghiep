@@ -71,10 +71,10 @@
                     margin-left: 75%;
                 }
                 .ratinghr{
-                   width: 650px;
-                   margin-left: 15px;
-               }
-               p.text_description{
+                 width: 650px;
+                 margin-left: 15px;
+             }
+             p.text_description{
                 margin-top: 100px;
                 display: block;
                 overflow: hidden;
@@ -89,3 +89,17 @@
                 margin-left: 85px;
                 margin-bottom: -10px;
             }
+            .slide .next_icon{
+                height: 40px;
+                margin-left: -640px;
+                width: 40px;
+            }
+            .slide .next_icon1{
+                height: 40px;
+               
+                width: 40px;
+            }
+            .slide ul.indicators1{
+                left: -320px;
+            }
+

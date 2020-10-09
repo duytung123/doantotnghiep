@@ -79,9 +79,9 @@
 		<h5>Phụ kiện cho : </h5>
 		<div class="chu-text">
 			<a class="chu-textbig" href="">Oppo F5</a>
-			<a class="chu-textbig" href="">RealMe</a>
-			<a class="chu-textbig" href="">Iphone 11 max</a>
-			<a class="chu-textbig" href="">iphone X</a>
+			<a class="chu-textbig" href="">Reale</a>
+			<a class="chu-textbig" href="">iPhone 11 Pro Max</a>
+			<a class="chu-textbig" href="">iPhone X</a>
 			<a class="chu-textbig" href="">Samsung galaxy 10</a>
 			<a class="chu-textbig" href="">Samsung Note 10</a>
 			<a class="chu-textbig" href="">Vivo S1</a>
@@ -109,82 +109,82 @@
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb3.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>tai nghe</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb4.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>loa</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb5.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>thẻ nhớ</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb6.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>usb</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb7.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>ổ cứng di động</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/7.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>phụ kiện chính hãng</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/8.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>miếng dán màn hình</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/9.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>ốp lưng điện thoại</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/10.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>ốp lứng máy tính</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/11.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>balô, túi chống sốc</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/12.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>thiết bị mạng</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/13.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>phụ kiện ô tô</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/14.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>quạt mini</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/15.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>gậy tự sướng</h3>
 	</a>
 
 	<a href="" class="logoqc">
-		<img src="avatar/catephukien/16.png" alt="">
-		<h3>nổi bật</h3>
+		<img src="avatar/catephukien/dbb1.png" alt="">
+		<h3>androi Tv Box</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/17.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>camera</h3>
 	</a>
 
 	<a href="" class="logoqc">
@@ -231,82 +231,82 @@
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb3.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>tai nghe</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb4.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>loa</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb5.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>thẻ nhớ</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb6.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>usb</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/00-nb7.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>ổ cứng di động</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/7.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>phụ kiện chính hãng</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/8.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>miếng dán màn hình</h3>
 	</a>
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/9.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>ốp lưng điện thoại</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/10.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>ốp lứng máy tính</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/11.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>balô, túi chống sốc</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/12.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>thiết bị mạng</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/13.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>phụ kiện ô tô</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/14.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>quạt mini</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/15.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>gậy tự sướng</h3>
 	</a>
 
 	<a href="" class="logoqc">
-		<img src="avatar/catephukien/16.png" alt="">
-		<h3>nổi bật</h3>
+		<img src="avatar/catephukien/dbb1.png" alt="">
+		<h3>androi Tv Box</h3>
 	</a>
 
 
 	<a href="" class="logoqc">
 		<img src="avatar/catephukien/17.png" alt="">
-		<h3>nổi bật</h3>
+		<h3>camera</h3>
 	</a>
 
 	<a href="" class="logoqc">

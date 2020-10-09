@@ -2,7 +2,7 @@
 @section('main')
 <link rel="stylesheet" href="css/index.css">
 <div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
+  <ul class="carousel-indicators indicators1">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
@@ -30,10 +30,10 @@
     </div>
   </div>
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
+    <span class="carousel-control-prev-icon next_icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
+    <span class="carousel-control-next-icon next_icon"></span>
   </a>
 
 </div>
@@ -44,7 +44,7 @@
 <div class="columlogo">
   <nav class="navbar navbar-expand-sm">
     <ul class="navbar-nav g1">
-         @foreach($listcate as $cate)
+         @foreach($catealllaptop as $cate)
       <li class="nav-item lg1">
       
         <a class="nav-link c1a" href="{{asset('cateallproduct/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">

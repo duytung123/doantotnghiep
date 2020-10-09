@@ -31,8 +31,9 @@ class AppServiceProvider extends ServiceProvider
         $data['listcate']=Cateallproduct::where('cateall_product',1)->get();
         $data['cateallphone']=Cateallproduct::where('cateall_product',1)->get();
         $data['catealllaptop']=Cateallproduct::where('cateall_product',2)->get();
-        $data['catealltablet']=Cateallproduct::all();
-        $data['cateallphukien']=Cateallproduct::where('cateall_product',4)->get();
+        $data['catealltablet']=Cateallproduct::where('cateall_product',3)->take(5)->get();
+        $data['catealltablet1']=Cateallproduct::where('cateall_product',3)->get();
+        $data['cateallphukien']=Cateallproduct::where('cateall_product',4)->take(7)->get();
         view()->share($data);
 
     }

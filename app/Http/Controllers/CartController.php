@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Cart;
+use Carbon\Carbon;
 use DB;
 use Mail;
 use App\Product;
@@ -47,10 +48,13 @@ class CartController extends Controller
 	{
 		$total=str_replace(',', '', Cart::total());
 		$arr = [
+			'user_name' => $request->email,
 			'tr_totalprice' =>intval($total),
 			'tr_phone' =>$request->phone,
 			'tr_note' =>$request->note,
-			'tr_address' =>$request->add
+			'tr_address' =>$request->add,
+			'created_at' =>Carbon::now(),
+			'updated_at' =>Carbon::now()
 		];
 
 		$transactionId = DB::table('td_transaction')->insertGetId($arr);
@@ -63,13 +67,12 @@ class CartController extends Controller
 					'or_transaction_id' =>$transactionId,
 					'or_product_id' =>$product->id,
 					'or_qty' => $product->qty,
-					'or_price'=>$product->price
+					'or_price'=>$product->price,
+					'created_at' =>Carbon::now(),
+					'updated_at' =>Carbon::now()
 				]);
 			}
 		}
-
-
-
 
 		$data['info']=$request->all();
 		$email=$request->email;
@@ -98,11 +101,7 @@ class CartController extends Controller
 	public function Saveinfotransaction(Request $request)
 	{
 
-
-
 		return view('Fontend.Complete.Complete');
-
-
 	}
 
 

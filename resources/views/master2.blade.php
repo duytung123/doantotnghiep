@@ -29,8 +29,10 @@
   <div class="header">
     <nav class="navbar navbar-expand-sm navbar1 navbar-dark">
       <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/lg1.jpg" alt=""> </div> </a> 
-      <form method="get" role="Search" class="form-inline" action="{{asset('searchcomplete/')}}">
-        <input class="form-control mr-sm-2 inputsearch" id="scrollable-dropdown-menu" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
+      <form method="post" role="Search" class="form-inline" autocomplete="off" action="">
+        {{csrf_field()}}
+        <input id="keywords" class="form-control mr-sm-2 inputsearch" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
+        <div id="search_ajax"></div>
         <button class="btn searchbtn"  type="submit"><i class="fa fa-search"></i></button>
       </form>
 
@@ -107,5 +109,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 <script src="js/laptop.js"></script>
+<script type="text/javascript">
+  $('#keywords').keyup(function(event) {
+    var query = $(this).val();
+    if(query != '')
+    {
+      var _token = $('input[name="_token"]').val();
+      $.ajax({
+        url : "{{url('autocomplet_ajax')}}",
+        method : "post",
+        data :{query:query, _token:_token},
+        success:function(data){
+          $('#search_ajax').fadeIn();
+          $('#search_ajax').html(data);
+        }
+
+      });
+    }
+    else
+    {
+      $('#search_ajax').fadeOut();
+    }
+  });
+</script>
 </body>
 </html>

@@ -162,7 +162,6 @@
       $('#search_ajax').fadeOut();
     }
   });
-
 </script>
 
 </body>

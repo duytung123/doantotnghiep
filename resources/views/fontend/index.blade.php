@@ -3,7 +3,15 @@
 <div class="producthot">
   <nav class="navbar navbar-expand-sm">
     <span class="chulon">Phụ Kiện giá rẻ</span>
-  </nav>
+
+    <ul class="navbar-nav category3">
+     @foreach($cateallphukien as $cate)
+     <li class="">
+       <a class="c1 c1_cate" href="">{{$cate->cateall_name}}</a>
+     </li>
+     @endforeach()
+   </ul>
+ </nav>
 
 </div>
 <section class="slider-area slider">
@@ -23,26 +31,9 @@
 <div class="producthot1">
   <nav class="navbar navbar-expand-sm">
     <span class="title__">Phụ Kiện Chính Hãng</span>
-    <ul class="navbar-nav category">
-      <li class="">
-       <a class="c1" href=""></a>
-     </li>
-     <li class="">
-       <a class="c1" href=""></a>
-     </li>
-     <li class="">
-       <a class="c1" href=""></a>
-     </li>
-     <li class="">
-       <a class="c1" href=""></a>
-     </li>
-     <li class="">
-       <a class="c1" href=""></a>
-     </li>
-   </ul>
-   
- </nav>
- 
+
+  </nav>
+
 </div>
 <section class="slider-area slider"> 
   @foreach($phukien2 as $phukien)
@@ -61,13 +52,13 @@
 <div class="producthot pr1">
  <nav class="navbar navbar-expand-sm">
    <span class="chulon">Điện Thoại Mới Nhất</span>
-<!--    <ul class="navbar-nav category">
-    @foreach($category as $cate)
+   <ul class="navbar-nav category4">
+    @foreach($cateallphone as $cate)
     <li class="">
-      <a class="c1" href="{{asset('category/'.$cate->cate_id.'/'.$cate->cate_slug.'.html')}}">{{$cate->cate_name}}</a>
+      <a class="c1" href="{{asset('cateallproduct/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">{{$cate->cateall_name}}</a>
     </li>
     @endforeach
-  </ul> -->
+  </ul>
 </nav>
 </div>
 <div class="content">
@@ -230,8 +221,14 @@
 <div class="producthot pr2">
   <nav class="navbar navbar-expand-sm ">
     <span class="chulon">LapTop Nổi Bật Nhất</span>
-
-  </nav>
+    <ul class="navbar-nav category5">
+     @foreach($catealllaptop as $cate)
+     <li class="">
+       <a class="c1 c1_cate" href="{{asset('catealllaptop/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">{{$cate->cateall_name}}</a>
+     </li>
+     @endforeach()
+   </ul>
+ </nav>
 </div>
 
 <div class="content">
@@ -275,8 +272,14 @@
   <nav class="navbar navbar-expand-sm">
     <!-- Brand/logo -->
     <span class="chulon">Tablet Mới Nhất</span>
-    
-    <!-- Links -->
+  
+    <ul class="navbar-nav category6">
+     @foreach($catealltablet as $cate)
+     <li class="">
+       <a class="c1 c1_cate" href="">{{$cate->cateall_name}}</a>
+     </li>
+     @endforeach()
+   </ul>
 
   </nav>
 </div>

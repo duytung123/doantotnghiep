@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use DB;
 use App\Product;
+use App\Http\Requests\ADDrequest;
 use App\Category;
 use App\Cateallproduct;
 
@@ -109,7 +110,7 @@ class TabletController extends Controller
 		return view('backend.Tablet.addtablet',$data);
 	}
 
-	public function postaddtablet(Request $request)
+	public function postaddtablet(ADDrequest $request)
 	{
 		$filename=$request->img->getClientOriginalName();
 		$product= new Product;

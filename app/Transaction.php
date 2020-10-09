@@ -9,6 +9,7 @@ class Transaction extends Model
  
 	protected $table='td_transaction';
     protected $primaryKey='id';
+    protected $fillable = [];
     protected $guarded=[];
 }
 

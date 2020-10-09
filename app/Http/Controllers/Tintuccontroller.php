@@ -13,7 +13,7 @@ class Tintuccontroller extends Controller
 	public function getDetailtintuc($id)
 	{
 		$data1['chitiet']=Tintuc::find($id);
-		return view('fontend.TinTuc.detail',$data1);
+		return view('fontend.TinTuc.Detail',$data1);
 	}
 
 	public function getindex()
