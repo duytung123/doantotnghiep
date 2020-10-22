@@ -1,0 +1,72 @@
+
+html: 
+			<div class="name">
+				<input placeholder="họ tên" type="text">
+			</div>
+			<div class="email">
+				<input placeholder="email" type="text">
+			</div>
+			<div class="phone">
+				<input placeholder="số điện thoại" type="text">
+			</div>
+
+css : 
+            .info_ratting{
+                position: absolute;
+                margin-top: -81px;
+                margin-left: 372px;
+            }
+            .info_ratting .name{
+                position: relative;
+                margin-left: 10px;
+            }
+
+            .info_ratting .email{
+                margin-left: 200px;
+                position: relative;
+                margin-top: -30px;
+            }
+            .info_ratting .phone{
+                margin-top: 17px;
+                margin-left: 10px;
+                position: relative;
+            }
+            .info_ratting .name input{
+                height: 30px;
+                border-radius: 4px;
+                border: 1px solid #ddd
+            }
+            .info_ratting .email input{
+                height: 30px;
+                border-radius: 4px;
+                border: 1px solid #ddd
+            }
+            .info_ratting .phone input{
+                height: 30px;
+                border-radius: 4px;
+                border: 1px solid #ddd
+            }
+
+/// phan div lon
+html
+<div class="bigbig invisible">
+css
+
+element.style {
+}
+.btn_rating11
+    border-radius: 4px;
+    margin-top: -10px;
+    padding: 10px 20px;
+    width: 1083px;
+    height: 170px;
+    border: 1px solid #ddd;
+
+js:
+text-decoration: none;
+    color: white;
+    font-size: 16px;
+    FONT-FAMILY: ui-serif;
+    padding: 0 10px;
+
+
