@@ -11,8 +11,10 @@ use App\Rating;
 
 class DetailController extends Controller
 {
+
 	public function getDetailphone($id)
 	{
+		$data['phukien']=Product::where('prod_featured',2)->Where('prod_cate',1)->orderBy('prod_id','desc')->take(5)->get();
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
 		$data['rating']=Rating::where('r_product_id',$id)->get();

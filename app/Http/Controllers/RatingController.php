@@ -22,7 +22,12 @@ class RatingController extends Controller
 			[
 				'r_product_id' => $id,
 				'r_content' =>$request->r_content,
-				'r_number' =>$request->number
+				'r_number' =>$request->number,
+				'r_name' => $request->r_name,
+				'r_email' =>$request->r_email,
+				'r_phone' =>$request->r_phone,
+				'created_at' =>Carbon::now(),
+				'updated_at' =>Carbon::now()
 
 			]);
 				
