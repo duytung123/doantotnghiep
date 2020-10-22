@@ -366,7 +366,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div> 
 			<h5 style="position: absolute;margin-left: 66%;">SẢN PHẨM KHÁC</h5>
 			@foreach($phukien as $product)
 					<span>{{$product->prod_name}}</span>

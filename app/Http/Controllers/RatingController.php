@@ -28,7 +28,7 @@ class RatingController extends Controller
 				'r_phone' =>$request->r_phone,
 				'created_at' =>Carbon::now(),
 				'updated_at' =>Carbon::now()
-
+  
 			]);
 				
 			$product =Product::find($id);
