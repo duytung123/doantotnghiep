@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Category;
 use App\Cateallproduct;
+use Carbon;
 
 class CategoryController extends Controller
 {
@@ -70,7 +71,7 @@ class CategoryController extends Controller
 
     	return back();
     }
-      // end cate cho trang chu
+       // end cate cho trang chu
 
     public function getcateall()
 
@@ -96,13 +97,14 @@ class CategoryController extends Controller
             'name.unique'=>'tên bạn nhập đã trùng'
 
         ]);
-
+        $filename=$request->img->getClientOriginalName();
         $category= new Cateallproduct;
         $category->cateall_name=$request->name;
         $category->cateall_slug=Str::slug($request->name);
         $category->cateall_product=$request->cate;
+        $category->cateall_img=$filename;
         $category->save();
-
+        $request->img->storeAs('avatar',$filename);
         return redirect('admin/cateallproduct')->with('thongbao','Thêm thành công');
     }
 
@@ -114,25 +116,23 @@ class CategoryController extends Controller
 
     public function postupdatecateall( Request $request,$id)
     {
-        $this->validate($request,
-            [
-                'name'=>'unique:td_cateallproduct,cateall_name'
-            ],
-
-            [
-                'name.unique'=>'tên bạn nhập đã trùng'
-            ]);
 
         $category= Cateallproduct::find($id);
-        $category->cateall_name=$request->name;
-        $category->cateall_slug=Str::slug($request->name);
-        $category->cateall_product=$request->cate;
-        $category->save();
+        $arr['cateall_name']=$request->name;
+        $arr['cateall_slug']=Str::slug($request->name);
+        $arr['cateall_product']=$request->cate;
+        if($request->hasFile('img')){
+            $img=$request->img->getClientOriginalName();
+            $arr['cateall_img']=$img;
+            $request->img->storeAs('avatar',$img);
+        }
+
+        $category::where('cateall_id',$id)->update($arr);
 
         return redirect('admin/category')->with('thongbao','sửa thành công :)');
 
     }
-        public function getdeletecateall($id)
+    public function getdeletecateall($id)
     {
         Cateallproduct::destroy($id);
         return back();

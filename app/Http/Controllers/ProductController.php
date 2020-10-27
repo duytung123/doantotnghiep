@@ -75,7 +75,6 @@ class ProductController extends Controller
             $arr['prod_img']=$img;
             $request->img->move('avatar'.$img);
         }
-
         $product::where('prod_id',$id)->update($arr);
         return redirect('admin/product')->with('thongbao','bạn đã sửa thành công');
     }

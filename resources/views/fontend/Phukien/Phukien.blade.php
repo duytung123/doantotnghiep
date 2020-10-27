@@ -94,103 +94,14 @@
 </div>
 
 <div class="logoquangcao">
+	@foreach($catelistphukien as $cate)
 
-	<a href="" class="logoqc active">
-		<img src="avatar/00_noibat.png" alt="">
-		<h3>nổi bật</h3>
-	</a>
-	<a href="" class="logoqc">
+	<a href="{{asset('cateallphukien/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}" class="logoqc">
 		<img src="avatar/00-noibat1.png" alt="">
-		<h3>Pin dự phòng</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/00-noibat2.png" alt="">
-		<h3>Sạc, cáp</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/00-nb3.png" alt="">
-		<h3>tai nghe</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/00-nb4.png" alt="">
-		<h3>loa</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/00-nb5.png" alt="">
-		<h3>thẻ nhớ</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/00-nb6.png" alt="">
-		<h3>usb</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/00-nb7.png" alt="">
-		<h3>ổ cứng di động</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/7.png" alt="">
-		<h3>phụ kiện chính hãng</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/8.png" alt="">
-		<h3>miếng dán màn hình</h3>
-	</a>
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/9.png" alt="">
-		<h3>ốp lưng điện thoại</h3>
+		<h3>{{$cate->cateall_name}}</h3>
 	</a>
 
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/10.png" alt="">
-		<h3>ốp lứng máy tính</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/11.png" alt="">
-		<h3>balô, túi chống sốc</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/12.png" alt="">
-		<h3>thiết bị mạng</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/13.png" alt="">
-		<h3>phụ kiện ô tô</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/14.png" alt="">
-		<h3>quạt mini</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/15.png" alt="">
-		<h3>gậy tự sướng</h3>
-	</a>
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/dbb1.png" alt="">
-		<h3>androi Tv Box</h3>
-	</a>
-
-
-	<a href="" class="logoqc">
-		<img src="avatar/catephukien/17.png" alt="">
-		<h3>camera</h3>
-	</a>
-
-	<a href="" class="logoqc">
-		<img src="avatar/00_noibat.png" alt="">
-		<h3>nổi bật</h3>
-	</a>
+	@endforeach
 </div>
 <br>
 <div class="back"><img src="avatar/backpk.png" alt=""></div>
