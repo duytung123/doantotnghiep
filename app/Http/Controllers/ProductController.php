@@ -59,7 +59,7 @@ class ProductController extends Controller
     }
     public function postupdateproduct(ADDrequest $request,$id)
     {
-        $product=new Product;
+        $product=Product::find($id);
         $arr['prod_name']=$request->name;
         $arr['prod_slug']=Str::slug($request->name);
         $arr['prod_warranty']=$request->warranty;
@@ -73,7 +73,7 @@ class ProductController extends Controller
         if($request->hasFile('img')){
             $img=$request->img->getClientOriginalName();
             $arr['prod_img']=$img;
-            $request->img->move('avatar'.$img);
+            $request->img->storeAs('avatar',$img);
         }
         $product::where('prod_id',$id)->update($arr);
         return redirect('admin/product')->with('thongbao','bạn đã sửa thành công');

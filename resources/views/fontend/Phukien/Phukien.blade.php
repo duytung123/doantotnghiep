@@ -97,7 +97,7 @@
 	@foreach($catelistphukien as $cate)
 
 	<a href="{{asset('cateallphukien/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}" class="logoqc">
-		<img src="avatar/00-noibat1.png" alt="">
+		<img src="{{asset('../storage/app/avatar/'.$cate->cateall_img)}}" alt="">
 		<h3>{{$cate->cateall_name}}</h3>
 	</a>
 

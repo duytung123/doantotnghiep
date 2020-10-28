@@ -107,8 +107,12 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 		Route::get('add','ProductController@getaddproduct');
 		Route::post('add','ProductController@postaddproduct');
 		Route::get('update/{id}','ProductController@getupdateproduct');
+
 		Route::post('update/{id}','ProductController@postupdateproduct');
 		Route::get('delete/{id}','ProductController@getdeleteproduct');
+		//Attribute
+		Route::get('updateattribute/{id}','AttributeController@getAttribute');
+		Route::post('updateattribute/{id}','AttributeController@addAttribute');
 
 
 	});

@@ -77,7 +77,7 @@ class Tintuccontroller extends Controller
         public function posteditnews(Request $request,$id)
     {
 
-		$tintuc=new Tintuc;
+		$tintuc=Tintuc::find($id);
         $arr['n_title']=$request->title;
         $arr['n_contentslug']=Str::slug($request->title);
         $arr['n_content']=$request->content;
@@ -87,7 +87,7 @@ class Tintuccontroller extends Controller
         if($request->hasFile('img')){
             $img=$request->img->getClientOriginalName();
             $arr['n_img']=$img;
-            $request->img->move('avatar'.$img);
+            $request->img->storeAs('avatar',$img);
         }
          $tintuc::where('id',$id)->update($arr);
 

@@ -330,3 +330,29 @@ p>a{
     position: absolute;
     color: blue;
     font-size: 75px}
+    .complete{
+    	    background-color: #fff;
+    padding: 63px 30px;
+    margin-left: 232px;
+    width: 866px;
+    height: 313px;
+    margin-top: 60px;
+    }
+    .backhome{
+    	margin-left: 44%;
+    }
+    .backhome a.backfont{
+    	text-decoration: none;
+    color: gray;
+    font-family: cursive;
+    font-weight: 600;
+    font-weight: bold;
+    font-size: 17px;
+    }
+    .backhome a.arrowhome{
+    	    font-size: 18px;
+    position: absolute;
+
+    color: gray;
+    margin-left: -26px;
+    }

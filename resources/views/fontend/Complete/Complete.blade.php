@@ -27,8 +27,9 @@
 		<p class="info2">Cám ơn Quý khách đã sử dụng Sản phẩm của Công ty chúng Tôi!</p>
 	</div>
 	<div class="backhome">
-		<a href=""><i class="fas fa-arrow-left"></i></a>
-		<a href="">quay lai trang chu</a>
+		<a class="arrowhome" href="trangchu"><i class="fas fa-arrow-left"></i></a>
+		<a class="" href="trangchu"><i style="margin-left: -9px;color: gray;" class="fas fa-arrow-left"></i></a>
+		<a class="backfont" href="trangchu">quay lại trang chu</a>
 	</div>
 	
 </div>					
