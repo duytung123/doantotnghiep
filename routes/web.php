@@ -64,6 +64,7 @@ Route::post('laptop/load_data','LaptopController@load_data')->name('laptop.load_
 Route::post('phone/load_data','PhoneController@load_data')->name('phone.load_data');
 Route::post('tablet/load_data','TabletController@load_data')->name('tablet.load_data');
 Route::post('phukien/load_data','PhukienController@load_data')->name('phukien.load_data');
+Route::post('phukien1/load_data','frontendController@load_data')->name('phukien1.load_data');
 
 Route::get('trangchu','frontendController@getHome');
 

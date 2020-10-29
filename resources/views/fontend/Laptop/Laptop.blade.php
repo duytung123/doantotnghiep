@@ -11,7 +11,7 @@ $(document).ready(function(){
  function load_data(prod_id="", _token)
  {
   $.ajax({
-   url:"{{ route('laptop.load_data') }}",
+   url:"{{ route('phukien1.load_data') }}",
    method:"POST",
    data:{prod_id:prod_id, _token:_token},
    success:function(data)

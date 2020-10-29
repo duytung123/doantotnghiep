@@ -71,30 +71,19 @@
   <img class="bn1" src="avatar/baner1.png" alt="">
   <img class="bn2" src="avatar/baner2.png" alt="">
 </div>
-<div class="columlogo colum2">
-  <nav class="navbar navbar-expand-sm">
-    <ul class="navbar-nav g1">
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/tb1.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/tb2.png" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/tb3.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/logo2.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/hy5.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/logo6.jpg" alt=""></a>
-      </li>
 
-    </ul>
-  </nav>
+<div class="columlogo">
+   <nav class="navbar navbar-expand-sm">
+      <ul class="navbar-nav g1">
+         @foreach($catealltablet1 as $cate)
+         <li class="nav-item lg1">
+            <a class="nav-link c1a" href="{{asset('catealltablet/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
+               <p class="catelistphone">{{$cate->cateall_name}}</p>
+            </a>
+         </li>
+         @endforeach
+      </ul>
+   </nav>
 </div>
 
 <div class="producthot">

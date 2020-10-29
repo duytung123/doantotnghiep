@@ -271,7 +271,8 @@
 
 	<div class="commenttong">
 		<div class="danhgiaphone">
-			<h3>42 đánh giá</h3>
+			<h4>{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 35px;margin-top: -23px;
+}">đánh giá <span>{{$cate->prod_name}}</span> </p> </h4>
 		</div>
 		<!-- đánh giá sản phẩm -->
 		<div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">

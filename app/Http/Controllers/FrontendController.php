@@ -10,23 +10,30 @@ use App\Cateallproduct;
 use DB;
 class FrontendController extends Controller
 {
+
 	// lay sp theo danh muc điện thoại
 	public function getcateallproduct($id)
 	{
 		$data['catname']=Cateallproduct::find($id);
-		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(20);
+		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(4);
 		return view('fontend.Phone.Catelist',$data);
 	}
 	public function getcatealllaptop($id)
 	{
 		$data['catname']=Cateallproduct::find($id);
-		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(20);
-		return view('fontend.Phone.Catelist',$data);
+		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(4);
+		return view('fontend.Laptop.Catelist',$data);
 	}
 	public function getcateallphukien($id)
 	{
 		$data['catname']=Cateallproduct::find($id);
-		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',4)->orderBy('prod_id','desc')->paginate(20);
+		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',4)->orderBy('prod_id','desc')->paginate(4);
+		return view('fontend.Phukien.Catelist',$data);
+	}
+		public function getcatealltablet($id)
+	{
+		$data['catname']=Cateallproduct::find($id);
+		$data['product']=Product::where('prod_cateall',$id)->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(4);
 		return view('fontend.Phukien.Catelist',$data);
 	}
 
@@ -73,6 +80,5 @@ class FrontendController extends Controller
 
 
 	}
-	
 
 }
