@@ -31,5 +31,19 @@ class OrderController extends Controller
 
     	}
     }
+    public function action($id)
+    {
+      $transaction = Transaction::find($id);
+      $orders =Order::where('or_transaction_id',$id)->get();
+      if($orders){
+        foreach ($orders as $item) {
+            $product =Product::find($item->or_product_id);
+            $product->prod_number=$product->prod_number - $product->or_qty;
+            $product->save();
+        }
+      }
+      $transaction->tr_status=Transaction::status_done;
+      $transaction->save();
+    }
   
 }

@@ -60,6 +60,7 @@ class CartController extends Controller
 		$transactionId = DB::table('td_transaction')->insertGetId($arr);
 		if($transactionId)
 		{
+						
 			$cart= Cart::content();
 			foreach($cart as $product)
 			{
@@ -71,6 +72,7 @@ class CartController extends Controller
 					'created_at' =>Carbon::now(),
 					'updated_at' =>Carbon::now()
 				]);
+				
 			}
 		}
 

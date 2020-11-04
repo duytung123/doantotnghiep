@@ -38,6 +38,7 @@ class ProductController extends Controller
         $product->prod_slug=Str::slug($request->name);
         $product->prod_img=$filename;
         $product->prod_price=$request->price;
+        $product->prod_number=$request->number;
         $product->prod_warranty=$request->warranty;
         $product->prod_promotion=$request->promotion;
         $product->prod_status=$request->status;
@@ -65,6 +66,7 @@ class ProductController extends Controller
         $arr['prod_warranty']=$request->warranty;
         $arr['prod_condition']=$request->condition;
         $arr['prod_status']=$request->status;
+        $arr['prod_number']=$request->number;
         $arr['prod_promotion']=$request->promotion;
         $arr['prod_featured']=$request->featured;
         $arr['prod_description']=$request->description;

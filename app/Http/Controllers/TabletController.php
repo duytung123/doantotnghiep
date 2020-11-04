@@ -166,4 +166,35 @@ class TabletController extends Controller
 		return back();
 	}
 
+	  // chon gia san pham
+public function price1()
+{
+  $data['product']=Product::where('prod_price','<',10000000)->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(5);
+  return view('fontend.Laptop.ListPrice',$data);
+}
+
+public function price2()
+{
+  $data['product']=Product::whereBetween('prod_price',[10000000,15000000])->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(4);
+  return view('fontend.Laptop.ListPrice',$data);
+}
+
+public function price3()
+{
+  $data['product']=Product::whereBetween('prod_price',[15000000,20000000])->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(4);
+  return view('fontend.Laptop.ListPrice',$data);
+}
+
+public function price4()
+{
+  $data['product']=Product::whereBetween('prod_price',[20000000,25000000])->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(4);
+  return view('fontend.Laptop.ListPrice',$data);
+}
+
+public function price5()
+{
+  $data['product']=Product::where('prod_price','>',25000000)->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(4);
+  return view('fontend.Laptop.ListPrice',$data);
+}
+
 }

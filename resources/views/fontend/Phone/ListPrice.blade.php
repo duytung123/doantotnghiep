@@ -30,7 +30,7 @@
     </div>
   </div>
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon next_icon"></span>
+    <span class="carousel-control-prev-icon next_icon1"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon next_icon"></span>
@@ -44,10 +44,10 @@
 <div class="columlogo">
   <nav class="navbar navbar-expand-sm">
     <ul class="navbar-nav g1">
-         @foreach($catealllaptop as $cate)
+         @foreach($listcate as $cate)
       <li class="nav-item lg1">
       
-        <a class="nav-link c1a" href="{{asset('catealllaptop/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
+        <a class="nav-link c1a" href="{{asset('cateallproduct/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
         <p class="catelistphone">{{$cate->cateall_name}}</p>
       </a>
       </li>
@@ -58,36 +58,34 @@
 </div>
 
 <div class="category2">
-
-  <ul class="nav lg2">
-    <li class="nav-item">
-      <a class="nav-link" href="#">chọn mức giá:</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="laptop/levelprice/price1">dưới 10 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="laptop/levelprice/price2">10 đến 15 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="laptop/levelprice/price3">15 đến 20 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="laptop/levelprice/price4">20 đến 25 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="laptop/levelprice/price5">trên 25 triệu</a>
-    </li>
-    <li class="nav-item dropdown drop1">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item active" href="">nổi bật nhất</a>
-        <a class="dropdown-item dr1" href=""> giá thấp đến cao</a>
-        <a class="dropdown-item dr2" href=""> giá cao xuống thấp</a>
-      </div>
-    </li>
-
-  </ul>
+   <ul class="nav lg2">
+      <li class="nav-item">
+         <span class="nav-link" href="">chọn mức giá:</span>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price1">dưới 2 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price2">từ 2 đến 4 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price3">từ 4 đến 7 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price4">từ 7 đến 13 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price5">trên 13 triệu</a>
+      </li>
+      <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>
+         <div class="dropdown-menu">
+            <a class="dropdown-item active" href="">nổi bật nhất</a>
+            <a class="dropdown-item dr1" href=""> giá thấp đến cao</a>
+            <a class="dropdown-item dr2" href=""> giá cao xuống thấp</a>
+         </div>
+      </li>
+   </ul>
 </div>
 <hr class="ke">
 <div class="sanpham_konoibat catephone1">
@@ -108,11 +106,9 @@
    </a>
  </div>
  @endforeach
- </div>
-
+{{--  </div>
 <div style="justify-content: center;text-align: center;display: flex;margin-top: 50px;" class="paginationnn">
   {{ $product->links() }}
-</div>
-
+</div> --}}
 
 @endsection

@@ -30,7 +30,7 @@
     </div>
   </div>
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon next_icon"></span>
+    <span class="carousel-control-prev-icon next_icon1"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon next_icon"></span>
@@ -109,10 +109,8 @@
  </div>
  @endforeach
  </div>
-
 <div style="justify-content: center;text-align: center;display: flex;margin-top: 50px;" class="paginationnn">
   {{ $product->links() }}
 </div>
-
 
 @endsection

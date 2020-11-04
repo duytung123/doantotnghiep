@@ -69,72 +69,13 @@
 							</div>
 							@endif
 							<div class="row" style="margin-bottom:40px">
-								<div class="col-xs-8">
-									<div class="form-group" >
-										<label>Tên sản phẩm</label>
-										<input value="{{$edit->prod_name}}" required type="text" name="name" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Hãng máy tính</label>
-										<select required name="cateall" class="form-control">
-											@foreach($catealllaptop as $cate)
-											<option value="{{$cate->cateall_id}}">{{$cate->cateall_name}}</option>
-											@endforeach
-										</select>
-									</div>
-									<div class="form-group" >
-										<label>Giá sản phẩm</label>
-										<input value="{{$edit->prod_price}}" required type="number" name="price" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Ảnh sản phẩm</label>
-										<input  id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
-										<img id="avatar" class="" width="300px" src="{{asset('../storage/app/avatar/'.$edit->prod_img)}}">
-									</div>
-									<div class="form-group" >
-										<label>Bảo hành</label>
-										<input value=" {{$edit->prod_warranty}}" required type="text" name="warranty" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Khuyến mãi</label>
-										<input value="{{$edit->prod_promotion}}"  required type="text" name="promotion" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Tình trạng</label>
-										<input value=" {{$edit->prod_condition}}" required type="text" name="condition" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Trạng thái</label>
-										<select required name="status" class="form-control">
-											<option value="1" @if($edit->prod_status==1) checked @endif >Còn hàng</option>
-											<option value="0" @if($edit->prod_status==0) checked @endif>Hết hàng</option>
-										</select>
-									</div>
-									<div class="form-group" >
-										<label>Miêu tả</label>
-										<textarea class="ckeditor" required name="description"></textarea>
+         <div class="field_wrapper">
+    <div>
+        <input type="text" name="at_screen[]" placeholder="Screen" value=""/>
+        <a href="javascript:void(0);" class="add_button" title="Add field">Add</a>
+    </div>
+</div>								
 
-
-
-									</div>
-									<div class="form-group" >
-										<label>Danh mục</label>
-										<select required name="cate" class="form-control">
-											@foreach($category as $cate)
-											<option value="{{$cate->cate_id}}" @if($edit->prod_cate == $cate->cate_id) selected @endif >{{$cate->cate_name}}</option>
-											@endforeach
-										</select>
-									</div>
-									<div class="form-group" >
-										<label>Sản phẩm nổi bật</label><br>
-										Sale: <input type="radio" checked name="featured" value="0" @if($edit->prod_featured == 1) selected @endif >
-										Có : <input type="radio" name="featured" value="1" @if($edit->prod_featured == 3 ) selected @endif >
-										Hot: <input type="radio" checked name="featured" value="2"@if($edit->prod_featured ==0) selected @endif >
-										Không: <input type="radio" checked name="featured" value="3" @if($edit->prod_featured ==2) selected @endif>
-										Sale Khủng : <input type="radio" checked name="featured" value="4" @if($edit->prod_featured == 4) selected @endif>
-										<option value=""></option>
-									</select>
-								</div>
 								<input type="submit" name="submit" value="Cập Nhật" class="btn btn-primary">
 								<a href="#" class="btn btn-danger">Hủy bỏ</a>
 							</div>
@@ -184,11 +125,36 @@
 		        reader.readAsDataURL(input.files[0]);
 		    }
 		}
+
 		$(document).ready(function() {
 			$('#avatar').click(function(){
 				$('#img').click();
 			});
 		});
+			/// attribute
+		$(document).ready(function(){
+    var maxField = 10; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var fieldHTML = '<div><input type="text" name="at_screen[]" placeholder="Screen" value=""/><a href="javascript:void(0);" class="remove_button">Remove</a></div>'; //New input field html 
+    var x = 1; //Initial field counter is 1
+    
+    //Once add button is clicked
+    $(addButton).click(function(){
+        //Check maximum number of input fields
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); //Add field html
+        }
+    });
+    
+    //Once remove button is clicked
+    $(wrapper).on('click', '.remove_button', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
+});
 	</script>	
 </body>
 

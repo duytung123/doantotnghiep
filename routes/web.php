@@ -12,6 +12,30 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 	Route::post('vnpay','VnpayController@create');
 	Route::get('getvnpay','VnpayController@return');
 });
+// chon muc gia phone
+Route::group(['prefix'=>'phone/levelprice'],function(){
+	Route::get('price1','PhoneController@price1');
+	Route::get('price2','PhoneController@price2');
+	Route::get('price3','PhoneController@price3');
+	Route::get('price4','PhoneController@price4');
+	Route::get('price5','PhoneController@price5');
+});
+// chon muc gia laptop
+Route::group(['prefix'=>'laptop/levelprice'],function(){
+	Route::get('price1','LaptopController@price1');
+	Route::get('price2','LaptopController@price2');
+	Route::get('price3','LaptopController@price3');
+	Route::get('price4','LaptopController@price4');
+	Route::get('price5','LaptopController@price5');
+});
+// chon muc gia table
+Route::group(['prefix'=>'table/levelprice'],function(){
+	Route::get('price1','TabletController@price1');
+	Route::get('price2','TabletController@price2');
+	Route::get('price3','TabletController@price3');
+	Route::get('price4','TabletController@price4');
+	Route::get('price5','TabletController@price5');
+});
 
 //search autocomplet
 Route::post('autocomplet_ajax','FrontendController@autocompletajax');
@@ -177,6 +201,7 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 	Route::group(['prefix'=>'order'],function(){
 		Route::get('/','OrderController@getorder');
 		Route::get('vieworder/{id}','OrderController@getvieworder');
+		Route::get('transaction/{id}','OrderController@action');
 
 	});
 
