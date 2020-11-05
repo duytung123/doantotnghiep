@@ -1,41 +1,180 @@
-*{margin: 0; padding: 0; box-sizing: border-box; }
-ul li.active {background-color:#f5f5f5;transition: 0.4s}
-.danhmuc{margin-top: 50px;}
-.thanh{display: flex;margin-left: 20px;}
-.thanh a{margin-top:2px; padding: 0 10px;}
-.chu-text a.chu-textbig{text-decoration: none;}
-.thanh h5{font-size: 14px;margin-top: 7px;}
-.chu-text{display: flex;}
-a.chu-textbig:hover{color: black;}
-a.chu-textbig{text-transform: capitalize;14px/18px Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif}
-.thanh-text{margin-right: 100px; margin-left: 60px;}
-.back{margin-left: 354px;}
-.logoquangcao{width:1200px; height: 300px; margin-top: 10px; display: flex; flex-wrap: wrap;margin-left: 80px;}
-.logo{display: flex;}
-.logoquangcao a.logoqc{text-decoration: none;}
-.logoqc{width: 120px;height: 118px; border:1px solid #f1efef;justify-content: center; text-align: center;}
-.logo h3{font-size: 12px;}
-.noibat{width: 120px; height: 118px;}
-.logoqc img{width: 55px;height: 55px;margin-top: 10px;}
-.logoqc h3{font-size: 12px; margin-top: 5px;text-transform: capitalize;}
-.phukiengiasoc a.phukientext{text-decoration: none;}
-.logoqc:hover{border: 1px solid rgb(9, 9, 255); transition: 0.5s;}
-.phukiengiasoc{width: 1200px; height: max-content; border: 3px solid #ba0953; margin-left: 80px;  display: flex; flex-wrap: wrap; box-sizing: border-box;}
-.itemphukien .bottompk{margin-top: -2px;
-    width: 280px; height: 142px;}
-.itemphukien{width: 285px; height: 420px;  box-sizing: border-box; margin-left: 12px; margin-top: 10px;border: 1px solid #f1f1ff;}
-.phukiengiasoc img{width: 280px; height: 280px;}
-.itemphukien strong{color: rgb(8, 8, 8);margin-top: -25px; font-size: 15px; font-family: 'Times New Roman', Times, serif;margin-left: 10px;}
-.itemphukien strong:hover{color: rgb(43, 43, 247);cursor: pointer;}
-.itemphukien p{font-weight: 700;padding: 10px 10px; color: rgb(253, 30, 30);cursor: pointer;}
-p.sale_1{margin-left: 105px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li.active {
+    background-color: #f5f5f5;
+    transition: 0.4s
+}
+
+.danhmuc {
+    margin-top: 50px;
+}
+
+.thanh {
+    display: flex;
+    margin-left: 20px;
+}
+
+.thanh a {
+    margin-top: 2px;
+    padding: 0 10px;
+}
+
+.chu-text a.chu-textbig {
+    text-decoration: none;
+}
+
+.thanh h5 {
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+.chu-text {
+    display: flex;
+}
+
+a.chu-textbig:hover {
+    color: black;
+}
+
+a.chu-textbig {
+    text-transform: capitalize;
+    14px/18px Helvetica,
+    Arial,
+    'DejaVu Sans',
+    'Liberation Sans',
+    Freesans,
+    sans-serif
+}
+
+.thanh-text {
+    margin-right: 100px;
+    margin-left: 60px;
+}
+
+.back {
+    margin-left: 354px;
+}
+
+.logoquangcao {
+    width: 1200px;
+    height: 300px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 80px;
+}
+
+.logo {
+    display: flex;
+}
+
+.logoquangcao a.logoqc {
+    text-decoration: none;
+}
+
+.logoqc {
+    width: 120px;
+    height: 118px;
+    border: 1px solid #f1efef;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo h3 {
+    font-size: 12px;
+}
+
+.noibat {
+    width: 120px;
+    height: 118px;
+}
+
+.logoqc img {
+    width: 55px;
+    height: 55px;
+    margin-top: 10px;
+}
+
+.logoqc h3 {
+    font-size: 12px;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.phukiengiasoc a.phukientext {
+    text-decoration: none;
+}
+
+.logoqc:hover {
+    border: 1px solid rgb(9, 9, 255);
+    transition: 0.5s;
+}
+
+.phukiengiasoc {
+    width: 1200px;
+    height: max-content;
+    border: 3px solid #ba0953;
+    margin-left: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.itemphukien .bottompk {
+    margin-top: -2px;
+    width: 280px;
+    height: 142px;
+}
+
+.itemphukien {
+    width: 285px;
+    height: 420px;
+    box-sizing: border-box;
+    margin-left: 12px;
+    margin-top: 10px;
+    border: 1px solid #f1f1ff;
+}
+
+.phukiengiasoc img {
+    width: 280px;
+    height: 280px;
+}
+
+.itemphukien strong {
+    color: rgb(8, 8, 8);
+    margin-top: -25px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 10px;
+}
+
+.itemphukien strong:hover {
+    color: rgb(43, 43, 247);
+    cursor: pointer;
+}
+
+.itemphukien p {
+    font-weight: 700;
+    padding: 10px 10px;
+    color: rgb(253, 30, 30);
+    cursor: pointer;
+}
+
+p.sale_1 {
+    margin-left: 105px;
     margin-top: -52px;
     position: absolute;
     color: gray;
     text-decoration: line-through;
     font-size: 13px;
 }
-a.buy{margin-top: 20px;
+
+a.buy {
+    margin-top: 20px;
     position: absolute;
     font-size: 12px;
     color: #f89406;
@@ -46,10 +185,62 @@ a.buy{margin-top: 20px;
     width: 100px;
     height: 35px;
 }
-a.buy:hover{background: #f89406; color: rgb(252, 243, 243);}
-.itemphukien a.buy{text-decoration: none;}
-.logoquangcao .active{border: 1px solid rgb(255, 255, 0);}
-.controllerpk{
+
+a.buy:hover {
+    background: #f89406;
+    color: rgb(252, 243, 243);
+}
+
+.itemphukien a.buy {
+    text-decoration: none;
+}
+
+.logoquangcao .active {
+    border: 1px solid rgb(255, 255, 0);
+}
+
+.controllerpk {
     margin-left: -84px;
 }
-#post_data1{display:flex;flex-wrap: wrap;}
+
+#post_data1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tong211{
+    height: 410px;
+    width: 300px;
+    border: 1px solid#f0f0f0;
+    background-color: white;
+}
+.hinh211 img.h211{
+    margin-top: 20px;
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+    height: 275px;
+}
+.con111 h3{
+    color: black;
+    margin-left: 10px;
+    font-size: 16px;
+    margin-top: 15px;
+    font-family: 'Font Awesome 5 Pro';
+}
+strong {
+    margin-left: 10px;
+    font-size: 14px;
+}
+p{
+     color: black;
+    margin-left: 10px;
+}
+.con111 a{text-decoration: none;}
+.tong211:hover h3{color: #288ad6;}
+.itemphukien:hover strong{color: #288ad6;}
+
+/* .hinh2 img.h2:hover{
+    margin: 0px auto 25px;
+} */

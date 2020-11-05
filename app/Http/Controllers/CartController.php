@@ -68,6 +68,7 @@ class CartController extends Controller
 					'or_product_id' =>$product->id,
 					'or_qty' => $product->qty,
 					'or_price'=>$product->price,
+					'or_img_product'=>$product->prod_img,
 					'created_at' =>Carbon::now(),
 					'updated_at' =>Carbon::now()
 				]);

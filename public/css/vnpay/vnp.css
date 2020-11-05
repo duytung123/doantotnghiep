@@ -1,0 +1,13 @@
+body{
+	background-color: aliceblue
+}
+.container-fuild1{
+	line-height: 30px;
+    box-sizing: border-box;
+    margin-left: auto;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    border: 1px solid gray;
+    margin-right: auto;
+}

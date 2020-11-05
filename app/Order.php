@@ -9,7 +9,12 @@ class Order extends Model
  
 	protected $table='td_order';
     protected $primaryKey='id';
-    protected $guarded=[];
+    protected $guarded=['*'];
+
+    public function product1()
+    {
+   		return $this->belongsTo('App\Product','or_product_id');
+    }
 }
 
 

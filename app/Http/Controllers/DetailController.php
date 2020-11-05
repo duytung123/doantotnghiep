@@ -15,7 +15,11 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
-		$data['rating']=Rating::where('r_product_id',$id)->get();
+		$data['phukien'] = Product::where('prod_featured',4)->Where('prod_cate',1)
+		->orderBy('prod_id', 'desc')
+		->take(5)
+		->get();
+		$data['rating']=Rating::where('r_product_id',$id)->take(5)->get();
 
 		return view('fontend.Phone.Detailphone',$data);
 
@@ -24,7 +28,11 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
-		$data['rating']=Rating::where('r_product_id',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->take(5)->get();
+		$data['phukien'] = Product::where('prod_featured',4)->Where('prod_cate',2)
+		->orderBy('prod_id', 'desc')
+		->take(5)
+		->get();
 		return view('fontend.Laptop.Detaillaptop',$data);
 
 	}
@@ -32,7 +40,11 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
-		$data['rating']=Rating::where('r_product_id',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->take(5)->get();
+		$data['phukien'] = Product::where('prod_featured',4)->Where('prod_cate',3)
+		->orderBy('prod_id', 'desc')
+		->take(5)
+		->get();
 		return view('fontend.Tablet.Detailtablet',$data);
 
 	}
@@ -40,7 +52,11 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
-		$data['rating']=Rating::where('r_product_id',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->take(5)->get();
+		$data['phukien'] = Product::where('prod_featured',4)->Where('prod_cate',4)
+		->orderBy('prod_id', 'desc')
+		->take(5)
+		->get();
 		return view('fontend.Phukien.Detailpkien',$data);
 
 	}

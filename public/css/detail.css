@@ -50,8 +50,20 @@
                 .opstionsphone{position: absolute;left: 70%; width: 370px;height: 560px;}
                 .opstionsphone hr{width: 330px;margin-left: 0px;}
                 li{list-style:none;}
-                li.com-details p.com_details_font{margin-top: 5px;font: 14px/18px Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;}
+                li.com-details p.com_details_font{width: 1150px;margin-top: 5px;font: 14px/18px Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;}
                 .commenttong{margin-left: 60px;}
+                p.r_name1{
+                        text-transform: capitalize;
+                    position: absolute;
+    margin-top: 4px;
+    margin-left: -49px; 
+}
+                
+                .product{
+                      margin-left: 26px;
+    margin-bottom: 60px;
+                }
+
                 .submitcmt{
                     width: 719px;
                     height: 35px;
@@ -71,10 +83,10 @@
                     margin-left: 75%;
                 }
                 .ratinghr{
-                 width: 650px;
-                 margin-left: 15px;
-             }
-             p.text_description{
+                   width: 650px;
+                   margin-left: 15px;
+               }
+               p.text_description{
                 margin-top: 100px;
                 display: block;
                 overflow: hidden;
@@ -96,10 +108,99 @@
             }
             .slide .next_icon1{
                 height: 40px;
-               
+
                 width: 40px;
             }
             .slide ul.indicators1{
                 left: -320px;
             }
+            .info_ratting{
+                position: absolute;
+                margin-top: -81px;
+                margin-left: 372px;
+            }
+            .name{
+                   position: absolute;
+    margin-left: 30%;
+    margin-top: -80px;
+            }
 
+            .email{
+               margin-top: -80px;
+    position: absolute;
+    margin-left: 45%;
+            }
+             .phone{
+             position: absolute;
+    margin-left: 30%;
+    margin-top: -34px;
+            }
+            .info_ratting .name input{
+                height: 30px;
+                border-radius: 4px;
+                border: 1px solid #ddd
+            }
+            .info_ratting .email input{
+                height: 30px;
+                border-radius: 4px;
+                border: 1px solid #ddd
+            }
+            .info_ratting .phone input{
+                height: 30px;
+                border-radius: 4px;
+                border: 1px solid #ddd
+            }
+            .border_ratting{
+               border-radius: 4px;
+    margin-top: -10px;
+    padding: 10px 20px;
+    width: 1083px;
+    height: 170px;
+    border: 1px solid #ddd;
+            }
+
+            .btn_rating11{
+                margin-top: -34px;
+    margin-left: 55.7%;
+    border-radius: 4px;
+    width: 130px;
+    height: 28px;
+    background-color: #288ad6;
+    padding: 2px 7px;
+            }
+            .bigbig{
+                padding: 10px 30px;
+    border: 1px solid #ddd;
+    width: 90%
+            }
+            .product_other .product_other_details{
+                position: relative;
+                padding: 10px 0;
+    top: 50px;
+    margin-left: 65%;
+            }
+
+            .product_other_details span.product_other_details_name{
+                position: absolute;
+
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Font Awesome 5 Pro';
+            }
+             .product_other_details span.product_other_details_price{
+    position: absolute;
+    color: red;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Font Awesome 5 Pro';
+    margin-top: 51px;
+    
+
+            }
+            .product_other_details hr.product_other_details_hr{
+                    width: 322px;
+    margin-left: 10px;
+            }
+            
+            

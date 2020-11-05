@@ -87,7 +87,7 @@ class CategoryController extends Controller
 
     public function postaddcateall(Request $request)
     {
-        $this->validate($request,
+         $this->validate($request,
            [
             'name'=>'unique:td_cateallproduct,cateall_name'
 
@@ -96,13 +96,14 @@ class CategoryController extends Controller
             'name.unique'=>'tên bạn nhập đã trùng'
 
         ]);
-
+        $filename=$request->img->getClientOriginalName();
         $category= new Cateallproduct;
         $category->cateall_name=$request->name;
         $category->cateall_slug=Str::slug($request->name);
         $category->cateall_product=$request->cate;
+        $category->cateall_img=$filename;
         $category->save();
-
+        $request->img->storeAs('avatar',$filename);
         return redirect('admin/cateallproduct')->with('thongbao','Thêm thành công');
     }
 
@@ -114,22 +115,19 @@ class CategoryController extends Controller
 
     public function postupdatecateall( Request $request,$id)
     {
-        $this->validate($request,
-            [
-                'name'=>'unique:td_cateallproduct,cateall_name'
-            ],
+       $category= Cateallproduct::find($id);
+        $arr['cateall_name']=$request->name;
+        $arr['cateall_slug']=Str::slug($request->name);
+        $arr['cateall_product']=$request->cate;
+        if($request->hasFile('img')){
+            $img=$request->img->getClientOriginalName();
+            $arr['cateall_img']=$img;
+            $request->img->storeAs('avatar',$img);
+        }
 
-            [
-                'name.unique'=>'tên bạn nhập đã trùng'
-            ]);
+        $category::where('cateall_id',$id)->update($arr);
 
-        $category= Cateallproduct::find($id);
-        $category->cateall_name=$request->name;
-        $category->cateall_slug=Str::slug($request->name);
-        $category->cateall_product=$request->cate;
-        $category->save();
-
-        return redirect('admin/category')->with('thongbao','sửa thành công :)');
+        return redirect('admin/cateallproduct')->with('thongbao','sửa thành công :)');
 
     }
         public function getdeletecateall($id)

@@ -308,8 +308,18 @@ html {
     margin-left: auto;
     margin-right: auto;
     width: 180px;
-    height: 180px;
+    height: 175px;
 }
+.hinh2 .hl2 {
+    margin-top: 20px;
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 120px;
+}
+
 
 .hinh2 .h2a {
     margin-top: 20px;
@@ -319,6 +329,15 @@ html {
     margin-right: auto;
     width: 180px;
     height: 120px;
+}
+.hinh2 .h2a1 {
+    margin-top: 20px;
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 150px;
 }
 
 .hinh4 .h4 {
@@ -344,6 +363,7 @@ html {
 }
 
 .con4 strong {
+    margin-left: 0px;
     color: red;
     margin-top: -11px;
     font-weight: 700;
@@ -359,6 +379,7 @@ html {
 }
 
 .con4 p {
+    margin-left: 0px;
     color: black;
     font-size: 13px;
     font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
@@ -393,6 +414,7 @@ html {
 }
 
 .con1 h3 {
+
     height: 18px;
     font-size: 14px;
     margin-bottom: 10px;
@@ -400,6 +422,7 @@ html {
 }
 
 .con1 strong {
+    margin-left: -1px;
     color: red;
     margin-top: 5px;
     font-weight: 700;
@@ -408,6 +431,7 @@ html {
 }
 
 .con1 p {
+        margin-left: 0px;
     color: black;
     font-size: 13px;
     font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;

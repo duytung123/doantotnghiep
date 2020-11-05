@@ -22,7 +22,7 @@
 				              	<thead>
 					                <tr class="bg-primary">
 					                  <th>Tên danh mục</th>
-					                
+					                  <th>Hình ảnh</th>
 					                  <th style="width:30%">Tùy chọn</th>
 
 					                </tr>
@@ -32,7 +32,7 @@
 								<tr>
 							
 									<td>{{$cateall->cateall_name}}</td>
-
+									<td><img src="{{asset('../storage/app/avatar/'.$cateall->cateall_img)}}" alt=""></td>
 								
 									<td>
 			                    		<a href="{{asset('admin/cateallproduct/update/'.$cateall->cateall_id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>

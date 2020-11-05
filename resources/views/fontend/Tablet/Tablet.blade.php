@@ -71,32 +71,44 @@
   <img class="bn1" src="avatar/baner1.png" alt="">
   <img class="bn2" src="avatar/baner2.png" alt="">
 </div>
-<div class="columlogo colum2">
-  <nav class="navbar navbar-expand-sm">
-    <ul class="navbar-nav g1">
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/tb1.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/tb2.png" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/tb3.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/logo2.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/hy5.jpg" alt=""></a>
-      </li>
-      <li class="nav-item lg1">
-        <a class="nav-link c1a" href=""><img src="avatar/logo6.jpg" alt=""></a>
-      </li>
 
-    </ul>
-  </nav>
+<div class="columlogo">
+   <nav class="navbar navbar-expand-sm">
+      <ul class="navbar-nav g1">
+         @foreach($catealltablet1 as $cate)
+         <li class="nav-item lg22">
+            <a class="nav-link c1a" href="{{asset('catealltablet/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
+               <p class="catelistphone22">{{$cate->cateall_name}}</p>
+            </a>
+         </li>
+         @endforeach
+      </ul>
+   </nav>
 </div>
-
+<div style="margin-left: -395px;" class="category2">
+   <ul class="nav lg2">
+      <li class="nav-item">
+         <span class="nav-link" href="">chọn mức giá:</span>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="tablet/levelprice/price1">dưới 3 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="tablet/levelprice/price2">từ 3 đến 7 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="tablet/levelprice/price3">trên 13 triệu</a>
+      </li>
+      <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>
+         <div class="dropdown-menu">
+            <a class="dropdown-item active" href="">nổi bật nhất</a>
+            <a class="dropdown-item dr1" href=""> giá thấp đến cao</a>
+            <a class="dropdown-item dr2" href=""> giá cao xuống thấp</a>
+         </div>
+      </li>
+   </ul>
+</div>
 <div class="producthot">
   <nav class="navbar navbar-expand-sm">
     <!-- Brand/logo -->

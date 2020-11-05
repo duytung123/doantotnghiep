@@ -91,16 +91,15 @@
 			</table>
 			<div class="row" id="total-price">
 				<div class="col-md-6 col-sm-12 col-xs-12">										
-					Tổng thanh toán: <span class="total-price">{{$subtotal}}</span>
+					Tổng thanh toán: <span class="total-price">{{number_format($subtotal)}}</span>
 
 				</div>
-				<div class="col-md-6 col-sm-12 col-xs-12">
+				<div class="col-md-6 col-sm-12 col-xs-12 col_buy">
 					<a href="phone" class="my-btn btn">Mua tiếp</a>
 					<a href="#" class="my-btn btn">Cập nhật</a>
 					<a href="{{asset('cart/delete/all')}}" class="my-btn btn">Xóa giỏ hàng</a>
-
-			<a  class="buttonbuythree" href="{{asset('thanhtoan/index/'.$item->rowId)}}">
-				<b>THANH TOÁN ONLINE</b>
+			<a class="buttonbuythree11" href="{{asset('thanhtoan/index/'.$item->rowId)}}">
+				<b style="margin-left: 30px;">THANH TOÁN ONLINE</b>
 			</a>
 
 				</div>
@@ -113,7 +112,7 @@
 		<h3>Xác nhận mua hàng</h3>
 		<form method="post">
 			<div class="form-group">
-				<label for="email">Email address:</label>
+				<label for="email">Email:</label>
 				<input required type="email" class="form-control" id="email" name="email">
 			</div>
 			<div class="form-group">

@@ -12,7 +12,7 @@
 	<title>Tạo mới đơn hàng</title>
 	<link href="css/vnpay/bootstrap.min.css">
 	<link href="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.css" rel="stylesheet"/>
-	<link href="css/vnpay/jumbotron-narrow.css">
+	<link rel="stylesheet" href="css/vnpay/vnp.css">
 	{{-- 		<script src="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.js"></script> --}}
 
 {{-- 	<script type="text/javascript">
@@ -44,9 +44,9 @@
 
 </head>
 
-<body>
+<body style="">
 
-	<div class="container">
+	<div class="container-fuild1">
 		<div class="header clearfix">
 			<h3 class="text-muted">VNPAY DEMO</h3>
 		</div>
@@ -77,7 +77,7 @@
 					@foreach($itemdd as $product_vnp1)
 					<label for="amount">số tiền:</label>
 					<input class="form-control" id="amount"
-					name="amount"value="{{$product_vnp1->price}}"/>
+					name="amount"value="{{$product_vnp1->price*$product_vnp1->qty}}"/>
 					@endforeach
 				</div>
 				<span>Bạn vui lòng điền vào những thông tin dưới đây:</span>

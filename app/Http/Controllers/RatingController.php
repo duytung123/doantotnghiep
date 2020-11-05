@@ -14,6 +14,19 @@ class RatingController extends Controller
 {
 	public function rating(Request $request)
 	{
+		$this->validate($request,
+           [
+            'r_content'=>'min:20|required',
+            'r_name' =>'required'
+
+        ],
+        [
+        
+            'r_content.required'=>'yâu cầu bạn nhập nội dung đánh giá',
+            'r_name' =>'yâu cầu bạn nhập nội dung đánh giá'
+
+        ]);
+
 		
 		if($request->ajax())
 		{
@@ -22,7 +35,12 @@ class RatingController extends Controller
 			[
 				'r_product_id' => $id,
 				'r_content' =>$request->r_content,
-				'r_number' =>$request->number
+				'r_number' =>$request->number,
+				'r_name' => $request->r_name,
+				'r_email' =>$request->r_email,
+				'r_phone' =>$request->r_phone,
+				'created_at' =>Carbon::now(),
+				'updated_at' =>Carbon::now()
 
 			]);
 				

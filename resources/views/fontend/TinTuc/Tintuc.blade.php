@@ -47,7 +47,7 @@
 	@foreach($tintuc as $tintuc)
 	<div class="home_new">
 		<div class="home_new_big">
-			<a href=""><img src="{{asset('../storage/app/avatar/'.$tintuc->n_img)}}" alt=""></a>
+			<a href="{{asset('detail5/'.$tintuc->id.'/'.$tintuc->n_contentslug.'.html')}}"><img src="{{asset('../storage/app/avatar/'.$tintuc->n_img)}}" alt=""></a>
 			<div class="title2">
 				<a class="title2_text" href="{{asset('detail5/'.$tintuc->id.'/'.$tintuc->n_contentslug.'.html')}}">
 				<p class="home_new_big_title">{{$tintuc->n_description}}</p>

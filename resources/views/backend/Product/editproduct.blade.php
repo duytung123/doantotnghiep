@@ -87,6 +87,10 @@
 										<input value="{{$edit->prod_price}}" required type="number" name="price" class="form-control">
 									</div>
 									<div class="form-group" >
+										<label>Số lượng</label>
+										<input value="{{$edit->prod_number}}" required type="number" name="number" class="form-control">
+									</div>
+									<div class="form-group" >
 										<label>Ảnh sản phẩm</label>
 										<input  id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
 										<img id="avatar" class="" width="300px" src="{{asset('../storage/app/avatar/'.$edit->prod_img)}}">
@@ -112,9 +116,7 @@
 									</div>
 									<div class="form-group" >
 										<label>Miêu tả</label>
-										<textarea class="ckeditor" required name="description"></textarea>
-
-
+										<textarea class="ckeditor" required name="description">{{$edit->prod_description}}</textarea>
 
 									</div>
 									<div class="form-group" >
@@ -127,52 +129,53 @@
 									</div>
 									<div class="form-group" >
 										<label>Sản phẩm nổi bật</label><br>
-										Sale: <input type="radio" name="featured" value="0" @if($edit->prod_featured ==1) selected @endif >
-										Có : <input type="radio" name="featured" value="1" @if($edit->prod_featured == 3 ) selected @endif >
-										Hot: <input type="radio" checked name="featured" value="2"@if($edit->prod_featured ==0) selected @endif >
-										Không: <input type="radio" name="featured" value="3" @if($edit->prod_featured ==2) selected @endif>
-										Sale Khủng : <input type="radio" name="featured" value="4" @if($edit->prod_featured == 4) selected @endif>
-										<option value=""></option>
-									</select>
+										<select name="featured" id="">
+											<option value="0" @if($edit->prod_featured == 0) selected @endif >SALE</option>
+											<option value="1" @if($edit->prod_featured == 1) selected @endif >CÓ</option>
+											<option value="2" @if($edit->prod_featured == 2) selected @endif>HOT</option>
+											<option value="3" @if($edit->prod_featured == 3) selected @endif>KHÔNG</option>
+											<option value="4" @if($edit->prod_featured == 4) selected @endif>SALE KHỦNG</option>
+										</select>
+										
+									</div>
+									<input type="submit" name="submit" value="Cập Nhật" class="btn btn-primary">
+									<a href="#" class="btn btn-danger">Hủy bỏ</a>
 								</div>
-								<input type="submit" name="submit" value="Cập Nhật" class="btn btn-primary">
-								<a href="#" class="btn btn-danger">Hủy bỏ</a>
 							</div>
-						</div>
-						{{csrf_field()}}
-					</form>
-					<div class="clearfix"></div>
+							{{csrf_field()}}
+						</form>
+						<div class="clearfix"></div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div><!--/.row-->
-</div>	<!--/.main-->
+		</div><!--/.row-->
+	</div>	<!--/.main-->
 
 
 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/chart.min.js"></script>
-<script src="js/chart-data.js"></script>
-<script src="js/easypiechart.js"></script>
-<script src="js/easypiechart-data.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script>
-	$('#calendar').datepicker({
-	});
-	!function ($) {
-		$(document).on("click","ul.nav li.parent > a > span.icon", function(){          
-			$(this).find('em:first').toggleClass("glyphicon-minus");      
-		}); 
-		$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-	}(window.jQuery);
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		$('#calendar').datepicker({
+		});
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+				$(this).find('em:first').toggleClass("glyphicon-minus");      
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
 
-	$(window).on('resize', function () {
-		if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-	})
-	$(window).on('resize', function () {
-		if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-	});
-	function changeImg(input){
+		$(window).on('resize', function () {
+			if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+			if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		});
+		function changeImg(input){
 		    //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
 		    if(input.files && input.files[0]){
 		    	var reader = new FileReader();

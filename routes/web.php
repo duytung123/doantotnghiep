@@ -39,7 +39,28 @@ Route::group(['prefix'=>'cart'],function(){
 
 });
 
-
+// chon muc gia phone
+Route::group(['prefix'=>'phone/levelprice'],function(){
+	Route::get('price1','PhoneController@price1');
+	Route::get('price2','PhoneController@price2');
+	Route::get('price3','PhoneController@price3');
+	Route::get('price4','PhoneController@price4');
+	Route::get('price5','PhoneController@price5');
+});
+// chon muc gia laptop
+Route::group(['prefix'=>'laptop/levelprice'],function(){
+	Route::get('price1','LaptopController@price1');
+	Route::get('price2','LaptopController@price2');
+	Route::get('price3','LaptopController@price3');
+	Route::get('price4','LaptopController@price4');
+	Route::get('price5','LaptopController@price5');
+});
+// chon muc gia table
+Route::group(['prefix'=>'tablet/levelprice'],function(){
+	Route::get('price1','TabletController@price1');
+	Route::get('price2','TabletController@price2');
+	Route::get('price3','TabletController@price3');
+});
 
 // route chi tiết của all sản phẩm
 Route::get('detail/{id}/{slug}.html','DetailController@getDetailphone');
@@ -73,6 +94,7 @@ Route::get('phukien','PhukienController@getPhukien');
 Route::get('tablet','TabletController@getHome');
 Route::get('laptop','LaptopController@getHome');
 Route::get('tintuc','Tintuccontroller@getindex');
+Route::get('watch','WatchController@getindex');
 Route::group(['prefix' =>'admin/login'],function(){
 	Route::get('/','LoginController@getLogin');
 
@@ -172,7 +194,8 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 	Route::group(['prefix'=>'order'],function(){
 		Route::get('/','OrderController@getorder');
 		Route::get('vieworder/{id}','OrderController@getvieworder');
-
+		Route::get('delete/{id}','OrderController@delete');
+		Route::get('active/{id}','OrderController@active');
 	});
 
 });

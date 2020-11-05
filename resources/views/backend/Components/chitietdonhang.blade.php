@@ -11,24 +11,16 @@
 		</tr>
 	</thead>
 	<tbody>
-                  <!--   @foreach($users as $u)
+                    @foreach($orders as $key =>$value)
                     <tr class="odd gradeX" align="center">
-                        <td>{{$u->id}}</td>
-                        <td>{{$u->name}}</td>
-                        <td>{{$u->email}}</td>
-                        <td>
-
-                            @if($u->level==1)
-                            {{"Admin"}}
-                            @else
-                            {{"Thường"}}
-                            @endif 
-
-                        </td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="user/delete/{{$u->id}}"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="user/edit/{{$u->id}}">Edit</a></td>
+                        <td>{{$value->id}}</td>
+                        <td><img src="{{ isset($value->product1->prod_img) ? pare_url_file($value->product1->prod_img) : ''}}" alt=""></td>
+                        <td>{{-- {{$u->}} --}}</td>
+                        <td>{{$value->or_price}}</td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="user/delete/{{$value->id}}"> Delete</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="user/edit/{{$value->id}}">Edit</a></td>
                     </tr>
-                    @endforeach -->
+                    @endforeach
                 </tbody>
             </table>
 @endif

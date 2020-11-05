@@ -91,16 +91,16 @@
 </div>
 <hr class="ke">
 <div class="sanpham_konoibat catephone1">
- @foreach($product as $product)
+ @foreach($product as $item)
  <div class="tong2">
    <a class="max" href="">
      <div class="hinh2">
-       <a href="{{asset('detail/'.$product->prod_id.'/'.$product->prod_slug.'.html')}}"><img class="h2" src="{{asset('../storage/app/avatar/'.$product->prod_img)}}" alt=""></a>
+       <a href="{{asset('detail/'.$item->prod_id.'/'.$item->prod_slug.'.html')}}"><img class="h2" src="{{asset('../storage/app/avatar/'.$item->prod_img)}}" alt=""></a>
        <div class="con1">
-         <a class="click1" href="{{asset('detail/'.$product->prod_id.'/'.$product->prod_slug.'.html')}}">
-           <h3>{{$product->prod_name}}</h3>
-           <strong>{{number_format($product->prod_price,0,',','.')}}đ</strong>
-         {!!$product->prod_description!!}
+         <a class="click1" href="{{asset('detail/'.$item->prod_id.'/'.$item->prod_slug.'.html')}}">
+           <h3>{{$item->prod_name}}</h3>
+           <strong>{{number_format($item->prod_price,0,',','.')}}đ</strong>
+         {!!$item->prod_description!!}
          </a>      
        </div>
      </div>
@@ -109,14 +109,7 @@
  </div>
  @endforeach
  </div>
-
-
-
-
-
-<div class="xemthem">
-
- <a class="pagina" href="">Xem Thêm Điện Thoại Khác</a> 
+<div style="justify-content: center;text-align: center;display: flex;margin-top: 50px;" class="paginationnn">
+  {{ $product->links() }}
 </div>
-
 @endsection

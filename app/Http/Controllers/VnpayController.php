@@ -77,7 +77,7 @@ class VnpayController extends Controller
         }
                 $arr = [
             'user_name' => $request->name,
-            'tr_totalprice' =>intval($vnp_Amount),
+            'tr_totalprice' =>str_replace(',', '',Cart::subtotal()),
             'tr_phone' =>$request->phone,
             'tr_note' =>$request->note,
             'tr_address' =>$request->add,

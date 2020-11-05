@@ -84,20 +84,23 @@
 									</div>
 									<div class="form-group" >
 										<label>Ảnh sản phẩm</label>
-										<input required id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
+										<input  id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
 										<img id="avatar" class="" width="300px" src="{{asset('../storage/app/avatar/'.$edit->n_img)}}">
 									</div>
 									<div class="form-group" >
 										<label>nội dung</label>
-										<textarea class="ckeditor"required name="content"></textarea>
+										<textarea class="ckeditor"required name="content">{{$edit->n_content}}</textarea>
 									</div>
 									<div class="form-group" >
-										<label>nổi bật</label><br>
-										Sale: <input type="radio" checked name="featured" value="0">
-										Có: <input type="radio" name="featured" value="1">
-										Hot: <input type="radio" name="featured" value="2">
-										Không: <input type="radio" name="featured" value="3">
-										Sele Khủng: <input type="radio" name="featured" value="4">
+										<label>Sản phẩm nổi bật</label><br>
+										<select name="featured" id="">
+											<option value="0" @if($edit->prod_featured == 0) selected @endif >SALE</option>
+											<option value="1" @if($edit->prod_featured == 1) selected @endif >CÓ</option>
+											<option value="2" @if($edit->prod_featured == 2) selected @endif>HOT</option>
+											<option value="3" @if($edit->prod_featured == 3) selected @endif>KHÔNG</option>
+											<option value="4" @if($edit->prod_featured == 4) selected @endif>SALE KHỦNG</option>
+										</select>
+										
 									</div>
 									<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
 									<a href="#" class="btn btn-danger">Hủy bỏ</a>

@@ -112,7 +112,7 @@
 									</div>
 									<div class="form-group" >
 										<label>Miêu tả</label>
-										<textarea class="ckeditor" required name="description"></textarea>
+										<textarea class="ckeditor" required name="description">{{$edit->prod_description}}</textarea>
 
 
 
@@ -127,14 +127,15 @@
 									</div>
 									<div class="form-group" >
 										<label>Sản phẩm nổi bật</label><br>
-										Sale: <input type="radio" name="featured" value="0" @if($edit->prod_featured ==1) selected @endif >
-										Có : <input type="radio" name="featured" value="1" @if($edit->prod_featured == 3 ) selected @endif >
-										Hot: <input type="radio" checked name="featured" value="2"@if($edit->prod_featured ==0) selected @endif >
-										Không: <input type="radio" name="featured" value="3" @if($edit->prod_featured ==2) selected @endif>
-										Sale Khủng : <input type="radio" name="featured" value="4" @if($edit->prod_featured == 4) selected @endif>
-										<option value=""></option>
-									</select>
-								</div>
+										<select name="featured" id="">
+											<option value="0" @if($edit->prod_featured == 0) selected @endif >SALE</option>
+											<option value="1" @if($edit->prod_featured == 1) selected @endif >CÓ</option>
+											<option value="2" @if($edit->prod_featured == 2) selected @endif>HOT</option>
+											<option value="3" @if($edit->prod_featured == 3) selected @endif>KHÔNG</option>
+											<option value="4" @if($edit->prod_featured == 4) selected @endif>SALE KHỦNG</option>
+										</select>
+										
+									</div>
 								<input type="submit" name="submit" value="Cập Nhật" class="btn btn-primary">
 								<a href="#" class="btn btn-danger">Hủy bỏ</a>
 							</div>

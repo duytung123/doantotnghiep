@@ -56,10 +56,10 @@
             <a class="nav" href="phukien">phụ kiện</a>
           </li>
         </a>
-        <a href="">
+        <a href="watch">
           <li class="nav-item nav_item">
             <div class="icon"><i class="fal fa-watch-fitness"></i></div> 
-            <a class="nav" href="">đồng hồ</a>
+            <a class="nav" href="watch">đồng hồ</a>
           </li>
         </a>
         <a href="tintuc">
@@ -125,7 +125,7 @@
   @yield('main')
 
   <div class="footer1">
-   <p class="kytu">© 2019. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/20019. Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 18001060. Email: cskh@thegioididong.com. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng Xem chính sách sử dụng web</p>
+<p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
  </div>
  <section>
   <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
