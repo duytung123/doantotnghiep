@@ -22,8 +22,8 @@
 .smart_detail{
     background-color: white;
     border: 1px solid gray;
-    width: 240px;
-    height: 360px;
+    width: 235px;
+    height: 400px;
 }
 .smart_detail span.name{
     margin-left: 10px;
@@ -63,4 +63,28 @@
 }
 .smart_detail:hover a.text{
    margin-top: 2px;
+}
+.smart_detail a.text p.name{
+    margin-top: 30px;
+    font: 14px/18px Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
+}
+.smart_detail a.text p.price{
+    color: red;
+    font-weight: 700;
+}
+.smart_detail a.text p.note{
+        font-weight: 600;
+    font-size: 12px;
+}
+.smart_detail label{
+    margin-left: 10px;
+    margin-top: 4px;
+    left: 95px;
+    width: 63px;
+/*    position: absolute;*/
+    height: 20px;
+    background-color: #fbda00;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
 }

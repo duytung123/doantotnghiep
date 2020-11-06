@@ -4,7 +4,11 @@
 }
 
 .body1 {
-    background-color: #fff
+    background-color: #fff;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .body2 {
@@ -640,7 +644,7 @@ a.count:hover {
 }
 
 .footer1 {
-    margin-top: 25px;
+    margin-top: auto;
 }
 
 ul.category li{
