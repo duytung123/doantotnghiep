@@ -50,7 +50,7 @@ class WatchController extends Controller
             <a class="click1" href="' . asset("/detail2/$lap->prod_id/$lap->prod_slug.html") . '">
             <img class="h2 h2a" src="' . asset("../storage/app/avatar/$lap->prod_img") . '" alt="">
             <div class="sdas">
-            <a class="text">
+            <a class="textdomain(text_domain)">
              <p class="name">' . $lap->prod_name . '</p>
             <p class="price" >' . number_format($lap->prod_price) . 'đ</p>
             <p class="note">' . $lap->prod_description . '</p> 

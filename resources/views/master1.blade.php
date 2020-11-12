@@ -81,6 +81,18 @@
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
+        @if(Auth::check()){
+        <span style="width: 100px;
+        text-transform: capitalize;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 600;
+        color: black;
+        top: 17px;
+        left: 91%;
+        /* float: left; */
+        position: absolute;">{{Auth::user()->email}}</span>
+        @endif
       </ul>
     </nav>
   </div>
@@ -130,9 +142,9 @@
   <br>
 
   @yield('main')
-
+  <div class="zalo-chat-widget" data-oaid="857030021737714216" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400">sadasd</div>
   <div class="footer1">
-    <p style="color:white;" class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
+    <p style="color:white;" class="kytu">© 2020. Công ty cổ phần Thế Giới Số 11. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
   </div>
   <section>
     <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
@@ -170,6 +182,7 @@
       }
     });
   </script>
+{{--     <script src="https://sp.zalo.me/plugins/sdk.js"></script> --}}
 
 </body>
 </html>

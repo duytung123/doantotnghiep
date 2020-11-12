@@ -1,6 +1,5 @@
 @extends('master2')
 @section('main')
-
 <script>
 	$(document).ready(function(){
 

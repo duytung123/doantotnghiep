@@ -12,6 +12,11 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 	Route::post('vnpay','VnpayController@create');
 	Route::get('getvnpay','VnpayController@return');
 });
+//logincart
+Route::group(['prefix'=>'loginform'],function(){
+	Route::post('/','LoginController@index');
+	Route::get('/','LoginController@indexloginform');
+});
 
 //search autocomplet
 Route::post('autocomplet_ajax','FrontendController@autocompletajax');
@@ -30,7 +35,7 @@ Route::get('complete','CartController@getcomple');
 
 
 // GioHang
-Route::group(['prefix'=>'cart'],function(){
+Route::group(['prefix'=>'cart','middleware'=>'loginform'],function(){
 	Route::get('add/{id}','CartController@getaddcart');
 	Route::get('update','CartController@getupdatecart');
 	Route::get('show','CartController@getshowcart');
@@ -210,6 +215,12 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 		Route::get('active/{id}','OrderController@active');
 	});
 
+	Route::group(['prefix'=>'khohang'],function(){
+		Route::get('/','ProductController@khohang');
+		Route::get('tonkho','ProductController@tonkho');
+		Route::get('delete/{id}','OrderController@delete');
+		Route::get('active/{id}','OrderController@active');
+	});
 });
 
 

@@ -113,5 +113,14 @@ class ProductController extends Controller
         return view('backend.Product.Searchproduct', $data);
 
     }
+    public function khohang()
+    {
+        return view('backend.Warehouse.Warehouse');
+    }
+    public function tonkho()
+    {
+        $data['inventory'] = Product::where('prod_status','0')->get();
+        return view('backend.Warehouse.Inventory',$data);
+    }
 }
 

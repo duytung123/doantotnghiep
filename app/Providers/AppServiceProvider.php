@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Category;
+use App\Product;
 use App\Cateallproduct;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $data['productall']= Product::paginate(10);
         $data['category']=Category::all();
         $data['cateallproduct']=Cateallproduct::all();
         $data['listcate']=Cateallproduct::where('cateall_product',1)->get();

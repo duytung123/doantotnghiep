@@ -171,7 +171,13 @@
             <img src="{{asset('dist/img/123.jpg')}}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">{{Auth::user()->email}}</a>
+            @if(Auth::check())
+            {
+                <a href="#" class="d-block">{{Auth::user()->email}}</a>
+            }
+
+            
+            @endif
           </div>
         </div>
 
@@ -316,6 +322,16 @@
               </a>
             </li>
           </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="khohang" class="nav-link">
+           <i class="fas fa-warehouse"></i>
+            <p>
+              KHO HÀNG
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
         </li>
 
       </li>

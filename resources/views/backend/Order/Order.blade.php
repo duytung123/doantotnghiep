@@ -40,6 +40,7 @@
                 <thead>
                     <tr align="center">
                         <th>ID</th>
+                        <th>Name</th>
                         <th>Phone</th>
                         <th>Địa Chỉ</th>
                         <th>Chú Thích</th>
@@ -53,16 +54,17 @@
                     @foreach($order as $order)
                     <tr class="odd gradeX" align="center">
                         <td>{{$order->id}}</td>
+                        <td>{{$order->user_name}}</td>
                         <td>{{$order->tr_phone}}</td>
                         <td>{{$order->tr_address}}</td>
                         <td>{{$order->tr_note}}</td>
                         <td>{{$order->tr_totalprice}}</td>
                         <td><a href="{{asset('admin/order/delete/'.$order->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                         <td><a class="model_js" href="{{asset('admin/order/vieworder/'.$order->id)}}"><i class="fas fa-eye"></i></a></td>
-                        <td>
+                       {{--  <td>
                             <a class="label {{$order->getStatus($order->tr_status)['class']}}" href="{{asset('admin/order/active/'.$order->id)}}">{{$order->getStatus($order->tr_status)['name']}}</a>
                         </td>
-
+ --}}
 
                   </tr>
 
