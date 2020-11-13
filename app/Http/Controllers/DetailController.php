@@ -60,6 +60,18 @@ class DetailController extends Controller
 		return view('fontend.Phukien.Detailpkien',$data);
 
 	}
+	public function getDetailWatch($id)
+	{
+		$data['cate']=Product::find($id);
+		$data['comment']=Comments::where('cm_product',$id)->get();
+		$data['rating']=Rating::where('r_product_id',$id)->take(5)->get();
+		$data['watch'] = Product::where('prod_featured',1)->Where('prod_cate',5)
+		->orderBy('prod_id', 'desc')
+		->take(5)
+		->get();
+		return view('fontend.Watch.DetailWatch',$data);
+
+	}
 
 	public function postComment(Request $request,$id)
 	{
@@ -70,5 +82,9 @@ class DetailController extends Controller
 		$comment->cm_product=$id;
 		$comment->save();
 		return back();
+	}
+	public function index()
+	{
+		return view('Fontend.FormLogin.LOGIN');
 	}
 }

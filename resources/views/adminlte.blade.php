@@ -271,6 +271,15 @@
             </li>
 
           </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="watch" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Đồng hồ</p>
+              </a>
+            </li>
+
+          </ul>
         </li>
 
         <li class="nav-item has-treeview">
@@ -328,30 +337,30 @@
         </ul>
       </li>
       
-  <!-- /.sidebar-menu -->
-</div>
-<!-- /.sidebar -->
-</aside>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-  @yield('main')
-  <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-<footer class="main-footer">
-  <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-  All rights reserved.
-  <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 3.0.5
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    @yield('main')
+    <!-- /.content -->
   </div>
-</footer>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.5
+    </div>
+  </footer>
 
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-  <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 

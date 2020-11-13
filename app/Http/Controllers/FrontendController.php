@@ -45,6 +45,11 @@ class FrontendController extends Controller
 
     public function getHome()
     {
+        $data['watch'] = Product::where('prod_featured', 4)->Where('prod_cate', 5)
+            ->orderBy('prod_id', 'desc')
+            ->take(10)
+            ->get();
+
         $data['phukien'] = Product::where('prod_featured', 0)->Where('prod_cate', 4)
             ->orderBy('prod_id', 'desc')
             ->take(10)
@@ -116,6 +121,29 @@ class FrontendController extends Controller
             echo $output;
 
         }
+
+    }
+
+        public function index()
+    { 
+      return view('fontend.FormLogin.Login');
+    }
+
+        public function postLogincart(Request $request)
+    {
+       $arr=['email'=>$request->email, 'password'=>$request->password];
+       if($request->remember='Remember Me'){
+          $remember=true;
+      }else {
+          $remember=false;
+      }
+      if(Auth::attempt($arr,$remember)){
+          return redirect('cart/show');}
+
+            else
+      {         
+            return redirect("log_cart");
+      }
 
     }
 

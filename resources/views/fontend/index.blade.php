@@ -116,7 +116,7 @@
       <!-- Brand/logo -->
       <span class="title__">Đồng Hồ Nổi Bật</span>
       <!-- Links -->
-      <ul class="navbar-nav g1">
+{{--       <ul class="navbar-nav g1">
          <li class="nav-item">
             <a class="nav-link c1a" href="">Appel watch</a>
          </li>
@@ -132,52 +132,21 @@
          <li class="nav-item">
             <a class="nav-link c1a" href="">xem thêm</a>
          </li>
-      </ul>
+      </ul> --}}
    </nav>
 </div>
 <section class="slider-area slider">
+   @foreach($watch as $product)
    <div class="slick">
-      <a class="click" href="">
-         <img class="sanpham" src="avatar/w1.jpg" alt="">
-         <h3>tai nghe apple</h3>
-         <strong>6900000</strong>
+      
+      <a class="click" href="{{asset('detail7/'.$product->prod_id.'/'.$product->prod_slug.'.html')}}">
+         <img class="sanpham" src="{{asset('../storage/app/avatar/'.$product->prod_img)}}" alt="">
+         <h3>{{$product->prod_name}}</h3>
+         <strong>{{number_format($product->prod_price,0,',','.')}}đ</strong>
       </a>
+    
    </div>
-   <div class="slick">
-      <a class="click" href="">
-         <img class="sanpham" src="avatar/w2.jpg" alt="">
-         <h3>tai nghe apple</h3>
-         <strong>4900000</strong>
-      </a>
-   </div>
-   <div class="slick">
-      <a class="click" href="">
-         <img class="sanpham" src="avatar/w3.jpg" alt="">
-         <h3>tai nghe apple</h3>
-         <strong>3409393</strong>
-      </a>
-   </div>
-   <div class="slick">
-      <a class="click" href="">
-         <img class="sanpham" src="avatar/w4.jpg" alt="">
-         <h3>tai nghe apple</h3>
-         <strong>6900000</strong>
-      </a>
-   </div>
-   <div class="slick">
-      <a class="click" href="">
-         <img class="sanpham" src="avatar/w5.jpg" alt="">
-         <h3>tai nghe apple</h3>
-         <strong>6900000</strong>
-      </a>
-   </div>
-   <div class="slick">
-      <a class="click" href="">
-         <img class="sanpham" src="avatar/w6.jpg" alt="">
-         <h3>tai nghe apple</h3>
-         <strong>6900000</strong>
-      </a>
-   </div>
+  @endforeach
 </section>
 <div class="producthot pr2">
    <nav class="navbar navbar-expand-sm ">

@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 });
+//đăng nhập giỏ hàng
+Route::group(['prefix'=>'log_cart'],function(){
+	Route::get('/','frontendController@index');
+	Route::post('/','frontendController@postLogincart');
+});
+
 //THANH TOÁN ONLINE VNPAY
 Route::group(['prefix'=>'thanhtoan'],function(){
 	Route::get('index/{id}','VnpayController@index');
@@ -30,7 +36,7 @@ Route::get('complete','CartController@getcomple');
 
 
 // GioHang
-Route::group(['prefix'=>'cart'],function(){
+Route::group(['prefix'=>'cart','middleware'=>'logincart'],function(){
 	Route::get('add/{id}','CartController@getaddcart');
 	Route::get('update','CartController@getupdatecart');
 	Route::get('show','CartController@getshowcart');
@@ -69,6 +75,7 @@ Route::get('detail3/{id}/{slug}.html','DetailController@getDetailtablet');
 Route::get('detail4/{id}/{slug}.html','DetailController@getDetailpkien');
 Route::get('detail5/{id}/{slug}.html','Tintuccontroller@getDetailtintuc');
 Route::get('detail6/{id}/{slug}.html','DetailController@getDetailpkien');
+Route::get('detail7/{id}/{slug}.html','DetailController@getDetailWatch');
 
 
 //các thao tác trên web
@@ -77,7 +84,7 @@ Route::post('detail/{id}/{slug}.html','DetailController@postComment');
 Route::post('detail2/{id}/{slug}.html','DetailController@postComment');
 Route::post('detail3/{id}/{slug}.html','DetailController@postComment');
 Route::post('detail4/{id}/{slug}.html','DetailController@postComment');
-
+Route::post('detail7/{id}/{slug}.html','DetailController@postComment');
 
 //ajax load more
 
@@ -85,6 +92,7 @@ Route::post('laptop/load_data','LaptopController@load_data')->name('laptop.load_
 Route::post('phone/load_data','PhoneController@load_data')->name('phone.load_data');
 Route::post('tablet/load_data','TabletController@load_data')->name('tablet.load_data');
 Route::post('phukien/load_data','PhukienController@load_data')->name('phukien.load_data');
+Route::post('watch/load_data','WatchController@load_data')->name('watch.load_data');
 
 Route::get('trangchu','frontendController@getHome');
 
@@ -94,7 +102,7 @@ Route::get('phukien','PhukienController@getPhukien');
 Route::get('tablet','TabletController@getHome');
 Route::get('laptop','LaptopController@getHome');
 Route::get('tintuc','Tintuccontroller@getindex');
-Route::get('watch','WatchController@getindex');
+Route::get('watch','WatchController@index');
 Route::group(['prefix' =>'admin/login'],function(){
 	Route::get('/','LoginController@getLogin');
 
@@ -165,6 +173,15 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 		Route::get('update/{id}','PhukienController@getupdatephukien');
 		Route::post('update/{id}','PhukienController@postupdatephukien');
 		Route::get('delete/{id}','PhukienController@getdeletephukien');
+	});
+
+	Route::group(['prefix'=>'watch'],function(){
+		Route::get('/','WatchController@getindex');
+		Route::get('add','WatchController@getaddwatch');
+		Route::post('add','WatchController@postaddwatch');
+		Route::get('update/{id}','WatchController@getupdatewatch');
+		Route::post('update/{id}','WatchController@postupdatewatch');
+		Route::get('delete/{id}','WatchController@getdeletewatch');
 	});
 
 
