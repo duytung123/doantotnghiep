@@ -1,72 +1,70 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Login Page</title>
-   <!--Made with love by Mutiullah Samim -->
-   
-	<!--Bootsrap 4 CDN-->
-		  <link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-	<!--Custom styles-->
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN-FORM</title>
+    <link rel="stylesheet" href="css/logn.css">
 </head>
 <body>
-<div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Sign In</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
-			</div>
-			<div class="card-body">
-				<form method="post" role="form">
-					{{csrf_field()}}
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" name="email" class="form-control" placeholder="username">
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" name="password" class="form-control" placeholder="password">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
-					<div class="form-group">
-						<input type="submit" name="submit" value="Login" class="btn float-right login_btn">
-					</div>
-					
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+    <div class="form-box">
+        <div class="btn-box">
+            <div id="btn"></div>
+            <button type="button" onclick="login()" class="btn-toggle">Login</button>
+            <button type="button" class="btn-toggle" onclick="register()" >Register</button>
+        </div>
+
+        <form role="form" method="post" id="login" class="form-login" action="loginform/login_customer">
+            {{csrf_field()}}
+            @if(isset($errors) && count($errors)>0)
+            <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{$err}}<br>
+            @endforeach     
+            </div>
+            @endif
+
+            @if(session('thongbao'))
+            <div class="alert alert-success">
+            {{session('thongbao')}}
+            </div>
+            @endif  
+            <input required type="text" value="{{old('email')}}" name="email" class="input-field" placeholder="Email">
+            <input required type="password" name="password" class="input-field" placeholder="Enter Your Password">
+            <input type="checkbox" class="check-box"> <span>Rememver Password</span>
+            <button type="submit" name="submit" class="btn-submit">Login</button>
+        </form>
+
+        <form id="register" class="form-login" action="{{route('customeradd')}}" method="post">
+            {{csrf_field()}}
+            <input required name="email" type="email" class="input-field" placeholder="Email ID">
+            <input required name="password" type="password" class="input-field" placeholder="Password">
+            <input required name="passwordagain" type="password" class="input-field" placeholder="RePassword">
+            <input required type="checkbox" class="check-box"> <span>i agree to the term & conditions</span>
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+      
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+        
+        function register(){
+            x.style.left = "-470px";
+            y.style.left = "70px";
+            z.style.left = "110px";
+        }
+        function login(){
+            x.style.left = "70px";
+            y.style.left = "470px";
+            z.style.left = "0px";
+        }
+        
+
+    </script>
+
+    
 </body>
 </html>

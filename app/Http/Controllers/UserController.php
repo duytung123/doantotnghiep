@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\MCustomer;
 
 class UserController extends Controller
 {
+    //     public function __construct()
+    // {
+    //     $this->middleware('guest:customer');
+    // }
     public function getList_user()
     {
     	$users=User::all();
@@ -95,4 +100,6 @@ class UserController extends Controller
 
         return redirect('admin/user')->with('thongbao','Bạn đã xóa thành công');
     }
+
+
 }

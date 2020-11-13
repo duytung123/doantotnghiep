@@ -80,7 +80,7 @@
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
-        @if(Auth::check()){
+        @if(Auth::guard('customer')->check())
         <span style="width: 100px;
         text-transform: capitalize;
         overflow: hidden;
@@ -90,8 +90,8 @@
         top: 17px;
         left: 91%;
         /* float: left; */
-        position: absolute;">{{Auth::user()->email}}</span>
-        @endif
+        position: absolute;">{{ auth('customer')->user()->name }}</span>
+      @endif
       }
     </ul>
   </nav>

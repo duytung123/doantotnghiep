@@ -173,7 +173,7 @@
           <div class="info">
             @if(Auth::check())
             {
-                <a href="#" class="d-block">{{Auth::user()->email}}</a>
+              <a href="#" class="d-block">{{Auth::user()->email}}</a>
             }
 
             
@@ -305,6 +305,16 @@
             </li>
 
           </ul>
+
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="customer" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách khách hàng</p>
+              </a>
+            </li>
+
+          </ul>
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -327,56 +337,56 @@
         <li class="nav-item has-treeview">
           <a href="khohang" class="nav-link">
            <i class="fas fa-warehouse"></i>
-            <p>
-              KHO HÀNG
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-        </li>
-
-      </li>
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
-          <i class="far fa-newspaper"></i>
-          <p>
-            Bài viết
+           <p>
+            KHO HÀNG
             <i class="fas fa-angle-left right"></i>
           </p>
         </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="news" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Danh sách bài viết</p>
-            </a>
-          </li>
-        </ul>
       </li>
-      
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    @yield('main')
-    <!-- /.content -->
+    </li>
+    <li class="nav-item has-treeview">
+      <a href="#" class="nav-link">
+        <i class="far fa-newspaper"></i>
+        <p>
+          Bài viết
+          <i class="fas fa-angle-left right"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="news" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Danh sách bài viết</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <!-- /.sidebar-menu -->
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.5
-    </div>
-  </footer>
+  <!-- /.sidebar -->
+</aside>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  @yield('main')
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+  <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 3.0.5
+  </div>
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 

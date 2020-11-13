@@ -87,8 +87,8 @@
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
-        @if(Auth::check()){
-        <span style="width: 100px;
+  
+       {{--  <a href="" style="width: 100px;
         text-transform: capitalize;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -97,8 +97,18 @@
         top: 17px;
         left: 91%;
         /* float: left; */
-        position: absolute;">{{Auth::user()->email}}</span>
-        @endif
+        position: absolute;">{{ auth('customer')->user()->name }}
+        </a> --}}
+
+              <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
+         <div class="dropdown-menu">
+            <a class="dropdown-item active" href="loginform/edit">Quản lý tài khoản</a>
+            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
+
+         </div>
+      </li>
+ 
       </ul>
     </nav>
   </div>

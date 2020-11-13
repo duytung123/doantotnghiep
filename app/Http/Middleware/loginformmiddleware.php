@@ -14,21 +14,27 @@ class loginformmiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next,$guard=null)
     {
+   
        $arr=['email'=>$request->email, 'password'=>$request->password];
        if($request->remember='Remember Me'){
           $remember=true;
       }else {
           $remember=false;
       }
-      if(Auth::check())
+      if(Auth::guard('customer')->check())
       {
-          return $next($request);
+            return $next($request);
       }
       else
-      {         
+      {        
+          
            return redirect("loginform");
       }
-    }
+           
+          return redirect("loginform");
+        
+      }
+    
 }

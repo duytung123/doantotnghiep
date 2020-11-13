@@ -5,6 +5,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 });
+
+// Route::group(['prefix'=>'customer'],function(){
+
+// 		Route::get('/','UserController@getList_customer');
+		
+
+// 		Route::get('edit/{id}','UserController@geteditecustomer');
+// 		Route::post('edit/{id}','UserController@posteditcustomer');
+// 		Route::get('delete/{id}','UserController@getdeletecustomer');
+// 	});
 //THANH TOÁN ONLINE VNPAY
 Route::group(['prefix'=>'thanhtoan'],function(){
 	Route::get('index/{id}','VnpayController@index');
@@ -14,8 +24,12 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 });
 //logincart
 Route::group(['prefix'=>'loginform'],function(){
-	Route::post('/','LoginController@index');
-	Route::get('/','LoginController@indexloginform');
+	Route::post('login_customer','CustomerController@index');
+	Route::get('/','CustomerController@indexloginform');
+	Route::get('logout','CustomerController@getLogoutCustomer');
+	Route::get('edit','CustomerController@geteditcustomer');
+	Route::post('edit','CustomerController@editcustomer');
+	Route::post('add','CustomerController@postaddcustomer')->name('customeradd');
 });
 
 //search autocomplet
@@ -38,7 +52,7 @@ Route::get('complete','CartController@getcomple');
 Route::group(['prefix'=>'cart','middleware'=>'loginform'],function(){
 	Route::get('add/{id}','CartController@getaddcart');
 	Route::get('update','CartController@getupdatecart');
-	Route::get('show','CartController@getshowcart');
+	Route::get('show','CartController@getshowcart')->name('cat');
 	Route::post('show','CartController@postcomplete');
 	Route::get('delete/{id}','CartController@getdeletecart');
 
@@ -194,6 +208,17 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 		Route::get('edit/{id}','UserController@getediteuser');
 		Route::post('edit/{id}','UserController@postedituser');
 		Route::get('delete/{id}','UserController@getdeleteuser');
+	});
+
+		Route::group(['prefix'=>'customer'],function(){
+
+		Route::get('/','CustomerController@getList_customer');
+		Route::get('add','CustomerController@getaddcustomer');
+		Route::post('add','CustomerController@postaddcustomer');
+
+		Route::get('edit/{id}','CustomerController@geteditecustomer');
+		Route::post('edit/{id}','CustomerController@posteditcustomer');
+		Route::get('delete/{id}','CustomerController@getdeletecustomer');
 	});
 
 	Route::group(['prefix'=>'news'],function(){
