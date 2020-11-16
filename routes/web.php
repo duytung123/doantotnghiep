@@ -28,8 +28,9 @@ Route::group(['prefix'=>'loginform'],function(){
 	Route::get('/','CustomerController@indexloginform');
 	Route::get('logout','CustomerController@getLogoutCustomer');
 	Route::get('edit','CustomerController@geteditcustomer');
-	Route::post('edit','CustomerController@editcustomer');
+	Route::post('edit','CustomerController@editcustomer')->name('editcustomer');
 	Route::post('add','CustomerController@postaddcustomer')->name('customeradd');
+	Route::get('editpassword','CustomerController@geteditpassword');
 });
 
 //search autocomplet

@@ -1,4 +1,6 @@
 .grid-3x2 {
+	width: 1111px;
+	height: 500px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
@@ -6,6 +8,7 @@
 }
 
 .d-flex__row{
+	margin-left: 80px;
 	display: flex;
 	flex-direction: column;
 }
@@ -15,6 +18,60 @@
 }
 
 .information__container{
-	padding:30px 40px;
+	margin-left: 6px;
+	padding:40px 50px;
 	background-color: #fff;
+}
+a.btn_edit{
+	margin-bottom: 15px;
+	margin-left: 60px;
+    background-color: #1a9cb7;
+    width: 288px;
+    height: 48px;
+	}
+.btn_edit a{
+	color:white;
+}
+.btn11 .btn_edit_pass{
+	margin-left: 60px;
+    background-color: #1a9cb7;
+    width: 288px;
+    height: 48px;
+}
+.btn_edit_pass a{
+	color: white;
+}
+.btn11{
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.btn11 span{
+	text-transform: uppercase;
+	position: absolute;
+    margin-left: 90px;
+    margin-top: 10px;
+    color: white;
+}
+.container{
+	position: relative;
+	height: 541px;
+	display: block;
+}
+.wrapper__box{
+	position: absolute;
+	display: block;
+	height: auto;
+}
+.fix_information{
+	opacity: 0;
+	visibility: hidden;
+}
+.fix_information.show{
+	opacity: 1;
+	visibility: visible;
+}
+.information.hide{
+	opacity: 0;
+	visibility: hidden;
 }

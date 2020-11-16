@@ -43,40 +43,21 @@ class CustomerController extends Controller
     	return view('fontend.FormLogin.information');
    	}
 
-      public function editcustomer(Request $request, $id)
+      public function editcustomer(Request $request)
     {
 
-        $users=MCustomer::find($id);
+        $Customer = new MCustomer;
+        $arr['name']=$request->name;
+        $arr['email']=$request->email;
+        $arr['phone']=$request->phone;
+        $arr['gender']=$request->gender;
+        $arr['code_tax']=$request->code;
+        $arr['address']=$request->address;
+        $Customer->update($arr);
+        return redirect('trangchu')->with('thongbao','Bạn đã sửa thành công');
 
-        $users->level=$request->level;
-
-
-        if($request->changePassword =="on")
-        {
-             $this->validate($request,
-        [
-            'password'=>'required|min:6|max:20',
-            'passwordAgain'=>'required|same:password'
-        ],
-        
-        [
-            
-            'password.required'=>'Bạn chưa nhập mật khẩu',
-            'password.min'=>'Mật khẩu phải có ít nhất 6 ký tự',
-            'password.max'=>'Mật khẩu không quá 20 ký tự',
-            'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp với mật khẩu trên'
-
-        ]);
-
-         $users->password=bcrypt($request->password);
-
-        }
-  
-        $users->save();
-        return redirect('admin/user')->with('thongbao','Bạn đã sửa thành công');
- 	  
     }
-
+  
 	public function indexloginform()
 	{
 		return view('fontend.FormLogin.formlogin');
@@ -120,5 +101,9 @@ class CustomerController extends Controller
 		Auth::guard('customer')->logout();
 		return redirect('trangchu');
 	}
+    public function geteditpassword()
+    {
+        return view('fontend.FormLogin.changepassword');
+    }
 
 }
