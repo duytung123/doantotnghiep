@@ -22,15 +22,17 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 	Route::post('vnpay','VnpayController@create');
 	Route::get('getvnpay','VnpayController@return');
 });
+
 //logincart
 Route::group(['prefix'=>'loginform'],function(){
 	Route::post('login_customer','CustomerController@index');
 	Route::get('/','CustomerController@indexloginform');
 	Route::get('logout','CustomerController@getLogoutCustomer');
-	Route::get('edit','CustomerController@geteditcustomer');
-	Route::post('edit','CustomerController@editcustomer')->name('editcustomer');
+	Route::get('edit/{id}','FrontendController@geteditcustomer');
+	Route::post('edit/{id}','CustomerController@editcustomer');
 	Route::post('add','CustomerController@postaddcustomer')->name('customeradd');
-	Route::get('editpassword','CustomerController@geteditpassword');
+	Route::get('editpassword/{id}','CustomerController@geteditpassword');
+	Route::post('editpassword/{id}','CustomerController@posteditpassword');
 });
 
 //search autocomplet
@@ -66,6 +68,8 @@ Route::group(['prefix'=>'phone/levelprice'],function(){
 	Route::get('price3','PhoneController@price3');
 	Route::get('price4','PhoneController@price4');
 	Route::get('price5','PhoneController@price5');
+	Route::get('ACS','PhoneController@ASC');
+	Route::get('ACSlist/{id}','PhoneController@ascCateList');
 });
 // chon muc gia laptop
 Route::group(['prefix'=>'laptop/levelprice'],function(){
@@ -217,8 +221,8 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 		Route::get('add','CustomerController@getaddcustomer');
 		Route::post('add','CustomerController@postaddcustomer');
 
-		Route::get('edit/{id}','CustomerController@geteditecustomer');
-		Route::post('edit/{id}','CustomerController@posteditcustomer');
+		// Route::get('edit/{id}','CustomerController@geteditecustomer');
+		// Route::post('edit/{id}','CustomerController@posteditcustomer');
 		Route::get('delete/{id}','CustomerController@getdeletecustomer');
 	});
 

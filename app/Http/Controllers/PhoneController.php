@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Product;
+use App\Cateallproduct;
 
 class PhoneController extends Controller
 {
@@ -129,6 +130,18 @@ class PhoneController extends Controller
     public function price5()
     {
         $data['product']=Product::where('prod_price','>',13000000)->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(4);
+        return view('fontend.Phone.ListPrice',$data);
+    }
+    public function ASC()
+    {
+       $data['product']=Product::where('prod_price','>',2000000)->where('prod_cate',1)->orderBy('prod_price','asc')->paginate(4);
+        return view('fontend.Phone.ListPrice',$data);
+    }
+    public function ascCateList($id)
+    {
+         $data['catname'] = Cateallproduct::find($id);
+        $data['product']=Product::where('prod_cateall',$id)->where('prod_cate',1)->orderBy('prod_price','asc')->paginate(4);
+        //dd($data);
         return view('fontend.Phone.ListPrice',$data);
     }
 }

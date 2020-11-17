@@ -22,7 +22,7 @@
 
   <div class="header">
     <nav class="navbar navbar-expand-sm navbar1 navbar-dark">
-      <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/lg1.jpg" alt=""> </div> </a> 
+      <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/tgs.png" alt=""> </div> </a> 
       <form method="post" role="Search" class="form-inline" autocomplete="off" action="">
         {{csrf_field()}}
         <input id="keywords" class="form-control mr-sm-2 inputsearch" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
@@ -81,18 +81,18 @@
           </li>
         </a>
         @if(Auth::guard('customer')->check())
-        <span style="width: 100px;
-        text-transform: capitalize;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-weight: 600;
-        color: black;
-        top: 17px;
-        left: 91%;
-        /* float: left; */
-        position: absolute;">{{ auth('customer')->user()->name }}</span>
-      @endif
-      }
+          <li class="nav-item dropdown">
+             @foreach($customer as $customer)
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">{{ auth('customer')->user()->name}}</a>
+         <div class="dropdown-menu">
+            <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
+
+         </div>
+         @endforeach
+        </li>
+         @endif
+      
     </ul>
   </nav>
 </div>
@@ -137,11 +137,14 @@
 
 @yield('main')
 
+  <div class="footer1">
 <div class="footer1">
   <p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
 </div>
 <section>
   <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
+  <div class="zalo-chat-widget" data-oaid="1602318280360005737" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400">
+</div>
 </section>
 
 
@@ -153,6 +156,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 <script src="js/index.js"></script>
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 <script type="text/javascript">
   $('#keywords').keyup(function(event) {
     var query = $(this).val();

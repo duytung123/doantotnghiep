@@ -101,9 +101,11 @@
       <li class="nav-item dropdown">
          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>
          <div class="dropdown-menu">
+       
             <a class="dropdown-item active" href="">nổi bật nhất</a>
-            <a class="dropdown-item dr1" href=""> giá thấp đến cao</a>
+            <a class="dropdown-item dr1" href="phone/levelprice/ACS"> giá thấp đến cao</a>
             <a class="dropdown-item dr2" href=""> giá cao xuống thấp</a>
+         
          </div>
       </li>
    </ul>

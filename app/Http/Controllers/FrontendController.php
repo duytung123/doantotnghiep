@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
 use App\Cateallproduct;
+use App\MCustomer;
+
 use DB;
 class FrontendController extends Controller
 {
@@ -97,7 +99,14 @@ class FrontendController extends Controller
             ->take(3)
             ->get();
 
+        // $data['customer']=MCustomer::find($id);
+
         return view('fontend.index', $data);
+    }
+    public function geteditcustomer($id)
+    {
+        $data =MCustomer::find($id);
+        return view('fontend.FormLogin.information');
     }
     public function autocompletajax(Request $request)
     {

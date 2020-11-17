@@ -19,7 +19,7 @@
 
 .information__container{
 	margin-left: 6px;
-	padding:40px 50px;
+	padding:85px 50px;
 	background-color: #fff;
 }
 a.btn_edit{
@@ -58,10 +58,23 @@ a.btn_edit{
 	height: 541px;
 	display: block;
 }
+.wrapper__box_pass{
+   margin-left: 15%;
+    position: absolute;
+    display: block;
+    height: auto;
+
+    margin-top: 20px;
+
+
+}
 .wrapper__box{
-	position: absolute;
-	display: block;
-	height: auto;
+
+    position: absolute;
+    display: block;
+    height: auto;
+
+  
 }
 .fix_information{
 	opacity: 0;
@@ -75,3 +88,34 @@ a.btn_edit{
 	opacity: 0;
 	visibility: hidden;
 }
+.information__container span{font-family: 'Font Awesome 5 Pro';}
+.btn11 input.btn11_save{
+	    border: 1px solid;
+    color: white;
+    background-color: #1a9cb7;
+    width: 288px;
+    height: 48px;
+    margin-left: 78px;
+    margin-top: -60px;
+    position: absolute;
+}
+a.back{
+	top: 396px;
+    left: 10%;
+    border: 1px solid;
+    background-color: #1a9cb7;
+    position: absolute;
+    width: 288px;
+    height: 48px;
+    color: white;
+}
+a.btn_edit_pass input.dddd{
+text-align: center;
+    text-transform: uppercase;
+    border: 1px solid;
+    background-color: #1a9cb7;
+    height: 48px;
+    width: 288px;
+    color: white;   
+
+    }

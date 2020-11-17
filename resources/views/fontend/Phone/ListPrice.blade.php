@@ -76,14 +76,20 @@
       <li class="nav-item">
          <a class="nav-link" href="phone/levelprice/price5">trên 13 triệu</a>
       </li>
+              @foreach($product as $product1)
       <li class="nav-item dropdown">
+        
          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>
          <div class="dropdown-menu">
+       
             <a class="dropdown-item active" href="">nổi bật nhất</a>
-            <a class="dropdown-item dr1" href=""> giá thấp đến cao</a>
+            <a class="dropdown-item dr1" href="{{asset('phone/levelprice/ACSlist/'.$product1->prod_id)}}"> giá thấp đến cao</a>
             <a class="dropdown-item dr2" href=""> giá cao xuống thấp</a>
+           
          </div>
+          
       </li>
+      @endforeach
    </ul>
 </div>
 <hr class="ke">

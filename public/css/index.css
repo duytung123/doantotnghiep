@@ -34,7 +34,7 @@ html {
 
 #gotop {
     position: fixed;
-    bottom: 23px;
+    bottom: 58px;
     right: 4px;
     font-size: 30px;
     width: 50px;
@@ -66,6 +66,7 @@ html {
 }
 
 .nav-item {
+    height: 57px;
     padding: 2px 7px;
 }
 
@@ -126,15 +127,15 @@ html {
 }
 
 .logo {
-    width: 150px;
+       width: 235px;
     background-size: cover;
     position: relative;
-    height: 55px;
-}
+    height: 55px;}
 
 .form-inline {
+    width: 304px;
     position: absolute;
-    left: 135px;
+    left: 229px;
 }
 
 
@@ -677,4 +678,8 @@ ul.category4 li{
 ul.category6{
     margin-left: 12%;
 
+}
+.zalo-chat-widget {
+    bottom: -8px!important;
+    right: -6px!important;
 }

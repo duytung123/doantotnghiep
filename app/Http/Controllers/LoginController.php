@@ -34,7 +34,7 @@ class LoginController extends Controller
       }
       else
       {         
-           return back()->withInput()->with('thongbao', 'ban dang nhap that bai');
+           return back()->with('thongbao','Đăng nhập thất bại');
       }
 
       

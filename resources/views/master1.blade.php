@@ -23,7 +23,7 @@
 
   <div class="header">
     <nav class="navbar navbar-expand-sm navbar1 navbar-dark">
-      <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/lg1.jpg" alt=""> </div> </a> 
+      <a href="trangchu"> <div class="hinh"> <img class="logo" src="avatar/tgs.png" alt=""> </div> </a> 
       <form method="post" role="Search" class="form-inline" autocomplete="off" action="">
         {{csrf_field()}}
         <input id="keywords" class="form-control mr-sm-2 inputsearch" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
@@ -82,17 +82,18 @@
           </li>
         </a>
     
-        <span style="width: 100px;
-        text-transform: capitalize;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-weight: 600;
-        color: black;
-        top: 17px;
-        left: 91%;
-        /* float: left; */
-        position: absolute;">{{ auth('customer')->user()->name }}</span>
+         @if(Auth::guard('customer')->check())
+          <li class="nav-item dropdown">
+             @foreach($customer as $customer)
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">{{ auth('customer')->user()->name}}</a>
+         <div class="dropdown-menu">
+            <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
 
+         </div>
+         @endforeach
+        </li>
+         @endif
       </ul>
     </nav>
   </div>
@@ -142,7 +143,7 @@
   <br>
 
   @yield('main')
-  <div class="zalo-chat-widget" data-oaid="857030021737714216" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400"></div>
+  <div class="zalo-chat-widget" data-oaid="1602318280360005737" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400"></div>
   <div class="footer1">
     <p style="color:white;" class="kytu">© 2020. Công ty cổ phần Thế Giới Số 11. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
   </div>

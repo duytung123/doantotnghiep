@@ -9,44 +9,44 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 </head>
 <body>
-        <form role="form" method="post">
-            {{csrf_field()}}
-            @if(isset($errors) && count($errors)>0)
-            <div class="alert alert-danger">
+    <form role="form" method="post">
+        {{csrf_field()}}
+        
+
+        <div class="login_box">
+            <h1>Login</h1>
+        @if(isset($errors) && count($errors)>0)
+        <div class="alert alert-danger">
             @foreach($errors->all() as $err)
-                {{$err}}<br>
+            {{$err}}<br> 
             @endforeach     
-            </div>
-            @endif
+        </div>
+        @endif
 
-            @if(session('thongbao'))
-            <div class="alert alert-success">
+        @if(session('thongbao'))
+        <div class="alert alert-success">
             {{session('thongbao')}}
-            </div>
-            @endif  
-
-            <div class="login_box">
-                    <h1>Login</h1>
-
+        </div>
+        @endif
             <div class="textbox">
                 <i class="fas fa-user"></i>
-                <input type="User" placeholder="UserName" name="email"value="{{old('email')}}">
+                <input required="" type="User" placeholder="UserName" name="email"value="{{old('email')}}">
             </div>
             <div class="textbox">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password" name="password" id="">
+                <input required="" type="password" placeholder="Password" name="password" id="">
             </div>
 
 
-                <input class="btn" type="submit"  name="submit"  value="Sign in">
+            <input class="btn" type="submit"  name="submit"  value="Sign in">
 
 
-            </div>
-            
-        </form>
+        </div>
+
+    </form>
 
 
-        <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/chart-data.js"></script>
@@ -63,11 +63,11 @@
 
         $(window).on('resize', function () {
           if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-        })
+      })
         $(window).on('resize', function () {
           if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-        })
-    </script>   
-    
+      })
+</script>   
+
 </body>
 </html>
