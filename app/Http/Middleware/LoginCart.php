@@ -16,20 +16,25 @@ class LoginCart
      */
     public function handle($request, Closure $next)
     {
-        $arr=['email'=>$request->email, 'password'=>$request->password];
+       
+       $arr=['email'=>$request->email, 'password'=>$request->password];
        if($request->remember='Remember Me'){
           $remember=true;
       }else {
           $remember=false;
       }
-      if(Auth::check()){
-             return $next($request);
+      if(Auth::guard('customer')->check())
+      {
+            return $next($request);
       }
       else
-      {         
-           return redirect("log_cart");
+      {        
+          
+           return redirect("loginform");
       }
+           
+          return redirect("loginform");
         
-        
-    }
+      }
+    
 }

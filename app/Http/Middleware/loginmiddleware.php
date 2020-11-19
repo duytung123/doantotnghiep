@@ -14,7 +14,7 @@ class Loginmiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()&&Auth::user()->email == "admin@gmail.com") {
+        if (Auth::check()&&Auth::user()->level == 1) {
             return $next($request);
         } else {
             return redirect("admin/login");

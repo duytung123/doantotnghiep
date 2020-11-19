@@ -10,6 +10,9 @@ use Mail;
 use App\Product;
 use App\Transaction;
 use App\Order;
+use App\City;
+use App\District;
+use App\Wards;
 class CartController extends Controller
 {
 	public function getaddcart($id)
@@ -21,6 +24,7 @@ class CartController extends Controller
 	}
 	public function getshowcart()
 	{
+		$data['city'] = City::orderby('matp','asc')->get();
 		$data['subtotal']= str_replace(',', '', Cart::total());
 		$data['itemdd']=Cart::content();
 		return view('fontend.Phone.Cartphone',$data);
@@ -52,7 +56,9 @@ class CartController extends Controller
 			'tr_totalprice' =>intval($total),
 			'tr_phone' =>$request->phone,
 			'tr_note' =>$request->note,
-			'tr_address' =>$request->add,
+			'tr_address' =>$request->wards,
+			'tr_address' =>$request->district,
+			'tr_address' =>$request->city,
 			'created_at' =>Carbon::now(),
 			'updated_at' =>Carbon::now()
 		];
@@ -105,6 +111,30 @@ class CartController extends Controller
 		return view('Fontend.Complete.Complete');
 	}
 
+	public function getadd(Request $request)
+	{
+		$data =$request->all();
+		if($data['action']){
+			$output = '';
+			if($data['action']=="city"){
+				$select_district=District::where('matp',$data['matp'])->orderby('maqh','asc')->get();
+				$output.='<option>---chọn quận huyện---</option>';
+				foreach($select_district as $item){
+					$output.='<option value="'.$item->maqh.'">'.$item->name_district.'</option>';
+				}
+			}
+			else
+			{
+				$select_ward=Wards::where('maqh',$data['matp'])->orderby('xaid','asc')->get();
+				$output.='<option>---chọn xã---</option>';
+				foreach($select_ward as $item1)
+				{
+					$output.='<option value="'.$item1->xaid.'">'.$item1->name_ward.'</option>';
+				}
+			}
 
+		}
+		echo $output;
+	}
 
 }

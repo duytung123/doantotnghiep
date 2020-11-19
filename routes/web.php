@@ -19,6 +19,18 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 	Route::get('getvnpay','VnpayController@return');
 });
 
+//logincart
+Route::group(['prefix'=>'loginform'],function(){
+	Route::post('login_customer','CustomerController@index');
+	Route::get('/','CustomerController@indexloginform');
+	Route::get('logout','CustomerController@getLogoutCustomer');
+	Route::get('edit/{id}','FrontendController@geteditcustomer');
+	Route::post('edit/{id}','CustomerController@editcustomer');
+	Route::post('add','CustomerController@postaddcustomer')->name('customeradd');
+	Route::post('editpassword/{id}','CustomerController@geteditpassword');
+	Route::post('editpassword/{id}','CustomerController@posteditpassword');
+});
+
 //search autocomplet
 Route::post('autocomplet_ajax','FrontendController@autocompletajax');
 //rating product
@@ -41,6 +53,7 @@ Route::group(['prefix'=>'cart','middleware'=>'logincart'],function(){
 	Route::get('update','CartController@getupdatecart');
 	Route::get('show','CartController@getshowcart');
 	Route::post('show','CartController@postcomplete');
+	Route::get('getadress','CartController@getadd');
 	Route::get('delete/{id}','CartController@getdeletecart');
 
 });
@@ -211,6 +224,13 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 	Route::group(['prefix'=>'order'],function(){
 		Route::get('/','OrderController@getorder');
 		Route::get('vieworder/{id}','OrderController@getvieworder');
+		Route::get('delete/{id}','OrderController@delete');
+		Route::get('active/{id}','OrderController@active');
+	});
+
+	Route::group(['prefix'=>'khohang'],function(){
+		Route::get('/','ProductController@khohang');
+		Route::get('tonkho','ProductController@tonkho');
 		Route::get('delete/{id}','OrderController@delete');
 		Route::get('active/{id}','OrderController@active');
 	});

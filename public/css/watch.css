@@ -2,7 +2,15 @@
     margin: 0;
     padding: 0;
 }
-
+/* .smart_all{
+    width: 240px;
+} */
+.kytu{
+    color: white;
+}
+.footer1{
+    margin-top: -54px;
+}
 .body2 {
     background-color: #000;
 }
@@ -22,7 +30,7 @@
 .smart_detail{
     background-color: white;
     border: 1px solid gray;
-    width: 235px;
+    width: 240px;
     height: 400px;
 }
 .smart_detail span.name{
@@ -47,7 +55,7 @@
 
 }
 .logobaner{
-    margin-left: 84px;
+    margin-left: 83px;
 }
 .all_smart{
 
@@ -58,10 +66,11 @@
 
 }
 .imgdetail:hover img{
-    margin-top: 5px;
-    transition: 0.5s;
+    margin-top: 15px;
+    transition: 0.4s;
 }
 .smart_detail:hover a.text{
+
    margin-top: 2px;
 }
 .smart_detail a.text p.name{
@@ -87,9 +96,4 @@
     font-size: 12px;
     text-align: center;
     border-radius: 3px;
-}
-.breakhead .login_form a{
-    margin-left: 66%;
-    margin-top: -24px;
-    position: absolute;
 }

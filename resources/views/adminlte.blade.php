@@ -318,6 +318,16 @@
           </ul>
         </li>
 
+        <li class="nav-item has-treeview">
+          <a href="khohang" class="nav-link">
+           <i class="fas fa-warehouse"></i>
+           <p>
+            KHO HÀNG
+            <i class="fas fa-angle-left right"></i>
+          </p>
+        </a>
+      </li>
+
       </li>
       <li class="nav-item has-treeview">
         <a href="#" class="nav-link">

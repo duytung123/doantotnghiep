@@ -87,14 +87,17 @@
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
-         @if(Auth::check()){
-        <span style="width: 100px;
-        text-transform: capitalize;
-        font-weight: 600;
-        color: black;
-        top: 17px;
-        left: 86%;
-        position: absolute;">{{Auth::user()->email}}</span>
+         @if(Auth::guard('customer')->check())
+          <li class="nav-item dropdown customer-name">
+             @foreach($customer as $customer)
+           <a class="nav-link dropdown-toggle customer-name-plank" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
+
+          </div>
+          @endforeach
+          </li>
         @endif
       </ul>
     </nav>
@@ -116,6 +119,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 <script src="js/laptop.js"></script>
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 <script type="text/javascript">
   $('#keywords').keyup(function(event) {
     var query = $(this).val();

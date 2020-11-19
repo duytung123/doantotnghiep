@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\ADDrequest;
 use App\Product;
 use App\Category;
+use App\Transaction;
 use DB;
 use Auth;
 class ProductController extends Controller
@@ -112,6 +113,16 @@ class ProductController extends Controller
         $data['productlist'] = Product::where('prod_name', 'like', '%' . $result . '%')->get();
         return view('backend.Product.Searchproduct', $data);
 
+    }
+
+    public function khohang()
+    {
+        return view('backend.Warehouse.Warehouse');
+    }
+    public function tonkho()
+    {
+        $data['inventory'] = Transaction::where('tr_status','0')->get();
+        return view('backend.Warehouse.Inventory',$data);
     }
 }
 

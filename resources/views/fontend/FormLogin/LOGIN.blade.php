@@ -15,8 +15,8 @@
             <button type="button" class="btn-toggle" onclick="register()" >Register</button>
         </div>
 
-        <form method="post" id="login" class="form-login" action="">
-            {{csrf_field()}}
+        <form method="post" id="login" class="form-login" action="loginform/login_customer">
+            @csrf
             @if(isset($errors) && count($errors)>0)
             <div class="alert alert-danger">
             @foreach($errors->all() as $err)
@@ -36,10 +36,12 @@
             <button type="submit" name="submit" class="btn-submit">Login</button>
         </form>
 
-        <form id="register" class="form-login" action="">
-            <input required type="email" class="input-field" placeholder="Email ID">
-            <input required type="password" class="input-field" placeholder="Password">
-            <input required type="password" class="input-field" placeholder="RePassword">
+        <form  id="register" class="form-login" action="{{route('customeradd')}}" method="post">
+            @csrf
+            <input required name="email" value="{{old('email')}}" type="email" class="input-field" placeholder="Email">
+            <input required name="name" value="{{old('email')}}" type="text" class="input-field" placeholder="Name">
+            <input required name="password" type="password" class="input-field" placeholder="Password">
+            <input required name="passwordagain" type="password" class="input-field" placeholder="RePassword">
             <input required type="checkbox" class="check-box"> <span>i agree to the term & conditions</span>
             <button type="submit" class="btn-submit">Register</button>
         </form>

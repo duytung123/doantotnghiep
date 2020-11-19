@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MUsers extends Migration
+class TdCustomer extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class MUsers extends Migration
      */
     public function up()
     {
-         Schema::create('m_users', function (Blueprint $table) {
+         Schema::create('td_customer', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('email')->unique();
                 $table->string('name')->nullable();
@@ -23,11 +23,7 @@ class MUsers extends Migration
                 $table->string('avatar')->nullable();
                 $table->integer('total_pay')->nullable();
                 $table->string('address')->nullable();
-                $table->string('about')->nullable();
-                $table->integer('code')->nullable();
-                $table->timestamps('time_code')->nullable();
-                $table->varchar('code_active')->nullable();
-                $table->timestamps('time_active')->nullable();
+                $table->string('aboute')->nullable();
                 $table->rememberToken();
                 $table->timestamps();
         });

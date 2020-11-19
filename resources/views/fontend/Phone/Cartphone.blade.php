@@ -9,10 +9,37 @@
 			{qty:qty,rowId:rowId},
 			function(){
 				location.reload();
-			});
-		
+			});	
 	}
 
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.choose').on('change',function(event) {
+			var action = $(this).attr('id');
+			var matp = $(this).val();
+			var _token =$('input[name="_token"]').val();
+			var result ='';
+		// alert(action);
+		// alert(matp);
+		// alert(_token);
+		if(action =='city')
+		{
+			result ='district';
+		}else{
+			result ='wards';
+		}
+		$.ajax({
+			method:'get',
+			url:'{{url('cart/getadress')}}',
+			data:{action:action,matp:matp,token:_token},
+			success:function(data){
+				$('#' + result).html(data);
+			}
+
+		});
+	});
+	});
 </script>
 
 <div id="demo" class="carousel slide" data-ride="carousel">
@@ -98,9 +125,9 @@
 					<a href="phone" class="my-btn btn">Mua tiếp</a>
 					<a href="#" class="my-btn btn">Cập nhật</a>
 					<a href="{{asset('cart/delete/all')}}" class="my-btn btn">Xóa giỏ hàng</a>
-			<a class="buttonbuythree11" href="{{asset('thanhtoan/index/'.$item->rowId)}}">
-				<b style="margin-left: 30px;">THANH TOÁN ONLINE</b>
-			</a>
+					<a class="buttonbuythree11" href="{{asset('thanhtoan/index/'.$item->rowId)}}">
+						<b style="margin-left: 30px;">THANH TOÁN ONLINE</b>
+					</a>
 
 				</div>
 			</div>
@@ -123,10 +150,30 @@
 				<label for="phone">Số điện thoại:</label>
 				<input required type="number" class="form-control" id="phone" name="phone">
 			</div>
-			<div class="form-group">
+{{-- 			<div class="form-group">
 				<label for="add">Địa chỉ:</label>
 				<input required type="text" class="form-control" id="add" name="add">
+			</div> --}}
+			{{-- // select tinh thanh pho, quan huyen --}}
+			<div style="PADDING: 0px 13PX;" class="form-group">Địa chỉ
+				<select style="MARGIN-LEFT: 50px;height: 35px;" name="city" id="city" class="choose city">
+					<option value="">---chọn thành phố---</option>
+					@foreach($city as $item)
+					<option value="{{$item->matp}}">{{$item->name_city}}</option>
+					@endforeach
+				</select>
+
+				<select style="height: 35px;" name="district" id="district" class="district choose">
+					<option value="">---chọn quận huyện---</option>
+					<option value=""></option>
+				</select>
+
+				<select style="height: 35px;" name="wards" id="wards" class="wards">
+					<option value="">---chọn xã phường---</option>
+					<option value=""></option>
+				</select>
 			</div>
+
 			<div class="form-group">
 				<label for="add">Ghí chú:</label>
 				<input required type="text" class="form-control" id="note" name="note">

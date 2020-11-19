@@ -41,7 +41,7 @@ body{
     background: linear-gradient(to right,#ff105f,#ffad06);
 }
 .form-login{
-   top:140px;
+   top:90px;
    position: absolute;
    width: 200px;
    transform: .5s; 

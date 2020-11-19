@@ -97,5 +97,7 @@
 	</div>
 
 </div>
-
+  <div class="footer12">
+    <p style="color:white" class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
+  </div>
 @endsection

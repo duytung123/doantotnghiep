@@ -713,7 +713,7 @@ html {
 
 #gotop {
     position: fixed;
-    bottom: 23px;
+    bottom: 60px;
     right: 4px;
     font-size: 30px;
     width: 50px;
@@ -1356,4 +1356,20 @@ ul.category4 li{
 ul.category6{
     margin-left: 12%;
 
+}
+li.customer-name{
+    margin-top: 7px;
+    margin-left: 50px;
+
+}
+a.customer-name-plank{
+    font-family: 'Font Awesome 5 Pro';
+    text-transform: capitalize;
+    color: black !important;
+    font-weight: 600;
+    font-size: 17px;
+}
+.zalo-chat-widget{
+    right: -4px!important;
+    bottom: -10px!important;
 }

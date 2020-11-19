@@ -74,71 +74,79 @@
             <a class="nav" href="">game app</a>
           </li>
         </a>
-          <a href="{{asset('cart/show')}}">
+        <a href="{{asset('cart/show')}}">
           <li class="dddd"> 
             <div class="icon cart"><i class="fas fa-shopping-cart"></i></div> 
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
-        @if(Auth::check()){
-        <span style="width: 100px;
-        text-transform: capitalize;
-        font-weight: 600;
-        color: black;
-        top: 17px;
-        left: 86%;
-        /* float: left; */
-        position: absolute;">{{Auth::user()->email}}</span>
+         
+        @if(Auth::guard('customer')->check())
+        
+          <li class="nav-item dropdown customer-name">
+            
+           <a class="nav-link dropdown-toggle customer-name-plank" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
+           <div class="dropdown-menu">
+            @foreach($customer as $customer)
+            <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
+          @endforeach
+          </div>
+         
+          </li>
+           
         @endif
-      </ul>
-    </nav>
-  </div>
-  {{-- head --}}
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
+        
     </ul>
+  </nav>
+</div>
+{{-- head --}}
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-    <!-- The slideshow -->
-    <br>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="avatar/bn1.png" alt="Los Angeles" width="1300px">
-      </div>
-      <div class="carousel-item">
-        <img src="avatar/bn2.png" alt="Chicago" width="1300px">
-      </div>
-      <div class="carousel-item">
-        <img src="avatar/bn3.png" alt="New York" width="1300px">
-      </div>
-    </div>
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
 
-
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-
-  </div>
-  <div class="quangcao">  
-    <img src="avatar/a1.png" alt="">
-  </div>
+  <!-- The slideshow -->
   <br>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="avatar/bn1.png" alt="Los Angeles" width="1300px">
+    </div>
+    <div class="carousel-item">
+      <img src="avatar/bn2.png" alt="Chicago" width="1300px">
+    </div>
+    <div class="carousel-item">
+      <img src="avatar/bn3.png" alt="New York" width="1300px">
+    </div>
+  </div>
 
-  @yield('main')
 
-  <div class="footer1">
-<p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
- </div>
- <section>
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+<div class="quangcao">  
+  <img src="avatar/a1.png" alt="">
+</div>
+<br>
+
+@yield('main')
+
+<div class="footer1">
+  <p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
+</div>
+<section>
   <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
+  <div class="zalo-chat-widget" data-oaid="1602318280360005737" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400">
 </section>
 
 
@@ -150,6 +158,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 <script src="js/index.js"></script>
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 <script type="text/javascript">
   $('#keywords').keyup(function(event) {
     var query = $(this).val();

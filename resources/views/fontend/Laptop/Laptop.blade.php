@@ -119,7 +119,7 @@ $(document).ready(function(){
 <!-- head -->
 <hr>
 
-<img class="lga" src="avatar/lga.png" alt="">
+<img width="300px" class="lga" src="avatar/lga.png" alt="">
 
 <div class="rowmu">
 

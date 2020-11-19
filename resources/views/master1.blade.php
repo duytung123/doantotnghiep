@@ -81,15 +81,17 @@
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
-         @if(Auth::check()){
-        <span style="width: 100px;
-        text-transform: capitalize;
-        font-weight: 600;
-        color: black;
-        top: 17px;
-        left: 86%;
-        /* float: left; */
-        position: absolute;">{{Auth::user()->email}}</span>
+         @if(Auth::guard('customer')->check())
+          <li class="nav-item dropdown customer-name">
+             @foreach($customer as $customer)
+           <a class="nav-link dropdown-toggle customer-name-plank" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
+
+          </div>
+          @endforeach
+          </li>
         @endif
       </ul>
     </nav>
@@ -142,7 +144,7 @@
   @yield('main')
 
   <div class="footer1">
-    <p style="color:white;" class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
+    <p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
   </div>
   <section>
     <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
@@ -157,6 +159,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
   <script src="js/index.js"></script>
+  <script src="https://sp.zalo.me/plugins/sdk.js"></script>
   <script type="text/javascript">
     $('#keywords').keyup(function(event) {
       var query = $(this).val();

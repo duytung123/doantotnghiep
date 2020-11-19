@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
 use App\Cateallproduct;
+use App\MCustomer;
 use DB;
 class FrontendController extends Controller
 {
@@ -14,8 +15,8 @@ class FrontendController extends Controller
     {
         $data['catname'] = Cateallproduct::find($id);
         $data['product'] = Product::where('prod_cateall', $id)->where('prod_cate', 1)
-            ->orderBy('prod_id', 'desc')
-            ->paginate(5);
+        ->orderBy('prod_id', 'desc')
+        ->paginate(5);
         return view('fontend.Phone.Catelist', $data);
         
     }
@@ -23,20 +24,20 @@ class FrontendController extends Controller
     {
         $data['catname'] = Cateallproduct::find($id);
         $data['product'] = Product::where('prod_cateall', $id)->where('prod_cate', 2)
-            ->orderBy('prod_id', 'desc')
-            ->paginate(5);
+        ->orderBy('prod_id', 'desc')
+        ->paginate(5);
         return view('fontend.Laptop.Catelist', $data);
     }
 
-        public function getcatealltablet($id)
+    public function getcatealltablet($id)
     {
         $data['catname'] = Cateallproduct::find($id);
         $data['product'] = Product::where('prod_cateall', $id)->where('prod_cate', 3)
-            ->orderBy('prod_id', 'desc')
-            ->paginate(5);
+        ->orderBy('prod_id', 'desc')
+        ->paginate(5);
         return view('fontend.Tablet.Catelist', $data);
     }
-        public function getcateallphukien($id)
+    public function getcateallphukien($id)
     {
         $data['catname']=Cateallproduct::find($id);
         $data['product']=Product::where('prod_cateall',$id)->where('prod_cate',4)->orderBy('prod_id','desc')->paginate(4);
@@ -46,61 +47,61 @@ class FrontendController extends Controller
     public function getHome()
     {
         $data['watch'] = Product::where('prod_featured', 4)->Where('prod_cate', 5)
-            ->orderBy('prod_id', 'desc')
-            ->take(10)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(10)
+        ->get();
 
         $data['phukien'] = Product::where('prod_featured', 0)->Where('prod_cate', 4)
-            ->orderBy('prod_id', 'desc')
-            ->take(10)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(10)
+        ->get();
 
         $data['phukien2'] = Product::where('prod_featured', 2)->Where('prod_cate', 4)
-            ->orderBy('prod_id', 'desc')
-            ->take(10)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(10)
+        ->get();
 
         $data['featured'] = Product::where('prod_featured', 3)->Where('prod_cate', 1)
-            ->orderBy('prod_id', 'desc')
-            ->take(1)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(1)
+        ->get();
         $data['featured1'] = Product::where('prod_featured', 1)->Where('prod_cate', 1)
-            ->orderBy('prod_id', 'desc')
-            ->take(1)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(1)
+        ->get();
 
         $data['new2'] = Product::where('prod_featured', 0)->Where('prod_cate', 1)
-            ->orderBy('prod_id', 'desc')
-            ->take(3)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(3)
+        ->get();
         $data['new1'] = Product::where('prod_featured', 2)->Where('prod_cate', 1)
-            ->orderBy('prod_id', 'desc')
-            ->take(3)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(3)
+        ->get();
 
         $data['laptop'] = Product::where('prod_featured', 2)->Where('prod_cate', 2)
-            ->orderBy('prod_id', 'desc')
-            ->take(3)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(3)
+        ->get();
 
         $data['laptop1'] = Product::where('prod_featured', 3)->Where('prod_cate', 2)
-            ->orderBy('prod_id', 'desc')
-            ->take(1)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(1)
+        ->get();
 
         $data['laptop2'] = Product::where('prod_featured', 1)->Where('prod_cate', 2)
-            ->orderBy('prod_id', 'desc')
-            ->take(3)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(3)
+        ->get();
 
         $data['tablet'] = Product::where('prod_featured', 0)->Where('prod_cate', 3)
-            ->orderBy('prod_id', 'desc')
-            ->take(1)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(1)
+        ->get();
         $data['tablet2'] = Product::where('prod_featured', 1)->Where('prod_cate', 3)
-            ->orderBy('prod_id', 'desc')
-            ->take(3)
-            ->get();
+        ->orderBy('prod_id', 'desc')
+        ->take(3)
+        ->get();
 
         return view('fontend.index', $data);
     }
@@ -114,8 +115,8 @@ class FrontendController extends Controller
             foreach ($product as $key => $value)
             {
                 $output .= '<li><a href="' . asset("/detail/$value->prod_id/$value->prod_slug.html") . '">
-				<img style=width:90px;height:75px; src="' . asset("../storage/app/avatar/$value->prod_img") . '" alt="">
-				' . $value->prod_name . '' . $value->prod_description . '</a></li>';
+                <img style=width:90px;height:75px; src="' . asset("../storage/app/avatar/$value->prod_img") . '" alt="">
+                ' . $value->prod_name . '' . $value->prod_description . '</a></li>';
             }
             $output .= '</ul>';
             echo $output;
@@ -124,28 +125,34 @@ class FrontendController extends Controller
 
     }
 
-        public function index()
+    public function index()
     { 
-      return view('fontend.FormLogin.Login');
-    }
+      return view('fontend.FormLogin.LOGIN');
+  }
+    // login form edit customer
+  public function geteditcustomer($id)
+  {
+    $data =MCustomer::find($id);
+    return view('fontend.FormLogin.Information',$data);
+}
 
-        public function postLogincart(Request $request)
-    {
-       $arr=['email'=>$request->email, 'password'=>$request->password];
-       if($request->remember='Remember Me'){
-          $remember=true;
-      }else {
-          $remember=false;
-      }
-      if(Auth::attempt($arr,$remember)){
-          return redirect('cart/show');}
+public function postLogincart(Request $request)
+{
+   $arr=['email'=>$request->email, 'password'=>$request->password];
+   if($request->remember='Remember Me'){
+      $remember=true;
+  }else {
+      $remember=false;
+  }
+  if(Auth::attempt($arr,$remember)){
+      return redirect('cart/show');}
 
-            else
+      else
       {         
-            return redirect("log_cart");
-      }
-
+        return redirect("log_cart");
     }
+
+}
 
 }
 
