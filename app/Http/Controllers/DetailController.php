@@ -15,6 +15,7 @@ class DetailController extends Controller
 	{
 		$data['cate']=Product::find($id);
 		$data['comment']=Comments::where('cm_product',$id)->get();
+		// lay san pham lien quan
 		$data['phukien'] = Product::where('prod_featured',4)->Where('prod_cate',1)
 		->orderBy('prod_id', 'desc')
 		->take(5)

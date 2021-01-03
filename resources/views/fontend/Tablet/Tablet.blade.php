@@ -85,7 +85,7 @@
       </ul>
    </nav>
 </div>
-<div style="margin-left: -395px;" class="category2">
+<div style="margin-left:-308px;" class="category2">
    <ul class="nav lg2">
       <li class="nav-item">
          <span class="nav-link" href="">chọn mức giá:</span>

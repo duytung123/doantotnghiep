@@ -52,13 +52,12 @@ class CartController extends Controller
 	{
 		$total=str_replace(',', '', Cart::total());
 		$arr = [
-			'user_name' => $request->email,
+			'user_name' => $request->name,
+			'email' => $request->email,
 			'tr_totalprice' =>intval($total),
 			'tr_phone' =>$request->phone,
 			'tr_note' =>$request->note,
-			'tr_address' =>$request->wards,
-			'tr_address' =>$request->district,
-			'tr_address' =>$request->city,
+			'tr_address' =>$request->city.'-'.$request->wards.'-'.$request->district,
 			'created_at' =>Carbon::now(),
 			'updated_at' =>Carbon::now()
 		];
@@ -74,7 +73,6 @@ class CartController extends Controller
 					'or_product_id' =>$product->id,
 					'or_qty' => $product->qty,
 					'or_price'=>$product->price,
-					'or_img_product'=>$product->prod_img,
 					'created_at' =>Carbon::now(),
 					'updated_at' =>Carbon::now()
 				]);
@@ -110,7 +108,7 @@ class CartController extends Controller
 
 		return view('Fontend.Complete.Complete');
 	}
-
+	//select thanh pho
 	public function getadd(Request $request)
 	{
 		$data =$request->all();

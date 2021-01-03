@@ -53,7 +53,6 @@
 	@endforeach
 </div>
 <div class="category2">
-
   <ul class="nav lg2">
     <li class="nav-item">
       <a class="nav-link" href="">chọn mức giá:</a>

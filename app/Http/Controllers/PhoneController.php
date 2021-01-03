@@ -116,19 +116,19 @@ class PhoneController extends Controller
 
     public function price3()
     {
-        $data['product']=Product::whereBetween('prod_price',[4000000,7000000])->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(4);
+        $data['product']=Product::whereBetween('prod_price',[4000000,7000000])->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(5);
         return view('fontend.Phone.ListPrice',$data);
     }
 
     public function price4()
     {
-        $data['product']=Product::whereBetween('prod_price',[7000000,13000000])->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(4);
+        $data['product']=Product::whereBetween('prod_price',[7000000,13000000])->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(5);
         return view('fontend.Phone.ListPrice',$data);
     }
 
     public function price5()
     {
-        $data['product']=Product::where('prod_price','>',13000000)->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(4);
+        $data['product']=Product::where('prod_price','>',13000000)->where('prod_cate',1)->orderBy('prod_id','desc')->paginate(5);
         return view('fontend.Phone.ListPrice',$data);
     }
 }

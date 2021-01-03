@@ -63,21 +63,21 @@
     <li class="nav-item">
       <a class="nav-link" href="">chọn mức giá:</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="?price=2">dưới 2 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">từ 2 đến 4 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">từ 4 đến 7 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">từ 7 đến 13 triệu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">trên 13 triệu</a>
-    </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price1">dưới 2 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price2">từ 2 đến 4 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price3">từ 4 đến 7 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price4">từ 7 đến 13 triệu</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="phone/levelprice/price5">trên 13 triệu</a>
+      </li>
     <li class="nav-item dropdown drop1">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>
       <div class="dropdown-menu">

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN-FORM</title>
+    <title>Update Recovery</title>
+    <base href="{{asset('')}}">
     <link rel="stylesheet" href="css/logn.css">
 </head>
 <body>
@@ -14,8 +15,11 @@
             <button type="button" onclick="login()" class="btn-toggle">Login</button>
             <button type="button" class="btn-toggle" onclick="register()" >Register</button>
         </div>
-
-        <form method="post" id="login" class="form-login" action="loginform/login_customer">
+            @php
+                $token= $_GET['token'];
+                $email=$_GET['email'];
+            @endphp
+        <form method="post" id="login" class="form-login" action="{{url('loginform/updatepassword')}}">
             @csrf
             @if(isset($errors) && count($errors)>0)
             <div class="alert alert-danger">
@@ -29,29 +33,17 @@
             <div class="alert alert-success">
             {{session('thongbao')}}
             </div>
-            @endif  
-            <input required type="text" name="email" class="input-field" placeholder="User ID">
+            @endif
+            <input type="hidden" name="email" value="{{$email}}">
+            <input type="hidden" name="token" value="{{$token}}">
+            <span>Vui lòng nhập mật khẩu mới</span>
+
             <input required type="password" name="password" class="input-field" placeholder="Enter Password">
-            <input type="checkbox" class="check-box"> <span>Rememver Password</span>
-            <button type="submit" name="submit" class="btn-submit">Login</button>
-            {{-- <a href="" name="forgetpass" class="btn-submit1"></a> --}}
-            <div>
-                 <a class="btn-forget" href="loginform/forgetpass">Forget Password</a>
-            </div>
        
-
+            <button type="submit" name="submit" class="btn-submit">Gửi</button>
         </form>
 
-        <form  id="register" class="form-login" action="{{route('customeradd')}}" method="post">
-            @csrf
-            <input required name="email" value="{{old('email')}}" type="email" class="input-field" placeholder="Email">
-            <input required name="name" value="{{old('email')}}" type="text" class="input-field" placeholder="Name">
-            <input required name="password" type="password" class="input-field" placeholder="Password">
-            <input required name="passwordagain" type="password" class="input-field" placeholder="RePassword">
-            <input required type="checkbox" class="check-box"> <span>i agree to the term & conditions</span>
-            <button type="submit" class="btn-submit">Register</button>
-           
-        </form>
+
       
     </div>
     <script>

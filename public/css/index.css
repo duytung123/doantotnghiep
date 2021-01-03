@@ -52,7 +52,31 @@ html {
 .navbar-nav {
     height: 60px;
 }
-
+/* iccon contact */
+.nav_item_contact{
+      left: 86%;
+    position: absolute;
+    margin-top: -3px;
+}
+.icon_contact{
+    color: black;
+    font-size: 30px;
+}
+a.nav_contact{
+    top: -13px;
+    font-family: 'Font Awesome 5 Pro';
+    /* margin-left: -4px; */
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    /* margin-top: 16px; */
+    color: black;
+    left: -5px;
+}
+a.nav_contact:hover{
+    color: black;
+}
+/* iccon contact */
 .navbar1 {
     height: 55px;
     background-color: #fed700 !important;
@@ -729,7 +753,7 @@ html {
 }
 
 .navbar-nav {
-    height: 60px;
+    height: 55px;
 }
 
 .navbar1 {
@@ -835,7 +859,8 @@ html {
 }
 
 .quangcao {
-    margin-left: 84px;
+      margin-left: 86px;
+    margin-top: 10px;
 }
 
 .producthot .a1 {
@@ -1188,6 +1213,7 @@ p {
 }
 
 .slick {
+
     width: 240px !important;
     height: 300px;
     margin-left: 29px;
@@ -1359,10 +1385,11 @@ ul.category6{
 }
 li.customer-name{
     margin-top: 7px;
-    margin-left: 50px;
+    margin-left: 69px;
 
 }
 a.customer-name-plank{
+    margin-left: -21px;
     font-family: 'Font Awesome 5 Pro';
     text-transform: capitalize;
     color: black !important;
@@ -1372,4 +1399,8 @@ a.customer-name-plank{
 .zalo-chat-widget{
     right: -4px!important;
     bottom: -10px!important;
+}
+a.dropdown-item{
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 15px;
 }

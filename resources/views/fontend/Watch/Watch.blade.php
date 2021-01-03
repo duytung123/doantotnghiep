@@ -39,19 +39,19 @@
 			<a class="nav-link" href="">chọn mức giá:</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="?price=2">dưới 2 triệu</a>
+			<a class="nav-link" href="?price=2">dưới 5 triệu</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="">từ 2 đến 4 triệu</a>
+			<a class="nav-link" href="">từ 5 đến 7 triệu</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="">từ 4 đến 7 triệu</a>
+			<a class="nav-link" href="">từ 7 đến 10 triệu</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="">từ 7 đến 13 triệu</a>
+			<a class="nav-link" href="">từ 10 đến 15 triệu</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="">trên 13 triệu</a>
+			<a class="nav-link" href="">trên 15 triệu</a>
 		</li>
 		<li class="nav-item dropdown drop1">
 			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Xem Thêm</a>

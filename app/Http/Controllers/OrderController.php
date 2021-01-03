@@ -23,7 +23,7 @@ class OrderController extends Controller
     	if($request->ajax())
     	{
 
-    		$orders = Order::with('product1')->where('or_transaction_id',$id)->get();
+    		$orders = Order::with('product')->where('or_transaction_id',$id)->get();
 
     		$html= view('backend.Components.chitietdonhang',compact('orders'))->render();
 
@@ -39,16 +39,19 @@ class OrderController extends Controller
     }
     public function active($id)
     {
-       $transaction = Transaction::find($id);
-       // dd($transaction);
+
+      $transaction = Transaction::find($id);
       $orders =Order::where('or_transaction_id',$id)->get();
+      //xu ly product
       if($orders){
         foreach ($orders as $item) {
             $product =Product::find($item->or_product_id);
-            $product->prod_number=$product->prod_number - $item->or_qty;
+            $product->prod_number = $product->prod_number - $item->or_qty;
+            $product->prod_pay=$product->prod_pay + $item->or_qty;
             $product->save();
         }
       }
+      // change status color
       $transaction->tr_status=Transaction::STATUS_PRIVATE;
       $transaction->save();
       return back();

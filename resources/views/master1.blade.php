@@ -28,7 +28,7 @@
         {{csrf_field()}}
         <input id="keywords" class="form-control mr-sm-2 inputsearch" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
         <div id="search_ajax"></div>
-        <button class="btn searchbtn"  type="submit"><i class="fa fa-search"></i></button>
+        <button class="btn searchbtn"  type="#"><i class="fa fa-search"></i></button>
       </form>
 
       <ul class="navbar-nav">
@@ -69,10 +69,10 @@
             <a class="nav" href="tintuc">công nghệ</a>
           </li>
         </a>
-        <a href="">
+        <a href="Contact">
           <li class="nav-item nav_item"> 
-            <div class="icon"><i class="fal fa-gamepad-alt"></i></div> 
-            <a class="nav" href="">game app</a>
+            <div class="icon"><i class="fal fa-users"></i></div> 
+            <a class="nav" href="Contact">Liên Hệ</a>
           </li>
         </a>
         <a href="{{asset('cart/show')}}">
@@ -81,108 +81,111 @@
             <a class="count" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
           </li>
         </a>
-         @if(Auth::guard('customer')->check())
-          <li class="nav-item dropdown customer-name">
-             @foreach($customer as $customer)
-           <a class="nav-link dropdown-toggle customer-name-plank" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
-           <div class="dropdown-menu">
-            <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
-            <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
+        @if(Auth::guard('customer')->check())
+        <li class="nav-item dropdown customer-name">
+         @foreach($customer as $customer)
+         <a class="nav-link dropdown-toggle customer-name-plank" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
+         <div class="dropdown-menu">
+          <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+           <a class="dropdown-item dr2" href="loginform/logout">Đơn hàng của bạn</a>
+          <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
 
-          </div>
-          @endforeach
-          </li>
-        @endif
-      </ul>
-    </nav>
-  </div>
-  {{-- head --}}
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
+        </div>
+        @endforeach
+      </li>
+      @endif
     </ul>
+  </nav>
+</div>
+{{-- head --}}
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-    <!-- The slideshow -->
-    <br>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="avatar/banerwatch1.png" alt="Los Angeles" width="1300px">
-      </div>
-      <div class="carousel-item">
-        <img src="avatar/banerwatch2.png" alt="Chicago" width="1300px">
-      </div>
-      <div class="carousel-item">
-        <img src="avatar/banerwatch3.png" alt="New York" width="1300px">
-      </div>
-      <div class="carousel-item">
-        <img src="avatar/banerwatch4.png" alt="New York" width="1300px">
-      </div>
-      <div class="carousel-item">
-        <img src="avatar/banerwatch5.png" alt="New York" width="1300px">
-      </div>
-    </div>
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
 
-
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-
-  </div>
-  <div class="quangcao">  
-    <img src="avatar/a1.png" alt="">
-  </div>
+  <!-- The slideshow -->
   <br>
-
-  @yield('main')
-
-  <div class="footer1">
-    <p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="avatar/banerwatch1.png" alt="Los Angeles" width="1300px">
+    </div>
+    <div class="carousel-item">
+      <img src="avatar/banerwatch2.png" alt="Chicago" width="1300px">
+    </div>
+    <div class="carousel-item">
+      <img src="avatar/banerwatch3.png" alt="New York" width="1300px">
+    </div>
+    <div class="carousel-item">
+      <img src="avatar/banerwatch4.png" alt="New York" width="1300px">
+    </div>
+    <div class="carousel-item">
+      <img src="avatar/banerwatch5.png" alt="New York" width="1300px">
+    </div>
   </div>
-  <section>
-    <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
-  </section>
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
-  <script src="js/index.js"></script>
-  <script src="https://sp.zalo.me/plugins/sdk.js"></script>
-  <script type="text/javascript">
-    $('#keywords').keyup(function(event) {
-      var query = $(this).val();
-      if(query != '')
-      {
-        var _token = $('input[name="_token"]').val();
-        $.ajax({
-          url : "{{url('autocomplet_ajax')}}",
-          method : "post",
-          data :{query:query, _token:_token},
-          success:function(data){
-            $('#search_ajax').fadeIn();
-            $('#search_ajax').html(data);
-          }
+</div>
+<div class="quangcao">  
+  <img src="avatar/a1.png" alt="">
+</div>
+<br>
 
-        });
-      }
-      else
-      {
-        $('#search_ajax').fadeOut();
-      }
-    });
-  </script>
+@yield('main')
+
+<div class="footer1">
+  <p class="kytu">© 2020. Công ty cổ phần Thế Giới Số 1. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2020. Địa chỉ: 79 Mai Thị Dõng,Nha Trang-Khánh Hòa. Điện thoại: 0964672213. Email: cskh@thegioiso1.vn. Chịu trách nhiệm nội dung: Nguyễn Duy Tùng</p>
+</div>
+<section>
+  <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
+  <div class="zalo-chat-widget" data-oaid="1602318280360005737" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400">
+  </div>
+</section>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+<script src="js/index.js"></script>
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>
+<script type="text/javascript">
+  $('#keywords').keyup(function(event) {
+    var query = $(this).val();
+    if(query != '')
+    {
+      var _token = $('input[name="_token"]').val();
+      $.ajax({
+        url : "{{url('autocomplet_ajax')}}",
+        method : "post",
+        data :{query:query, _token:_token},
+        success:function(data){
+          $('#search_ajax').fadeIn();
+          $('#search_ajax').html(data);
+        }
+
+      });
+    }
+    else
+    {
+      $('#search_ajax').fadeOut();
+    }
+  });
+</script>
 
 </body>
 </html>

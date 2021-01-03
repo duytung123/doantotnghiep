@@ -190,19 +190,19 @@ class TabletController extends Controller
         // chon gia san pham
 public function price1()
 {
-  $data['product']=Product::where('prod_price','<',3000000)->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(4);
+  $data['product']=Product::where('prod_price','<',3000000)->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(5);
   return view('fontend.Tablet.ListPrice',$data);
 }
 
 public function price2()
 {
-  $data['product']=Product::whereBetween('prod_price',[3000000,7000000])->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(4);
+  $data['product']=Product::whereBetween('prod_price',[3000000,7000000])->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(5);
   return view('fontend.Tablet.ListPrice',$data);
 }
 
 public function price3()
 {
-  $data['product']=Product::where('prod_price','>',13000000)->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(4);
+  $data['product']=Product::where('prod_price','>',13000000)->where('prod_cate',3)->orderBy('prod_id','desc')->paginate(5);
   return view('fontend.Tablet.ListPrice',$data);
 }
 

@@ -82,6 +82,10 @@
 				</div>
 				<span>Bạn vui lòng điền vào những thông tin dưới đây:</span>
 				<div class="form-group">
+					<label for="order_desc">Email của bạn</label>
+					<input class="form-control" cols="20" id="order_desc" name="email">
+				</div>
+				<div class="form-group">
 					<label for="order_desc">Tên của bạn</label>
 					<input class="form-control" cols="20" id="order_desc" name="name">
 				</div>
@@ -91,7 +95,7 @@
 				</div>
 					<div class="form-group">
 					<label for="order_desc">Địa chỉ</label>
-					<input class="form-control" cols="20" id="order_desc" name="add">
+					<input class="form-control" cols="20" id="order_desc" name="city">
 				</div>
 				<div class="form-group">
 					<label for="order_desc">Ghi chú</label>
@@ -143,7 +147,7 @@
 			&nbsp;
 		</p>
 		<footer class="footer">
-			<p>&copy; VNPAY 2015</p>
+			<p>&copy; VNPAY 2020</p>
 		</footer>
 	</div>  
 

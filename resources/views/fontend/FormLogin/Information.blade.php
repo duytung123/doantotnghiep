@@ -94,7 +94,7 @@
 				</div>
 				<div class="d-flex__row information_email">
 					<span>Email</span>
-					<input readonly required type="text"name="email" value="{{auth('customer')->user()->email}}">
+					<input  type="text"name="email" value="{{auth('customer')->user()->email}}">
 					{{-- <span>{{auth('customer')->user()->email}}</span> --}}
 				</div>
 				<div class="d-flex__row information_address">
@@ -118,7 +118,7 @@
 			</div>
 			<div class="d-flex__row information_phone">
 				<span>Mã số thuế</span>
-				<input required="" type="text" name="code" value="{{auth('customer')->user()->code_tax}}">
+				<input type="text" name="code" value="{{auth('customer')->user()->code_tax}}">
 				{{-- 			<span>vui lòng nhập giới tính của bạn</span> --}}
 			</div>
 			<div class="btn11">

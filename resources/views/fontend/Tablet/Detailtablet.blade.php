@@ -76,7 +76,7 @@
     </script>   
     <style>
         .star_rating_foramt_total .active {color: #FF9705 !important;}
-    
+
         .list__star .rating_active{
             color:#ff9705;
         }
@@ -112,14 +112,29 @@
             border-width: 6px;
             margin-top: -6px;
         }
+        .login_form{
+            position: relative;
+            top: 10px;
+            left: -65px;
+            float: right;
+        }
+        .login_form_text{
+            font-weight: 600;
+            color: #037eea;
+        }
     </style>
     <link rel="stylesheet" href="css/detail.css">
     <div class="breakhead">
         <a class="breakhead-text" href="trangchu">Trang chủ </a>
         <span> › </span>
-        <a class="breakhead-text" href="">Điện Thoại </a>
+        <a class="breakhead-text" href="">Tablet</a>
         <span> › </span>
-        <a class="breakhead-text" href="">....</a>
+
+        <div class="login_form">
+
+            <a class="login_form_text" href="loginform">ĐĂNG NHẬP/ĐĂNG KÝ</a>
+
+        </div>
     </div>
 
     <div class="phonetext">
@@ -257,170 +272,169 @@
 
     <div class="commenttong">
         <div class="danhgiaphone">
-            <h4>{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 35px;margin-top: -23px;
-}">Đánh giá <span>{{$cate->prod_name}}</span> </p> </h4>
+            <h5 style="margin-left: 10px;">{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 24px;margin-top: -22px">Đánh giá <span>{{$cate->prod_name}}</span> </p> </h5>
         </div>
-        <!-- đánh giá sản phẩm -->
-        <div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">
+    <!-- đánh giá sản phẩm -->
+    <div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">
 
-            <div class="rating_item" style="width: 20%;position: relative;"> 
-                <span class="fa fa-star" style="font-size: 100px; display: block; margin: 0 auto;text-align: center; color: #ff9705";></span><b style="position: absolute;top: 50%;transform: translateX(-50%) translateY(-50%);text-align: center;left: 50%;color: white;font-size: 30px;">2.5</b>
-            </div>
+        <div class="rating_item" style="width: 20%;position: relative;"> 
+            <span class="fa fa-star" style="font-size: 100px; display: block; margin: 0 auto;text-align: center; color: #ff9705";></span><b style="position: absolute;top: 50%;transform: translateX(-50%) translateY(-50%);text-align: center;left: 50%;color: white;font-size: 30px;">2.5</b>
+        </div>
 
 
-            <div class="list_rating" style="width: 60%;padding: 20px;" >
-                @for($i =1; $i<=5; $i++ )
-                <div class="item" style="display: flex; align-items: center;">
+        <div class="list_rating" style="width: 60%;padding: 20px;" >
+            @for($i =1; $i<=5; $i++ )
+            <div class="item" style="display: flex; align-items: center;">
 
-                    <div style="width: 10%">
-                        {{$i}}<span class="fa fa-star"></span>
-                    </div>
-                    <div style="width: 70%; margin: 0 20px;" >
-                        <span style="width: 100%; height: 8px; display: block;border:1px solid #dedede ; background-color:#dedede ;"> <b style="width: 30%; background-color: #f25800 ;  display: block;height: 100%; border-radius: 5px; "></b></span>
-                    </div>
-                    <div style="width: 20%">
-                        <a href="">20 đánh giá</a>
-                    </div>
-
+                <div style="width: 10%">
+                    {{$i}}<span class="fa fa-star"></span>
                 </div>
-                @endfor
-            </div>
-            <?php 
-            $listrating =[
-                1 =>    "không thích",
-                2 =>    "tạm được",
-                3 =>    "hài lòng",
-                4 =>    "rất tốt",
-                5 =>    "tuyệt vời"
-            ];
-            ?>
-
-            <div style="    border-radius: 5px;width: 200px;background-color: #288ad6;padding: 10px 35px;" class="rating_people">
-                <a href="#" class="js_rating" style="color: white; font-size: 15px;   text-decoration: none;" >Đánh giá của bạn</a>
-            </div>
-
-        </div>
-
-        <div style="margin-left:47px ;" class="list product">
-            <div class="col-md-12">
-                <div class="comment-list">
-                    @foreach($rating as $rating)
-
-                    <ul>
-                        <li class="com-title">
-                            <p class="r_name1">{{$rating->r_name}}</p>
-                            <i class="fal fa-badge-check checked"></i> <span class="r">Đã mua hàng tại Thegioiso.web</span>
-                            <br>
-                            <li class="com-details">
-                                <p class="com_details_font">{{$rating->r_content}}</p>
-                            </li>
-                            <span style="font-size: 13px">{{$rating->updated_at}}</span>   
-                        </li>
-
-                    </ul>
-                    @endforeach
+                <div style="width: 70%; margin: 0 20px;" >
+                    <span style="width: 100%; height: 8px; display: block;border:1px solid #dedede ; background-color:#dedede ;"> <b style="width: 30%; background-color: #f25800 ;  display: block;height: 100%; border-radius: 5px; "></b></span>
                 </div>
+                <div style="width: 20%">
+                    <a href="">20 đánh giá</a>
+                </div>
+
             </div>
+            @endfor
         </div>
-        <div class="bigbig invisible">
-            <div style="display:flex;margin-top: 3px; "class="hide" > 
-                <p style="font-size: 15px; ">Chọn đánh giá của bạn</p>
-                <span style="margin: -3px 15px; " class="list__star">
-                    @for($i=1;$i<=5;$i++)
-                    <i class="fa fa-star" data-key="{{$i}}"></i>
-                    @endfor
-                </span>
-                <span class="cffff1">không thích</span>
-                <input type="hidden" value="" class="number_rating_format">
-            </div>
-            <div>
-                <textarea required id="r_content" name="" cols="50" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
+        <?php 
+        $listrating =[
+            1 =>    "không thích",
+            2 =>    "tạm được",
+            3 =>    "hài lòng",
+            4 =>    "rất tốt",
+            5 =>    "tuyệt vời"
+        ];
+        ?>
 
-            </div>
-
-            <div class="name">
-                <input required id="r_name" placeholder="họ tên" type="text">
-            </div>
-            <div class="email">
-                <input required id="r_email" required placeholder="email" type="email">
-            </div>
-            <div class="phone">
-                <input required id="r_phone" required placeholder="số điện thoại" type="number">
-            </div>
-
-            <div class="btn_rating11">
-                <a class="js_rating_product" style="text-decoration: none;color: white;font-size: 16px;FONT-FAMILY: ui-serif;padding: 0 12px;" data-id="{{$cate->prod_id}}" href="{{asset('/rating')}}" >Gửi Đánh Giá</a>
-            </div>
-    
-        </div>
-    {{--     product lien quan --}}
-        <div class="product_other"> 
-            <h5 style="position: absolute;margin-left: 66%;font-family: 'slick';
-    margin-left: 63%;
-    margin-top: 20px;
-    font-weight: 600;">CÁC SẢN PHẨM NỔI BẬT KHÁC</h5>
-            @foreach($phukien as $product)
-            <div class="product_other_details">
-                    <a href="{{asset('detail/'.$product->prod_id.'/'.$product->prod_slug.'.html')}}"><img width="120px" height="100px" src="{{asset('../storage/app/avatar/'.$product->prod_img)}}" alt=""></a>
-                    <a href=""><span class="product_other_details_name">{{$product->prod_name}}</span></a>
-                    <a href=""><span class="product_other_details_price">{{$product->prod_price}}</span></a>
-    <hr class="product_other_details_hr">
-            </div>
-
-            @endforeach
-
+        <div style="    border-radius: 5px;width: 200px;background-color: #288ad6;padding: 10px 35px;" class="rating_people">
+            <a href="#" class="js_rating" style="color: white; font-size: 15px;   text-decoration: none;" >Đánh giá của bạn</a>
         </div>
 
+    </div>
 
-        <!-- phần bình luận sản phẩm -->
+    <div style="margin-left:47px ;" class="list product">
+        <div class="col-md-12">
+            <div class="comment-list">
+                @foreach($rating as $rating)
 
-        <div class="comment_product" style="margin-top: -450px;margin-bottom: 173px;" id="comment">
-            <h3>Bình luận</h3>
-            <div class="col-md-6 comment">
-                <form method="post">
-                    <div class="form-group">
-                        <label style="position: absolute" for="email">Email:</label>
-                        <input required type="email" class="form-control" id="email" name="email">
-
-                    </div>
-                    <div class="form-group">
-                        <label style="position: absolute" for="name">Tên:</label>
-                        <input required type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="form-group">
-                        <label style="position: absolute" for="cm">Bình luận:</label>
-                        <textarea required rows="6" id="cm" class="form-control" name="content"></textarea>
-                    </div>
-                    <div class="form-group text-right">
-                        <button class="btnsubmit" type="submit" class="btn btn-default">Gửi</button>
-                    </div>
-                    {{csrf_field()}}
-                </form>
-            </div>
-        </div>
-
-        <hr class="ratinghr">
-        <div class="list product">
-            <div class="col-md-12">
-                <div class="comment-list">
-                    @foreach($comment as $cm)
-                    <ul>
-                        <li class="com-title">
-                            {{$cm->cm_name}} <i class="fal fa-badge-check checked"></i> <span class="r">Đã mua hàng tại Thegioiso.web</span>
-                            <br>
-                            <span>{{date('d/m/Y H:i',strtotime($cm->created_at))}}</span>   
-                        </li>
+                <ul>
+                    <li class="com-title">
+                        <p class="r_name1">{{$rating->r_name}}</p>
+                        <i class="fal fa-badge-check checked"></i> <span class="r">Đã mua hàng tại Thegioiso.web</span>
+                        <br>
                         <li class="com-details">
-                            <p class="com_details_font">{{$cm->cm_content}}</p>
+                            <p class="com_details_font">{{$rating->r_content}}</p>
                         </li>
-                    </ul>
-                    @endforeach
-                </div>
+                        <span style="font-size: 13px;margin-left: 10px;">{{$rating->updated_at}}</span>   
+                    </li>
+
+                </ul>
+                @endforeach
             </div>
         </div>
+    </div>
+    <div class="bigbig invisible">
+        <div style="display:flex;margin-top: 3px; "class="hide" > 
+            <p style="font-size: 15px; ">Chọn đánh giá của bạn</p>
+            <span style="margin: -3px 15px; " class="list__star">
+                @for($i=1;$i<=5;$i++)
+                <i class="fa fa-star" data-key="{{$i}}"></i>
+                @endfor
+            </span>
+            <span class="cffff1">không thích</span>
+            <input type="hidden" value="" class="number_rating_format">
+        </div>
+        <div>
+            <textarea required id="r_content" name="" cols="50" rows="3" placeholder="Nhập đánh giá về sản phẩm"></textarea>
 
+        </div>
+
+        <div class="name">
+            <input required id="r_name" placeholder="họ tên" type="text">
+        </div>
+        <div class="email">
+            <input required id="r_email" required placeholder="email" type="email">
+        </div>
+        <div class="phone">
+            <input required id="r_phone" required placeholder="số điện thoại" type="number">
+        </div>
+
+        <div class="btn_rating11">
+            <a class="js_rating_product" style="text-decoration: none;color: white;font-size: 16px;FONT-FAMILY: ui-serif;padding: 0 12px;" data-id="{{$cate->prod_id}}" href="{{asset('/rating')}}" >Gửi Đánh Giá</a>
+        </div>
+
+    </div>
+    {{--     product lien quan --}}
+    <div class="product_other"> 
+        <h5 style="position: absolute;margin-left: 66%;font-family: 'slick';
+        margin-left: 63%;
+        margin-top: 20px;
+        font-weight: 600;">CÁC SẢN PHẨM NỔI BẬT KHÁC</h5>
+        @foreach($phukien as $product)
+        <div class="product_other_details">
+            <a href="{{asset('detail/'.$product->prod_id.'/'.$product->prod_slug.'.html')}}"><img width="120px" height="100px" src="{{asset('../storage/app/avatar/'.$product->prod_img)}}" alt=""></a>
+            <a href=""><span class="product_other_details_name">{{$product->prod_name}}</span></a>
+            <a href=""><span class="product_other_details_price">{{$product->prod_price}}</span></a>
+            <hr class="product_other_details_hr">
+        </div>
+
+        @endforeach
 
     </div>
 
 
-    @endsection
+    <!-- phần bình luận sản phẩm -->
+
+    <div class="comment_product" style="margin-top: -450px;margin-bottom: 173px;" id="comment">
+        <h3>Bình luận</h3>
+        <div class="col-md-6 comment">
+            <form method="post">
+                <div class="form-group">
+                    <label style="position: absolute" for="email">Email:</label>
+                    <input required type="email" class="form-control" id="email" name="email">
+
+                </div>
+                <div class="form-group">
+                    <label style="position: absolute" for="name">Tên:</label>
+                    <input required type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label style="position: absolute" for="cm">Bình luận:</label>
+                    <textarea required rows="6" id="cm" class="form-control" name="content"></textarea>
+                </div>
+                <div class="form-group text-right">
+                    <button class="btnsubmit" type="submit" class="btn btn-default">Gửi</button>
+                </div>
+                {{csrf_field()}}
+            </form>
+        </div>
+    </div>
+
+    <hr class="ratinghr">
+    <div class="list product">
+        <div class="col-md-12">
+            <div class="comment-list">
+                @foreach($comment as $cm)
+                <ul>
+                    <li class="com-title">
+                        {{$cm->cm_name}} <i class="fal fa-badge-check checked"></i> <span class="r">Đã mua hàng tại Thegioiso.web</span>
+                        <br>
+                        <span>{{date('d/m/Y H:i',strtotime($cm->created_at))}}</span>   
+                    </li>
+                    <li class="com-details">
+                        <p class="com_details_font">{{$cm->cm_content}}</p>
+                    </li>
+                </ul>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+@endsection

@@ -56,7 +56,7 @@
 						<p>
 							<span class="info">Địa chỉ: </span>
 							{{-- {{$info->$request->city}} --}}
-							{{$info['city']}}.--.{{$info['district']}}.--.{{$info['wards']}}
+							{{$info['city']}}
 						</p>
 						<p>
 							<span class="info">Ghi chú: </span>

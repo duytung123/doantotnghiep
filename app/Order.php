@@ -11,7 +11,7 @@ class Order extends Model
     protected $primaryKey='id';
     protected $guarded=['*'];
 
-    public function product1()
+    public function product()
     {
    		return $this->belongsTo('App\Product','or_product_id');
     }

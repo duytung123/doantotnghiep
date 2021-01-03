@@ -4,26 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Tintuc;
+use App\Article;
 use DB;
 use Auth;
 
-class Tintuccontroller extends Controller
+class ArticleController extends Controller
 {
 	public function getDetailtintuc($id)
 	{
-		$data1['chitiet']=Tintuc::find($id);
+		$data1['chitiet']=Article::find($id);
 		return view('fontend.TinTuc.Detail',$data1);
 	}
 
 	public function getindex()
 	{
-		$data['tintuc']=Tintuc::all();
+		$data['tintuc']=Article::all();
 		return view('fontend.TinTuc.Tintuc',$data);
 	}
 	public function getList_news()
 	{
-		$data['tintuc']=Tintuc::all();
+		$data['tintuc']=Article::all();
 		
 		return view('backend.News.News',$data);
 	}
@@ -50,7 +50,7 @@ class Tintuccontroller extends Controller
 				'content.required'=>'Bạn chưa nhập nội dung'
 			]);
 
-		$tintuc=new Tintuc;
+		$tintuc=new Article;
 		$filename=$request->img->getClientOriginalName();
 		$tintuc->n_title=$request->title;
 		$tintuc->n_contentslug=Str::slug($request->title);
@@ -68,7 +68,7 @@ class Tintuccontroller extends Controller
 
 	    public function geteditnews($id)
     {
-        $data['edit']=Tintuc::find($id);
+        $data['edit']=Article::find($id);
 
         return view('backend.News.editnews',$data);
         
@@ -77,7 +77,7 @@ class Tintuccontroller extends Controller
         public function posteditnews(Request $request,$id)
     {
 
-		$tintuc=new Tintuc;
+		$tintuc=new Article;
         $arr['n_title']=$request->title;
         $arr['n_contentslug']=Str::slug($request->title);
         $arr['n_content']=$request->content;
@@ -95,7 +95,7 @@ class Tintuccontroller extends Controller
     }
     public function getdeletenews($id)
     {
-    	Tintuc::destroy($id);
+    	Article::destroy($id);
     	return back();
     }
 }

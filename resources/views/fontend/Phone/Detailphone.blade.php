@@ -112,6 +112,16 @@
 			border-width: 6px;
 			margin-top: -6px;
 		}
+		.login_form{
+            position: relative;
+            top: 10px;
+            left: -65px;
+            float: right;
+        }
+        .login_form_text{
+            font-weight: 600;
+            color: #037eea;
+        }
 	</style>
 	<link rel="stylesheet" href="css/detail.css">
 	<div class="breakhead">
@@ -119,7 +129,11 @@
 		<span> › </span>
 		<a class="breakhead-text" href="">Điện Thoại </a>
 		<span> › </span>
-		<a class="breakhead-text" href="">....</a>
+		<div class="login_form">
+
+            <a class="login_form_text" href="loginform">ĐĂNG NHẬP/ĐĂNG KÝ</a>
+
+        </div>
 	</div>
 
 	<div class="phonetext">
@@ -175,18 +189,13 @@
 					<span>Giao tận nơi hoặc nhận tại siêu thị</span>
 				</a>
 
-
 			</div>
 			<div class="contentphone-buttonbuy2">
-
-
 				<a  class="buttonbuytwo" href="">
 					<b>MUA TRẢ GÓP 0%</b>
 
 					<span>Thủ tục đơn giản</span>
 				</a>
-
-
 				<a  class="buttonbuythree" href="{{asset('thanhtoan/index/'.$cate->prod_id)}}">
 					<b>THANH TOÁN ONLINE</b>
 
@@ -256,10 +265,9 @@
 	<hr>
 
 	<div class="commenttong">
-		<div class="danhgiaphone">
-			<h4>{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 35px;margin-top: -23px;
-}">Đánh giá <span>{{$cate->prod_name}}</span> </p> </h4>
-		</div>
+        <div class="danhgiaphone">
+            <h5 style="margin-left: 10px;">{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 24px;margin-top: -23px">Đánh giá <span>{{$cate->prod_name}}</span> </p> </h5>
+        </div>
 		<!-- đánh giá sản phẩm -->
 		<div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">
 
@@ -314,7 +322,7 @@
 							<li class="com-details">
 								<p class="com_details_font">{{$rating->r_content}}</p>
 							</li>
-							<span style="font-size: 13px">{{$rating->updated_at}}</span>   
+							<span style="font-size: 13px;margin-left: 10px;">{{$rating->updated_at}}</span>   
 						</li>
 
 					</ul>
@@ -408,7 +416,7 @@
 						<li class="com-title">
 							{{$cm->cm_name}} <i class="fal fa-badge-check checked"></i> <span class="r">Đã mua hàng tại Thegioiso.web</span>
 							<br>
-							<span>{{date('d/m/Y H:i',strtotime($cm->created_at))}}</span>   
+							<span>{{date('d/m/Y H:i:s',strtotime($cm->created_at))}}</span>   
 						</li>
 						<li class="com-details">
 							<p class="com_details_font">{{$cm->cm_content}}</p>

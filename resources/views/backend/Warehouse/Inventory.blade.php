@@ -56,7 +56,7 @@
 													<img width="200px" src="{{asset('../storage/app/avatar/'.$prod1->prod_img)}}"class="thumbnail">
 												</td>
 												<td>{{$prod1->cate_name}}</td>
-												<td>SL:{{$prod1->prod_number}} <br>ĐD:{{$prod1->prod_rating_number}} </td> 
+												<td>SL:{{$prod1->prod_pay}} <br>ĐG:{{$prod1->prod_rating_number}} </td> 
 												<td>
 													<a href="{{asset('admin/product/update/'.$prod1->prod_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
 													<a onclick= "return confirm('Bạn có chắc muốn xóa sản phẩm không')" href="{{asset('admin/product/delete/'.$prod1->prod_id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
@@ -70,7 +70,7 @@
 							</div>
 						</div>
 						<div class="clearfix"></div>
-						<div style="margin-left: 40%">{{ $productall->links() }}</div> 
+						<div style="margin-left: 40%">{{ $inventory->links() }}</div> 
 					</form>
 				</div>
 			</div>

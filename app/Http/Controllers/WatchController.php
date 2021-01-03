@@ -21,19 +21,19 @@ class WatchController extends Controller
             if ($request->prod_id > 0)
             {
                 $data = DB::table('td_product')->where('prod_id', '<', $request->prod_id)
-                    ->where('prod_featured', 4)
-                    ->where('prod_cate', 5)
-                    ->orderBy('prod_id', 'DESC')
-                    ->limit(5)
-                    ->get();
+                ->where('prod_featured', 4)
+                ->where('prod_cate', 5)
+                ->orderBy('prod_id', 'DESC')
+                ->limit(5)
+                ->get();
             }
             else
             {
                 $data = DB::table('td_product')->where('prod_featured', 4)
-                    ->where('prod_cate', 5)
-                    ->orderBy('prod_id', 'DESC')
-                    ->limit(5)
-                    ->get();
+                ->where('prod_cate', 5)
+                ->orderBy('prod_id', 'DESC')
+                ->limit(5)
+                ->get();
             }
             $output = '';
             $last_id = '';
@@ -44,39 +44,39 @@ class WatchController extends Controller
                 {
                     $output .= '
                     <div class="smart_all">
-            <div class="smart_detail">
-            <label>trả góp 0%</label>
-            <div class="imgdetail">
-            <a class="click1" href="' . asset("/detail7/$lap->prod_id/$lap->prod_slug.html") . '">
-            <img class="h2 h2a" src="' . asset("../storage/app/avatar/$lap->prod_img") . '" alt="">
-            <div class="sdas">
-            <a class="text">
-             <p class="name">' . $lap->prod_name . '</p>
-            <p class="price" >' . number_format($lap->prod_price) . 'đ</p>
-            <p class="note">' . $lap->prod_description . '</p> 
-            </a>
-            </div>
-            </a>
-            </div>
-            </div> 
-            </div>
-            ';
+                    <div class="smart_detail">
+                    <label>trả góp 0%</label>
+                    <div class="imgdetail">
+                    <a class="click1" href="' . asset("/detail7/$lap->prod_id/$lap->prod_slug.html") . '">
+                    <img class="h2 h2a" src="' . asset("../storage/app/avatar/$lap->prod_img") . '" alt="">
+                    <div class="sdas">
+                    <a class="text">
+                    <p class="name">' . $lap->prod_name . '</p>
+                    <p class="price" >' . number_format($lap->prod_price) . 'đ</p>
+                    <p class="note">' . $lap->prod_description . '</p> 
+                    </a>
+                    </div>
+                    </a>
+                    </div>
+                    </div> 
+                    </div>
+                    ';
                     $last_id = $lap->prod_id;
 
                 }
                 $output .= '
-          <div id="load_more">
-          <button type="button" name="load_more_button" class="btn form-control btnmore" data-id="' . $last_id . '" id="load_more_button">Xem thêm</button>
-          </div>
-          ';
+                <div id="load_more">
+                <button type="button" name="load_more_button" class="btn form-control btnmore" data-id="' . $last_id . '" id="load_more_button">Xem thêm</button>
+                </div>
+                ';
             }
             else
             {
                 $output .= '
-          <div id="load_more">
-          <button type="button" name="load_more_button" class="btn form-control btnmore">.....</button>
-          </div>
-          ';
+                <div id="load_more">
+                <button type="button" name="load_more_button" class="btn form-control btnmore">.....</button>
+                </div>
+                ';
             }
             echo $output;
         }
@@ -86,18 +86,18 @@ class WatchController extends Controller
     public function index()
     {
     	$data['watchpr'] = Product::where('prod_featured',1)->where('prod_cate',5)
-            ->orderBy('prod_id','desc')
-            ->take(5)
-            ->get();
-    	return view('fontend.Watch.Watch',$data);
+        ->orderBy('prod_id','desc')
+        ->take(5)
+        ->get();
+        return view('fontend.Watch.Watch',$data);
     }
 
     public function getindex()
     {
         $data['watchlist'] = DB::table('td_product')->where('prod_cate',5)
-            ->join('td_category', 'td_product.prod_cate', '=', 'td_category.cate_id')
-            ->orderBy('prod_id', 'desc')
-            ->get();
+        ->join('td_category', 'td_product.prod_cate', '=', 'td_category.cate_id')
+        ->orderBy('prod_id', 'desc')
+        ->get();
         return view('backend.Watch.Watch',$data);
 
     }
@@ -110,8 +110,8 @@ class WatchController extends Controller
     public function postaddwatch(Request $request)
     {
         $filename = $request
-            ->img
-            ->getClientOriginalName();
+        ->img
+        ->getClientOriginalName();
         $product = new Product;
         $product->prod_name = $request->name;
         $product->prod_slug = Str::slug($request->name);
@@ -128,8 +128,8 @@ class WatchController extends Controller
         // $product->prod_cateall = $request->cateall;
         $product->save();
         $request
-            ->img
-            ->storeAs('avatar', $filename);
+        ->img
+        ->storeAs('avatar', $filename);
         return redirect('admin/watch/add')->with('thongbao', 'bạn đã thêm thành công');
 
     }
@@ -157,12 +157,12 @@ class WatchController extends Controller
         if ($request->hasFile('img'))
         {
             $img = $request
-                ->img
-                ->getClientOriginalName();
+            ->img
+            ->getClientOriginalName();
             $arr['prod_img'] = $img;
             $request
-                ->img
-                ->move('avatar' . $img);
+            ->img
+            ->move('avatar' . $img);
         }
 
         $product::where('prod_id', $id)->update($arr);
@@ -173,4 +173,35 @@ class WatchController extends Controller
         Product::destroy($id);
         return back();
     }
+
+        // chon gia san pham
+    public function price1()
+    {
+      $data['product']=Product::where('prod_price','<',10000000)->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(5);
+      return view('fontend.Laptop.ListPrice',$data);
+  }
+
+  public function price2()
+  {
+      $data['product']=Product::whereBetween('prod_price',[10000000,15000000])->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(5);
+      return view('fontend.Laptop.ListPrice',$data);
+  }
+
+  public function price3()
+  {
+      $data['product']=Product::whereBetween('prod_price',[15000000,20000000])->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(5);
+      return view('fontend.Laptop.ListPrice',$data);
+  }
+
+  public function price4()
+  {
+      $data['product']=Product::whereBetween('prod_price',[20000000,25000000])->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(5);
+      return view('fontend.Laptop.ListPrice',$data);
+  }
+
+  public function price5()
+  {
+      $data['product']=Product::where('prod_price','>',25000000)->where('prod_cate',2)->orderBy('prod_id','desc')->paginate(5);
+      return view('fontend.Laptop.ListPrice',$data);
+  }
 }

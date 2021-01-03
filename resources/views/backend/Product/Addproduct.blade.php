@@ -86,6 +86,10 @@
 										<input required type="number" name="price" class="form-control" value="2000000">
 									</div>
 									<div class="form-group" >
+										<label>Số lượng</label>
+										<input required type="number" name="number" class="form-control" value="1">
+									</div>
+									<div class="form-group" >
 										<label>Ảnh sản phẩm</label>
 										<input required id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
 										<img id="avatar" class="" width="300px" src="">

@@ -5,6 +5,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 });
+// thong ke doanh so
+Route::post('/filetr','LoginController@filter');
+Route::post('/dayorder','LoginController@dayorder');
+//Contact
+Route::group(['prefix'=>'Contact'],function(){
+	Route::get('/','frontendController@Contact');
+	Route::post('/','frontendController@postContact');
+});
 //đăng nhập giỏ hàng
 Route::group(['prefix'=>'log_cart'],function(){
 	Route::get('/','frontendController@index');
@@ -23,12 +31,17 @@ Route::group(['prefix'=>'thanhtoan'],function(){
 Route::group(['prefix'=>'loginform'],function(){
 	Route::post('login_customer','CustomerController@index');
 	Route::get('/','CustomerController@indexloginform');
+	Route::get('transaction','CustomerController@transaction');
 	Route::get('logout','CustomerController@getLogoutCustomer');
 	Route::get('edit/{id}','FrontendController@geteditcustomer');
 	Route::post('edit/{id}','CustomerController@editcustomer');
 	Route::post('add','CustomerController@postaddcustomer')->name('customeradd');
-	Route::post('editpassword/{id}','CustomerController@geteditpassword');
+	Route::get('editpassword/{id}','CustomerController@geteditpassword');
 	Route::post('editpassword/{id}','CustomerController@posteditpassword');
+	Route::get('forgetpass','CustomerController@forgetpass');
+	Route::post('recovery','CustomerController@recovery');
+	Route::get('updaterecovery','CustomerController@updaterecovery');
+	Route::post('updatepassword','CustomerController@updatepassword');
 });
 
 //search autocomplet
@@ -86,7 +99,7 @@ Route::get('detail/{id}/{slug}.html','DetailController@getDetailphone');
 Route::get('detail2/{id}/{slug}.html','DetailController@getDetaillaptop');
 Route::get('detail3/{id}/{slug}.html','DetailController@getDetailtablet');
 Route::get('detail4/{id}/{slug}.html','DetailController@getDetailpkien');
-Route::get('detail5/{id}/{slug}.html','Tintuccontroller@getDetailtintuc');
+Route::get('detail5/{id}/{slug}.html','ArticleController@getDetailtintuc');
 Route::get('detail6/{id}/{slug}.html','DetailController@getDetailpkien');
 Route::get('detail7/{id}/{slug}.html','DetailController@getDetailWatch');
 
@@ -114,7 +127,7 @@ Route::get('phone','PhoneController@getPhone');
 Route::get('phukien','PhukienController@getPhukien');
 Route::get('tablet','TabletController@getHome');
 Route::get('laptop','LaptopController@getHome');
-Route::get('tintuc','Tintuccontroller@getindex');
+Route::get('tintuc','ArticleController@getindex');
 Route::get('watch','WatchController@index');
 Route::group(['prefix' =>'admin/login'],function(){
 	Route::get('/','LoginController@getLogin');
@@ -211,13 +224,13 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 
 	Route::group(['prefix'=>'news'],function(){
 
-		Route::get('/','Tintuccontroller@getList_news');
-		Route::get('add','Tintuccontroller@getaddnews');
-		Route::post('add','Tintuccontroller@postaddnews');
+		Route::get('/','ArticleController@getList_news');
+		Route::get('add','ArticleController@getaddnews');
+		Route::post('add','ArticleController@postaddnews');
 
-		Route::get('edit/{id}','Tintuccontroller@geteditnews');
-		Route::post('edit/{id}','Tintuccontroller@posteditnews');
-		Route::get('delete/{id}','Tintuccontroller@getdeletenews');
+		Route::get('edit/{id}','ArticleController@geteditnews');
+		Route::post('edit/{id}','ArticleController@posteditnews');
+		Route::get('delete/{id}','ArticleController@getdeletenews');
 	});
 
 
@@ -233,6 +246,12 @@ Route::group(['prefix'=>'admin','middleware'=>'loginmiddile'],function(){
 		Route::get('tonkho','ProductController@tonkho');
 		Route::get('delete/{id}','OrderController@delete');
 		Route::get('active/{id}','OrderController@active');
+	});
+
+		Route::group(['prefix'=>'contact'],function(){
+		Route::get('/','ContactController@contact');
+		Route::get('delete/{id}','ContactController@delete');
+		Route::get('active/{id}','ContactController@active');
 	});
 
 });

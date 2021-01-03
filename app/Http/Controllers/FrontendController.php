@@ -7,10 +7,11 @@ use App\Product;
 use App\Category;
 use App\Cateallproduct;
 use App\MCustomer;
+use App\Contact;
 use DB;
 class FrontendController extends Controller
 {
-    // lay sp theo danh muc điện thoại
+    // lay sp theo danh muc
     public function getcateallproduct($id)
     {
         $data['catname'] = Cateallproduct::find($id);
@@ -18,7 +19,7 @@ class FrontendController extends Controller
         ->orderBy('prod_id', 'desc')
         ->paginate(5);
         return view('fontend.Phone.Catelist', $data);
-        
+
     }
     public function getcatealllaptop($id)
     {
@@ -39,11 +40,13 @@ class FrontendController extends Controller
     }
     public function getcateallphukien($id)
     {
-        $data['catname']=Cateallproduct::find($id);
-        $data['product']=Product::where('prod_cateall',$id)->where('prod_cate',4)->orderBy('prod_id','desc')->paginate(4);
-        return view('fontend.Phukien.Catelist',$data);
+        $data['catname'] = Cateallproduct::find($id);
+        $data['product'] = Product::where('prod_cateall', $id)->where('prod_cate', 4)
+        ->orderBy('prod_id', 'desc')
+        ->paginate(4);
+        return view('fontend.Phukien.Catelist', $data);
     }
-
+    // hien thi all san pham ngoai trang chu
     public function getHome()
     {
         $data['watch'] = Product::where('prod_featured', 4)->Where('prod_cate', 5)
@@ -105,6 +108,7 @@ class FrontendController extends Controller
 
         return view('fontend.index', $data);
     }
+    // search san pham
     public function autocompletajax(Request $request)
     {
         $data = $request->all();
@@ -126,33 +130,53 @@ class FrontendController extends Controller
     }
 
     public function index()
-    { 
-      return view('fontend.FormLogin.LOGIN');
-  }
+    {
+        return view('fontend.FormLogin.LOGIN');
+    }
     // login form edit customer
-  public function geteditcustomer($id)
-  {
-    $data =MCustomer::find($id);
-    return view('fontend.FormLogin.Information',$data);
-}
-
-public function postLogincart(Request $request)
-{
-   $arr=['email'=>$request->email, 'password'=>$request->password];
-   if($request->remember='Remember Me'){
-      $remember=true;
-  }else {
-      $remember=false;
-  }
-  if(Auth::attempt($arr,$remember)){
-      return redirect('cart/show');}
-
-      else
-      {         
-        return redirect("log_cart");
+    public function geteditcustomer($id)
+    {
+        $data = MCustomer::find($id);
+        return view('fontend.FormLogin.Information', $data);
     }
 
-}
+    public function postLogincart(Request $request)
+    {
+        $arr = ['email' => $request->email, 'password' => $request->password];
+        if ($request->remember = 'Remember Me')
+        {
+            $remember = true;
+        }
+        else
+        {
+            $remember = false;
+        }
+        if (Auth::attempt($arr, $remember))
+        {
+            return redirect('cart/show');
+        }
+
+        else
+        {
+            return redirect("log_cart");
+        }
+
+    }
+    public function Contact()
+    {
+        return view('fontend.Contact.Contact');
+    }
+    public function postContact(Request $request)
+    {
+
+        $contact=new Contact;
+        $contact->email=$request->email;
+        $contact->name=$request->name;
+        $contact->phone=$request->phone;
+        $contact->content=$request->content;
+        $contact->save();
+        return back()->with('thongbao','Bạn đã gửi liên hệ thành công');
+    }
 
 }
 

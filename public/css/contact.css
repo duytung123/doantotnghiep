@@ -1,0 +1,31 @@
+.container__{
+	    margin-left: 23%;
+    /* text-align: center; */
+    width: 700px;
+    height: 500px;
+    border: 1px solid gray;
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+h3{
+	    position: relative;
+    top: 30px;
+	    text-align: center;
+    color: black;
+    font-family: 'slick';
+    font-weight: 600;
+}
+.postion{
+	position: absolute;
+}
+.btn__{
+font-family: 'Font Awesome 5 Pro';
+    border: 1px solid;
+    width: 100px;
+    height: 50px;
+    color: blue;
+    font-weight: 600;
+}
+.content_customer{
+	margin-top: 80px;
+}

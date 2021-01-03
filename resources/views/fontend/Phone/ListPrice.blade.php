@@ -44,10 +44,10 @@
 <div class="columlogo">
   <nav class="navbar navbar-expand-sm">
     <ul class="navbar-nav g1">
-         @foreach($catealllaptop as $cate)
+         @foreach($listcate as $cate)
       <li class="nav-item lg1">
       
-        <a class="nav-link c1a" href="{{asset('catealllaptop/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
+        <a class="nav-link c1a" href="{{asset('cateallproduct/'.$cate->cateall_id.'/'.$cate->cateall_slug.'.html')}}">
         <p class="catelistphone">{{$cate->cateall_name}}</p>
       </a>
       </li>

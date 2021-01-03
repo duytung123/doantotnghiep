@@ -48,7 +48,7 @@ class PhukienController extends Controller
 					<p>' . number_format($lap->prod_price) . 'đ</p>
 					<p class="sale_1">' . $lap->prod_promotion . '</p>
 					<strong>' . $lap->prod_name . '</strong>
-					<a class="buy" href="">MUA NGAY</a>
+					<a class="buy" href="' . asset("/detail6/$lap->prod_id/$lap->prod_slug.html") . '">MUA NGAY</a>
 					</div>
 					</a>	
 					</div>

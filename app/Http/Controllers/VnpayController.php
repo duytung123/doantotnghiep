@@ -10,13 +10,14 @@ use DB;
 use App\Product;
 use App\Transaction;
 use App\Order;
-// use App\Http\Requests\ADDrequest;
+use Mail;
+
 class VnpayController extends Controller
 {
 
     // Ngân hàng: NCB
-    // Số thẻ: 9704198526191432198
-    // Tên chủ thẻ:NGUYEN VAN A
+    // Số thẻ:  9704198526191432198
+    // Tên chủ thẻ:  NGUYEN VAN A
     // Ngày phát hành: 07/15
     // Mật khẩu OTP:123456
 	public function index($id)
@@ -36,7 +37,7 @@ class VnpayController extends Controller
         $vnp_TmnCode = "EFVOTUU1"; //Mã website tại VNPAY 
         $vnp_HashSecret = "WOTZLCXVIEEHKKKXKWCOBXXFBXPJMNBT"; //Chuỗi bí mật
         $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://localhost/thegioiso/public/trangchu";
+        $vnp_Returnurl = "http://localhost/thegioiso/public/complete";
         $vnp_TxnRef = date("YmdHis"); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = "Thanh toán hóa đơn phí dich vụ";
         $vnp_OrderType = 'billpayment';
@@ -75,15 +76,17 @@ class VnpayController extends Controller
             }
             $query .= urlencode($key) . "=" . urlencode($value) . '&';
         }
-                $arr = [
-            'user_name' => $request->name,
-            'tr_totalprice' =>str_replace(',', '',Cart::subtotal()),
-            'tr_phone' =>$request->phone,
-            'tr_note' =>$request->note,
-            'tr_address' =>$request->add,
-            'created_at' =>Carbon::now(),
-            'updated_at' =>Carbon::now()
-        ];
+            $arr = 
+            [
+                'email' => $request->email,
+                'user_name' => $request->name,
+                'tr_totalprice' =>str_replace(',', '',Cart::subtotal()),
+                'tr_phone' =>$request->phone,
+                'tr_note' =>$request->note,
+                'tr_address' =>$request->city,
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
+            ];
         $transactionId = DB::table('td_transaction')->insertGetId($arr);
         if($transactionId)
         {
@@ -100,6 +103,20 @@ class VnpayController extends Controller
                 ]);
             }
         }
+        $data['info']=$request->all();
+        $data['subtotal']=Cart::total();
+        $data['cart'] = Cart::content();
+        $email=$request->email;
+        Mail::send('fontend.Complete.Email',$data,function($message) use($email)
+        {
+            $message->from('tichuot455@gmail.com', 'Khách hàng');
+
+            $message->to($email, $email);
+
+            $message->cc('tungnguyen1399@gmail.com','Nguyễn Duy Tùng');
+
+            $message->subject('xác nhận đặt đơn hàng thành công');
+        });
         Cart::destroy();
 
         $vnp_Url = $vnp_Url . "?" . $query;

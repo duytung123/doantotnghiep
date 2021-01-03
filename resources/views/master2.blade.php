@@ -33,7 +33,7 @@
         {{csrf_field()}}
         <input id="keywords" class="form-control mr-sm-2 inputsearch" type="text" placeholder="Bạn tìm gì.." name="resultcomplete">
         <div id="search_ajax"></div>
-        <button class="btn searchbtn"  type="submit"><i class="fa fa-search"></i></button>
+        <button class="btn searchbtn"  type=""><i class="fa fa-search"></i></button>
       </form>
 
       <ul class="navbar-nav">
@@ -74,10 +74,10 @@
             <a class="nav" href="tintuc">công nghệ</a>
           </li>
         </a>
-        <a href="">
+        <a href="Contact">
           <li class="nav-item nav_item"> 
-            <div class="icon"><i class="fal fa-gamepad-alt"></i></div> 
-            <a class="nav" href="">game app</a>
+            <div class="icon"><i class="fal fa-users"></i></div> 
+            <a class="nav" href="Contact">Liên Hệ</a>
           </li>
         </a>
 
@@ -93,6 +93,7 @@
            <a class="nav-link dropdown-toggle customer-name-plank" data-toggle="dropdown" href="">{{ auth('customer')->user()->name }}</a>
            <div class="dropdown-menu">
             <a class="dropdown-item active" href="{{asset('loginform/edit/'.$customer->id)}}">Quản lý tài khoản</a>
+            <a class="dropdown-item dr2" href="loginform/logout">Đơn hàng của bạn</a>
             <a class="dropdown-item dr1" href="loginform/logout">Đăng xuất</a>
 
           </div>
@@ -110,6 +111,8 @@
  </div>
  <section>
   <button id="gotop"><a alt="về đầu trang" class="fas fa-arrow-circle-up"></a></button>
+    <div class="zalo-chat-widget" data-oaid="1602318280360005737" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="120" data-width="400" data-height="400">
+  </div>
 </section>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

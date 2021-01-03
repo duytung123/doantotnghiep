@@ -50,7 +50,7 @@ class ProductController extends Controller
         $product->prod_warranty = $request->warranty;
         $product->prod_promotion = $request->promotion;
         $product->prod_status = $request->status;
-        $product->prod_number = $request->prod_number;
+        $product->prod_number = $request->number;
         $product->prod_featured = $request->featured;
         $product->prod_condition = $request->condition;
         $product->prod_description = $request->description;
@@ -100,9 +100,7 @@ class ProductController extends Controller
     public function getdeleteproduct($id)
     {
         Product::destroy($id);
-
         return back();
-
     }
 
     public function getsearch(Request $request)
@@ -117,11 +115,12 @@ class ProductController extends Controller
 
     public function khohang()
     {
-        return view('backend.Warehouse.Warehouse');
+        $data['warehouse']= Product::where('prod_number','>=',1)->paginate(4);
+        return view('backend.Warehouse.Warehouse',$data);
     }
     public function tonkho()
     {
-        $data['inventory'] = Transaction::where('tr_status','0')->get();
+        $data['inventory'] = Product::where('prod_pay','>',0)->paginate(4);
         return view('backend.Warehouse.Inventory',$data);
     }
 }

@@ -47,19 +47,19 @@
                                  <th width="30%">Tùy chọn</th>
                               </tr>
                               <tbody id="pr_search">
-                                 @foreach($productall as $prod1)
+                                 @foreach($warehouse as $warehouses)
                                  <tr>
-                                    <td>{{$prod1->prod_id}}</td>
-                                    <td>{{$prod1->prod_name}}</td>
-                                    <td>{{number_format($prod1->prod_price,0,',','.')}}VND</td>
+                                    <td>{{$warehouses->prod_id}}</td>
+                                    <td>{{$warehouses->prod_name}}</td>
+                                    <td>{{number_format($warehouses->prod_price,0,',','.')}}VND</td>
                                     <td>
-                                       <img width="200px" src="{{asset('../storage/app/avatar/'.$prod1->prod_img)}}"class="thumbnail">
+                                       <img width="200px" src="{{asset('../storage/app/avatar/'.$warehouses->prod_img)}}"class="thumbnail">
                                     </td>
-                                    <td>{{$prod1->cate_name}}</td>
-                                    <td>SL:{{$prod1->prod_number}} <br>ĐD:{{$prod1->prod_rating_number}} </td> 
+                                    <td>{{$warehouses->cate_name}}</td>
+                                    <td>SL:{{$warehouses->prod_number}} <br>ĐG:{{$warehouses->prod_rating_number}} </td> 
                                     <td>
-                                       <a href="{{asset('admin/product/update/'.$prod1->prod_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-                                       <a onclick= "return confirm('Bạn có chắc muốn xóa sản phẩm không')" href="{{asset('admin/product/delete/'.$prod1->prod_id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                                       <a href="{{asset('admin/product/update/'.$warehouses->prod_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+                                       <a onclick= "return confirm('Bạn có chắc muốn xóa sản phẩm không')" href="{{asset('admin/product/delete/'.$warehouses->prod_id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
 
                                  </tr>

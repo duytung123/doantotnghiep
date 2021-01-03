@@ -14,6 +14,7 @@
                     @foreach($orders as $key =>$value)
                     <tr class="odd gradeX" align="center">
                         <td>{{$value->id}}</td>
+                        <td>{{-- {{$value->name}} --}}</td>
                         <td><img src="{{ isset($value->product1->prod_img) ? pare_url_file($value->product1->prod_img) : ''}}" alt=""></td>
                         <td>{{-- {{$u->}} --}}</td>
                         <td>{{$value->or_price}}</td>

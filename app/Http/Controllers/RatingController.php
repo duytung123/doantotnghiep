@@ -16,7 +16,7 @@ class RatingController extends Controller
 	{
 		$this->validate($request,
            [
-            'r_content'=>'min:20|required',
+            'r_content'=>'min:10|required',
             'r_name' =>'required'
 
         ],
@@ -42,8 +42,7 @@ class RatingController extends Controller
 				'created_at' =>Carbon::now(),
 				'updated_at' =>Carbon::now()
 
-			]);
-				
+			]);	
 			$product =Product::find($id);
 			$product->prod_total_number +=$request->number;
 			$product->prod_rating_number += 1;

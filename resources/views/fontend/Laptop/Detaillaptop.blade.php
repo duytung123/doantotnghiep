@@ -112,14 +112,28 @@
             border-width: 6px;
             margin-top: -6px;
         }
+        .login_form{
+            position: relative;
+            top: 10px;
+            left: -65px;
+            float: right;
+        }
+        .login_form_text{
+            font-weight: 600;
+            color: #037eea;
+        }
     </style>
     <link rel="stylesheet" href="css/detail.css">
     <div class="breakhead">
         <a class="breakhead-text" href="trangchu">Trang chủ </a>
         <span> › </span>
-        <a class="breakhead-text" href="">Điện Thoại </a>
+        <a class="breakhead-text" href="">Laptop</a>
         <span> › </span>
-        <a class="breakhead-text" href="">....</a>
+        <div class="login_form">
+
+            <a class="login_form_text" href="loginform">ĐĂNG NHẬP/ĐĂNG KÝ</a>
+
+        </div>
     </div>
 
     <div class="phonetext">
@@ -257,8 +271,7 @@
 
     <div class="commenttong">
         <div class="danhgiaphone">
-            <h4>{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 35px;margin-top: -23px;
-}">Đánh giá <span>{{$cate->prod_name}}</span> </p> </h4>
+            <h5 style="margin-left: 10px;">{{$cate->prod_rating_number}}<p style="font-weight:bolder;font-size: 20px;margin-left: 24px;margin-top: -22px">Đánh giá <span>{{$cate->prod_name}}</span> </p> </h5>
         </div>
         <!-- đánh giá sản phẩm -->
         <div class="component_rating" style="width: 90%;display: flex;border-radius: 5px;border: 1px solid #d0cbcb;align-items: center; margin-bottom: 20px; position: relative;">
@@ -314,7 +327,7 @@
                             <li class="com-details">
                                 <p class="com_details_font">{{$rating->r_content}}</p>
                             </li>
-                            <span style="font-size: 13px">{{$rating->updated_at}}</span>   
+                            <span style="font-size: 13px;margin-left: 10px;">{{$rating->updated_at}}</span>   
                         </li>
 
                     </ul>
